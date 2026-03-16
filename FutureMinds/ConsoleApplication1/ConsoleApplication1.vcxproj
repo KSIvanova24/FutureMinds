@@ -131,12 +131,19 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="accessData.cpp" />
+    <ClCompile Include="auth.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="menu.cpp" />
+    <ClCompile Include="teacherDashboard.cpp" />
     <ClCompile Include="pch.h" />
+    <ClCompile Include="studentDashboard.cpp" />
+    <ClCompile Include="validation.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="menu.h" />
+    <ClInclude Include="accessData.h" />
+    <ClInclude Include="auth.h" />
+    <ClInclude Include="dashboards.h" />
+    <ClInclude Include="validation.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

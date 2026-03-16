@@ -10,5 +10,7 @@
 #include <ctime>
 #include <cstdlib>
 #include <cstdio>
+#include <fstream>
+#include <sstream>
 
 using namespace std;

@@ -1,6 +1,6 @@
-﻿#include "menu.h"
+﻿#include "auth.h"
 
 int main()
 {
-	menu();
+	startingScreen();
 }
