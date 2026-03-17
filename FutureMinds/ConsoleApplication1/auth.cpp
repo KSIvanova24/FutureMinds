@@ -324,9 +324,9 @@ void startingScreen()
     InitWindow(screenWidth, screenHeight, "TLib");
     Image logo = LoadImage("../../logo.png");
     SetWindowIcon(logo);
-    Vector2 loginButtonPosition = { 1400, 250 };
-    Vector2 signUpButtonPosition = { 1400, 450 };
-    Vector2 exitButtonPosition = { 1400, 650 };
+    Vector2 loginButtonPosition = { 810, 250 };
+    Vector2 signUpButtonPosition = { 810, 450 };
+    Vector2 exitButtonPosition = { 810, 650 };
 
     const Rectangle loginButton = { loginButtonPosition.x, loginButtonPosition.y, 300, 100 };
     const Rectangle signUpButton = { signUpButtonPosition.x, signUpButtonPosition.y, 300, 100 };
@@ -343,10 +343,10 @@ void startingScreen()
 
         DrawTexture(background, 0, 0, WHITE);
 
-        DrawText("Welcome to FutureMinds!", GetScreenWidth() / 2 + 380, GetScreenHeight() / 2 - 350, 50, BLACK);
+        DrawText("Welcome to FutureMinds!", GetScreenWidth() / 2 -325, GetScreenHeight() / 2 - 350, 50, BLACK);
         bool isMouseOverLoginButton = CheckCollisionPointRec(mousePosition, loginButton);
         DrawRectangleRounded(loginButton, 5, (int)2, (isMouseOverLoginButton ? DARKGRAY : BLACK));
-        DrawText("Login", loginButtonPosition.x + 85, loginButtonPosition.y + 25, 50, WHITE);
+        DrawText("Login", loginButtonPosition.x +85, loginButtonPosition.y + 25, 50, WHITE);
         if (CheckCollisionPointRec(mousePosition, loginButton) && IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) {
             login();
         }
@@ -355,14 +355,14 @@ void startingScreen()
 
         bool isMouseOverSignUpButton = CheckCollisionPointRec(mousePosition, signUpButton);
         DrawRectangleRounded(signUpButton, 5, (int)2, isMouseOverSignUpButton ? DARKGRAY : BLACK);
-        DrawText("Sign up", signUpButtonPosition.x + 60, signUpButtonPosition.y + 25, 50, WHITE);
+        DrawText("Sign up", signUpButtonPosition.x +55, signUpButtonPosition.y + 25, 50, WHITE);
         if (CheckCollisionPointRec(mousePosition, signUpButton) && IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) {
             signup();
         }
 
         bool isMouseOverExitButton = CheckCollisionPointRec(mousePosition, exitButton);
         DrawRectangleRounded(exitButton, 5, (int)2, (isMouseOverExitButton ? DARKGRAY : BLACK));
-        DrawText("Exit", exitButtonPosition.x + 100, exitButtonPosition.y + 25, 50, WHITE);
+        DrawText("Exit", exitButtonPosition.x +100, exitButtonPosition.y + 25, 50, WHITE);
         if (CheckCollisionPointRec(mousePosition, exitButton) && IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) {
             return;
         }
