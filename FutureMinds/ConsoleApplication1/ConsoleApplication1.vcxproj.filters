@@ -21,12 +21,6 @@
     <ClCompile Include="pch.h">
       <Filter>Header Files</Filter>
     </ClCompile>
-    <ClCompile Include="teacherDashboard.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="studentDashboard.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="auth.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -34,6 +28,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="validation.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="dashboards.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

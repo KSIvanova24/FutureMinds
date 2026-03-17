@@ -133,10 +133,9 @@
   <ItemGroup>
     <ClCompile Include="accessData.cpp" />
     <ClCompile Include="auth.cpp" />
+    <ClCompile Include="dashboards.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="teacherDashboard.cpp" />
     <ClCompile Include="pch.h" />
-    <ClCompile Include="studentDashboard.cpp" />
     <ClCompile Include="validation.cpp" />
   </ItemGroup>
   <ItemGroup>
