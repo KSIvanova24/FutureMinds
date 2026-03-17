@@ -317,11 +317,15 @@ void login()
     }
 
 }
-void startingScreen()
+void startingScreen(bool hasInit)
 {
     const int screenWidth = 1920;
     const int screenHeight = 975;
-    InitWindow(screenWidth, screenHeight, "TLib");
+    if (!hasInit)
+    {
+        InitWindow(screenWidth, screenHeight, "TLib");
+    }
+    
     Image logo = LoadImage("../../logo.png");
     SetWindowIcon(logo);
     Vector2 loginButtonPosition = { 810, 250 };
@@ -364,7 +368,7 @@ void startingScreen()
         DrawRectangleRounded(exitButton, 5, (int)2, (isMouseOverExitButton ? DARKGRAY : BLACK));
         DrawText("Exit", exitButtonPosition.x +100, exitButtonPosition.y + 25, 50, WHITE);
         if (CheckCollisionPointRec(mousePosition, exitButton) && IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) {
-            return;
+            CloseWindow();
         }
         EndDrawing();
     }

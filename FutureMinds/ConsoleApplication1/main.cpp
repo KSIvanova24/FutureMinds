@@ -2,5 +2,5 @@
 
 int main()
 {
-	startingScreen();
+	startingScreen(false);
 }

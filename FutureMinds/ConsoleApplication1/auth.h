@@ -2,7 +2,7 @@
 
 #include "pch.h"
 
-void startingScreen();
+void startingScreen(bool hasInit);
 
 void login();
 

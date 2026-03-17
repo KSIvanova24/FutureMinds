@@ -144,7 +144,7 @@ void teacherDashboard()
 
         if (logoutHover && IsMouseButtonPressed(MOUSE_LEFT_BUTTON))
         {
-            startingScreen();
+            startingScreen(true);
         }
 
         EndDrawing();
