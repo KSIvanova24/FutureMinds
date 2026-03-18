@@ -1,7 +1,8 @@
-#include "dashboards.h"
+﻿#include "dashboards.h"
 #include "accessData.h"
 #include "auth.h"
 #include "settings.h"
+#include "quizes.h"
 
 void drawUsername(string user)
 {
@@ -152,14 +153,85 @@ void teacherDashboard()
         {
             settings();
         }
-
+        if (quizHover && IsMouseButtonPressed(MOUSE_LEFT_BUTTON))
+        {
+            quizes();
+        }
         EndDrawing();
     }
 
     CloseWindow();
 }
 
+
 void studentDashboard()
 {
-    ;
+    const int screenWidth = 1000;
+    const int screenHeight = 700;
+
+    if (!IsWindowReady()) {
+        InitWindow(screenWidth, screenHeight, "Student Dashboard - English");
+    }
+
+    bool isDropdownOpen = false;
+    bool itemHovered = false;
+    Rectangle dropdownHeader = { 350, 300, 300, 50 };
+    Rectangle startButton = { 400, 500, 200, 50 };
+    
+    SetTargetFPS(60);
+
+    while (!WindowShouldClose())
+    {
+        Vector2 mouse = GetMousePosition();
+        bool overHeader = CheckCollisionPointRec(mouse, dropdownHeader);
+        bool overStart = CheckCollisionPointRec(mouse, startButton);
+
+        if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) {
+            if (overHeader) isDropdownOpen = !isDropdownOpen;
+            else if (isDropdownOpen) {
+                Rectangle itemRect = { dropdownHeader.x, dropdownHeader.y + 50, dropdownHeader.width, 50 };
+                if (CheckCollisionPointRec(mouse, itemRect)) {
+                    isDropdownOpen = false;
+                } else {
+                    isDropdownOpen = false;
+                }
+            }
+        }
+
+        BeginDrawing();
+        ClearBackground(GetColor(0xF5F7FAFF)); 
+
+        DrawRectangle(0, 0, screenWidth, 100, WHITE);
+        DrawText("LEARNER PORTAL", 40, 35, 28, GetColor(0x2D3436FF));
+        DrawCircle(920, 50, 20, LIGHTGRAY);
+        DrawText("JD", 912, 42, 15, DARKGRAY);
+
+        DrawText("Welcome back, Student!", 380, 180, 24, DARKGRAY);
+        DrawText("Select your current course to begin the assessment", 310, 220, 16, GRAY);
+
+        DrawRectangleRounded(dropdownHeader, 0.2f, 8, WHITE);
+        DrawRectangleRoundedLines(dropdownHeader, 0.2f, 8, 2, isDropdownOpen ? SKYBLUE : LIGHTGRAY);
+        DrawText("English Language", dropdownHeader.x + 20, dropdownHeader.y + 15, 20, DARKGRAY);
+        DrawText(isDropdownOpen ? "▲" : "▼", dropdownHeader.x + 260, dropdownHeader.y + 15, 18, GRAY);
+
+        if (isDropdownOpen) {
+            Rectangle itemRect = { dropdownHeader.x, dropdownHeader.y + 55, dropdownHeader.width, 50 };
+            itemHovered = CheckCollisionPointRec(mouse, itemRect);
+            
+            DrawRectangleRounded(itemRect, 0.2f, 8, itemHovered ? GetColor(0xF0F9FFFF) : WHITE);
+            DrawRectangleRoundedLines(itemRect, 0.2f, 8, 1, SKYBLUE);
+            DrawText("English Language", itemRect.x + 20, itemRect.y + 15, 20, itemHovered ? SKYBLUE : DARKGRAY);
+        }
+
+        if (!isDropdownOpen) {
+            DrawRectangleRounded(startButton, 0.3f, 8, overStart ? GetColor(0x0984E3FF) : SKYBLUE);
+            DrawText("START QUIZ", startButton.x + 45, startButton.y + 15, 20, WHITE);
+            
+            if (overStart && IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) {
+                break; 
+            }
+        }
+
+        EndDrawing();
+    }
 }
