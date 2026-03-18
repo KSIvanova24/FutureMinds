@@ -136,12 +136,15 @@
     <ClCompile Include="dashboards.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="pch.h" />
+    <ClCompile Include="quiz.cpp" />
+    <ClCompile Include="settings.cpp" />
     <ClCompile Include="validation.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="accessData.h" />
     <ClInclude Include="auth.h" />
     <ClInclude Include="dashboards.h" />
+    <ClInclude Include="settings.h" />
     <ClInclude Include="validation.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

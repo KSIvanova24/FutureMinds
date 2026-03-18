@@ -1,69 +1,23 @@
 ﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(531,5): warning MSB8028: The intermediate directory (x64\Debug\) contains files shared from another project (ConsoleApplication1.vcxproj).  This can lead to incorrect clean and rebuild behavior.
-  auth.cpp
-D:\FutureMinds project\FutureMinds\FutureMinds\ConsoleApplication1\auth.cpp(18,58): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
-D:\FutureMinds project\FutureMinds\FutureMinds\ConsoleApplication1\auth.cpp(18,58): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-D:\FutureMinds project\FutureMinds\FutureMinds\ConsoleApplication1\auth.cpp(18,87): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
-D:\FutureMinds project\FutureMinds\FutureMinds\ConsoleApplication1\auth.cpp(18,87): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-D:\FutureMinds project\FutureMinds\FutureMinds\ConsoleApplication1\auth.cpp(19,58): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
-D:\FutureMinds project\FutureMinds\FutureMinds\ConsoleApplication1\auth.cpp(19,58): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-D:\FutureMinds project\FutureMinds\FutureMinds\ConsoleApplication1\auth.cpp(19,87): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
-D:\FutureMinds project\FutureMinds\FutureMinds\ConsoleApplication1\auth.cpp(19,87): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-D:\FutureMinds project\FutureMinds\FutureMinds\ConsoleApplication1\auth.cpp(20,64): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
-D:\FutureMinds project\FutureMinds\FutureMinds\ConsoleApplication1\auth.cpp(20,64): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-D:\FutureMinds project\FutureMinds\FutureMinds\ConsoleApplication1\auth.cpp(20,93): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
-D:\FutureMinds project\FutureMinds\FutureMinds\ConsoleApplication1\auth.cpp(20,93): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-D:\FutureMinds project\FutureMinds\FutureMinds\ConsoleApplication1\auth.cpp(26,59): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
-D:\FutureMinds project\FutureMinds\FutureMinds\ConsoleApplication1\auth.cpp(26,59): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-D:\FutureMinds project\FutureMinds\FutureMinds\ConsoleApplication1\auth.cpp(26,88): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
-D:\FutureMinds project\FutureMinds\FutureMinds\ConsoleApplication1\auth.cpp(26,88): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-D:\FutureMinds project\FutureMinds\FutureMinds\ConsoleApplication1\auth.cpp(150,100): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-D:\FutureMinds project\FutureMinds\FutureMinds\ConsoleApplication1\auth.cpp(150,79): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-D:\FutureMinds project\FutureMinds\FutureMinds\ConsoleApplication1\auth.cpp(150,62): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-D:\FutureMinds project\FutureMinds\FutureMinds\ConsoleApplication1\auth.cpp(150,45): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-D:\FutureMinds project\FutureMinds\FutureMinds\ConsoleApplication1\auth.cpp(153,61): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-D:\FutureMinds project\FutureMinds\FutureMinds\ConsoleApplication1\auth.cpp(153,42): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-D:\FutureMinds project\FutureMinds\FutureMinds\ConsoleApplication1\auth.cpp(154,138): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-D:\FutureMinds project\FutureMinds\FutureMinds\ConsoleApplication1\auth.cpp(154,119): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-D:\FutureMinds project\FutureMinds\FutureMinds\ConsoleApplication1\auth.cpp(155,156): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-D:\FutureMinds project\FutureMinds\FutureMinds\ConsoleApplication1\auth.cpp(155,131): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-D:\FutureMinds project\FutureMinds\FutureMinds\ConsoleApplication1\auth.cpp(177,58): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
-D:\FutureMinds project\FutureMinds\FutureMinds\ConsoleApplication1\auth.cpp(177,58): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-D:\FutureMinds project\FutureMinds\FutureMinds\ConsoleApplication1\auth.cpp(177,87): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
-D:\FutureMinds project\FutureMinds\FutureMinds\ConsoleApplication1\auth.cpp(177,87): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-D:\FutureMinds project\FutureMinds\FutureMinds\ConsoleApplication1\auth.cpp(178,58): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
-D:\FutureMinds project\FutureMinds\FutureMinds\ConsoleApplication1\auth.cpp(178,58): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-D:\FutureMinds project\FutureMinds\FutureMinds\ConsoleApplication1\auth.cpp(178,87): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
-D:\FutureMinds project\FutureMinds\FutureMinds\ConsoleApplication1\auth.cpp(178,87): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-D:\FutureMinds project\FutureMinds\FutureMinds\ConsoleApplication1\auth.cpp(179,54): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
-D:\FutureMinds project\FutureMinds\FutureMinds\ConsoleApplication1\auth.cpp(179,54): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-D:\FutureMinds project\FutureMinds\FutureMinds\ConsoleApplication1\auth.cpp(179,83): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
-D:\FutureMinds project\FutureMinds\FutureMinds\ConsoleApplication1\auth.cpp(179,83): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-D:\FutureMinds project\FutureMinds\FutureMinds\ConsoleApplication1\auth.cpp(185,58): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
-D:\FutureMinds project\FutureMinds\FutureMinds\ConsoleApplication1\auth.cpp(185,58): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-D:\FutureMinds project\FutureMinds\FutureMinds\ConsoleApplication1\auth.cpp(185,87): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
-D:\FutureMinds project\FutureMinds\FutureMinds\ConsoleApplication1\auth.cpp(185,87): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-D:\FutureMinds project\FutureMinds\FutureMinds\ConsoleApplication1\auth.cpp(298,88): warning C4244: 'argument': conversion from 'const float' to 'int', possible loss of data
-D:\FutureMinds project\FutureMinds\FutureMinds\ConsoleApplication1\auth.cpp(298,69): warning C4244: 'argument': conversion from 'const float' to 'int', possible loss of data
-D:\FutureMinds project\FutureMinds\FutureMinds\ConsoleApplication1\auth.cpp(298,54): warning C4244: 'argument': conversion from 'const float' to 'int', possible loss of data
-D:\FutureMinds project\FutureMinds\FutureMinds\ConsoleApplication1\auth.cpp(298,39): warning C4244: 'argument': conversion from 'const float' to 'int', possible loss of data
-D:\FutureMinds project\FutureMinds\FutureMinds\ConsoleApplication1\auth.cpp(299,61): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-D:\FutureMinds project\FutureMinds\FutureMinds\ConsoleApplication1\auth.cpp(299,42): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-D:\FutureMinds project\FutureMinds\FutureMinds\ConsoleApplication1\auth.cpp(301,88): warning C4244: 'argument': conversion from 'const float' to 'int', possible loss of data
-D:\FutureMinds project\FutureMinds\FutureMinds\ConsoleApplication1\auth.cpp(301,69): warning C4244: 'argument': conversion from 'const float' to 'int', possible loss of data
-D:\FutureMinds project\FutureMinds\FutureMinds\ConsoleApplication1\auth.cpp(301,54): warning C4244: 'argument': conversion from 'const float' to 'int', possible loss of data
-D:\FutureMinds project\FutureMinds\FutureMinds\ConsoleApplication1\auth.cpp(301,39): warning C4244: 'argument': conversion from 'const float' to 'int', possible loss of data
-D:\FutureMinds project\FutureMinds\FutureMinds\ConsoleApplication1\auth.cpp(302,122): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-D:\FutureMinds project\FutureMinds\FutureMinds\ConsoleApplication1\auth.cpp(302,103): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-D:\FutureMinds project\FutureMinds\FutureMinds\ConsoleApplication1\auth.cpp(304,72): warning C4244: 'argument': conversion from 'const float' to 'int', possible loss of data
-D:\FutureMinds project\FutureMinds\FutureMinds\ConsoleApplication1\auth.cpp(304,57): warning C4244: 'argument': conversion from 'const float' to 'int', possible loss of data
-D:\FutureMinds project\FutureMinds\FutureMinds\ConsoleApplication1\auth.cpp(304,46): warning C4244: 'argument': conversion from 'const float' to 'int', possible loss of data
-D:\FutureMinds project\FutureMinds\FutureMinds\ConsoleApplication1\auth.cpp(304,35): warning C4244: 'argument': conversion from 'const float' to 'int', possible loss of data
-D:\FutureMinds project\FutureMinds\FutureMinds\ConsoleApplication1\auth.cpp(305,49): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-D:\FutureMinds project\FutureMinds\FutureMinds\ConsoleApplication1\auth.cpp(305,34): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-D:\FutureMinds project\FutureMinds\FutureMinds\ConsoleApplication1\auth.cpp(353,76): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-D:\FutureMinds project\FutureMinds\FutureMinds\ConsoleApplication1\auth.cpp(353,49): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-D:\FutureMinds project\FutureMinds\FutureMinds\ConsoleApplication1\auth.cpp(362,80): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-D:\FutureMinds project\FutureMinds\FutureMinds\ConsoleApplication1\auth.cpp(362,52): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-D:\FutureMinds project\FutureMinds\FutureMinds\ConsoleApplication1\auth.cpp(369,74): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-D:\FutureMinds project\FutureMinds\FutureMinds\ConsoleApplication1\auth.cpp(369,47): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  settings.cpp
+D:\FutureMinds project\FutureMinds\FutureMinds\ConsoleApplication1\settings.cpp(61,58): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+D:\FutureMinds project\FutureMinds\FutureMinds\ConsoleApplication1\settings.cpp(61,45): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+D:\FutureMinds project\FutureMinds\FutureMinds\ConsoleApplication1\settings.cpp(66,70): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+D:\FutureMinds project\FutureMinds\FutureMinds\ConsoleApplication1\settings.cpp(66,57): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+D:\FutureMinds project\FutureMinds\FutureMinds\ConsoleApplication1\settings.cpp(69,70): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+D:\FutureMinds project\FutureMinds\FutureMinds\ConsoleApplication1\settings.cpp(69,56): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+D:\FutureMinds project\FutureMinds\FutureMinds\ConsoleApplication1\settings.cpp(72,59): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+D:\FutureMinds project\FutureMinds\FutureMinds\ConsoleApplication1\settings.cpp(72,44): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+D:\FutureMinds project\FutureMinds\FutureMinds\ConsoleApplication1\settings.cpp(77,62): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+D:\FutureMinds project\FutureMinds\FutureMinds\ConsoleApplication1\settings.cpp(77,46): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+D:\FutureMinds project\FutureMinds\FutureMinds\ConsoleApplication1\settings.cpp(80,89): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+D:\FutureMinds project\FutureMinds\FutureMinds\ConsoleApplication1\settings.cpp(80,42): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+D:\FutureMinds project\FutureMinds\FutureMinds\ConsoleApplication1\settings.cpp(84,64): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+D:\FutureMinds project\FutureMinds\FutureMinds\ConsoleApplication1\settings.cpp(84,49): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+D:\FutureMinds project\FutureMinds\FutureMinds\ConsoleApplication1\settings.cpp(89,59): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+D:\FutureMinds project\FutureMinds\FutureMinds\ConsoleApplication1\settings.cpp(89,43): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+D:\FutureMinds project\FutureMinds\FutureMinds\ConsoleApplication1\settings.cpp(92,86): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+D:\FutureMinds project\FutureMinds\FutureMinds\ConsoleApplication1\settings.cpp(92,42): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+D:\FutureMinds project\FutureMinds\FutureMinds\ConsoleApplication1\settings.cpp(100,93): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+D:\FutureMinds project\FutureMinds\FutureMinds\ConsoleApplication1\settings.cpp(100,44): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
   ConsoleApplication1.vcxproj -> D:\FutureMinds project\FutureMinds\FutureMinds\x64\Debug\FutureMinds.exe

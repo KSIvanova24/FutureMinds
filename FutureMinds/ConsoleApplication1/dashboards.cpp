@@ -1,6 +1,7 @@
 #include "dashboards.h"
 #include "accessData.h"
 #include "auth.h"
+#include "settings.h"
 
 void drawUsername(string user)
 {
@@ -145,6 +146,11 @@ void teacherDashboard()
         if (logoutHover && IsMouseButtonPressed(MOUSE_LEFT_BUTTON))
         {
             startingScreen(true);
+        }
+
+        if (settingsHover && IsMouseButtonPressed(MOUSE_LEFT_BUTTON))
+        {
+            settings();
         }
 
         EndDrawing();
