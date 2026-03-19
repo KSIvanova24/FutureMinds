@@ -2,6 +2,7 @@
 #include "accessData.h"
 #include "quizes.h"
 #include "auth.h"
+#include "dashboards.h"
 
 void settings()
 {
@@ -36,11 +37,13 @@ void settings()
         Rectangle saveBtn = { card.x + 50, 800, 900, 80 };
 
         // Sidebar Button Rectangles
-        Rectangle qBtn = { 0, 150, 300, 60 };
-        Rectangle gBtn = { 0, 220, 300, 60 };
-        Rectangle sBtn = { 0, 290, 300, 60 };
+        Rectangle qBtn = { 0, 220, 300, 60 };
+        Rectangle gBtn = { 0, 290, 300, 60 };
+        Rectangle sBtn = { 0, 360, 300, 60 };
         Rectangle logoutBtn = { 20, (float)GetScreenHeight() - 80, 260, 50 };
 
+        Vector2 dashPosition = { 0, 150 };
+        Rectangle dashButton = { dashPosition.x, dashPosition.y, 300, 60 };
         // --- 2. LOGIC ---
         if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) {
             if (CheckCollisionPointRec(mouse, nameBtn)) activeField = 1;
@@ -77,24 +80,35 @@ void settings()
         DrawText("FutureMinds", 40, 50, 35, WHITE);
         DrawLineEx({ 30, 110 }, { 270, 110 }, 2, Fade(GRAY, 0.5f));
 
+        bool dashHover = CheckCollisionPointRec(mouse, dashButton);
+        if (dashHover)
+        {
+            DrawRectangleRec(dashButton, Fade(accentColor, 0.3f));
+            DrawRectangle(dashButton.x, dashButton.y, 5, dashButton.height, accentColor);
+            if (dashHover && IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) {
+                studentDashboard();
+
+            }
+        }
+        DrawText("Dashboard", dashPosition.x + 60, dashPosition.y + 15, 24, WHITE);
         // Quizzes Sidebar Button
         if (CheckCollisionPointRec(mouse, qBtn)) {
             DrawRectangleRec(qBtn, Fade(accentColor, 0.3f));
             DrawRectangle(qBtn.x, qBtn.y, 5, qBtn.height, accentColor);
         }
-        DrawText("Quizzes", 60, 165, 24, WHITE);
+        DrawText("Quizzes", 60, 235, 24, WHITE);
 
         // Grades Sidebar Button
         if (CheckCollisionPointRec(mouse, gBtn)) {
             DrawRectangleRec(gBtn, Fade(accentColor, 0.3f));
             DrawRectangle(gBtn.x, gBtn.y, 5, gBtn.height, accentColor);
         }
-        DrawText("Grades", 60, 235, 24, WHITE);
+        DrawText("Grades", 60, 305, 24, WHITE);
 
         // Settings Sidebar Button (Active State)
         DrawRectangleRec(sBtn, Fade(accentColor, 0.3f));
         DrawRectangle(sBtn.x, sBtn.y, 5, sBtn.height, accentColor);
-        DrawText("Settings", 60, 305, 24, WHITE);
+        DrawText("Settings", 60, 375, 24, WHITE);
 
         // Logout Button
         bool logoutHover = CheckCollisionPointRec(mouse, logoutBtn);

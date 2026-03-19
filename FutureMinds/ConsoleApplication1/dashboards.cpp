@@ -145,7 +145,8 @@ void teacherDashboard()
 void studentDashboard() {
     const int screenWidth = 1920;
     const int screenHeight = 1080;
-
+    Vector2 dashPosition = { 0, 150 };
+    Rectangle dashButton = { dashPosition.x, dashPosition.y, 300, 60 };
     Color sideBarColor = { 45, 55, 72, 255 };
     Color accentColor = { 66, 153, 225, 255 };
 
@@ -160,8 +161,15 @@ void studentDashboard() {
         DrawText("FutureMinds", 40, 50, 35, WHITE);
         DrawLineEx({ 30, 110 }, { 270, 110 }, 2, Fade(GRAY, 0.5f));
 
+        bool dashHover = CheckCollisionPointRec(mouse, dashButton);
+        if (dashHover)
+        {
+            DrawRectangleRec(dashButton, Fade(accentColor, 0.3f));
+            DrawRectangle(dashButton.x, dashButton.y, 5, dashButton.height, accentColor);
+        }
+        DrawText("Dashboard", dashPosition.x + 60, dashPosition.y + 15, 24, WHITE);
         // --- QUIZZES BUTTON ---
-        Rectangle qBtn = { 0, 150, 300, 60 };
+        Rectangle qBtn = { 0, 220, 300, 60 };
         bool qHover = CheckCollisionPointRec(mouse, qBtn);
         if (qHover) {
             DrawRectangleRec(qBtn, Fade(accentColor, 0.3f));
@@ -170,10 +178,10 @@ void studentDashboard() {
                 quizes();
             }
         }
-        DrawText("Quizzes", 60, 165, 24, WHITE);
+        DrawText("Quizzes", 60, 235, 24, WHITE);
 
         // --- GRADES BUTTON ---
-        Rectangle gBtn = { 0, 220, 300, 60 };
+        Rectangle gBtn = { 0, 290, 300, 60 };
         bool gHover = CheckCollisionPointRec(mouse, gBtn);
         if (gHover) {
             DrawRectangleRec(gBtn, Fade(accentColor, 0.3f));
@@ -182,10 +190,10 @@ void studentDashboard() {
                 ; // Placeholder for grades function
             }
         }
-        DrawText("Grades", 60, 235, 24, WHITE);
+        DrawText("Grades", 60, 305, 24, WHITE);
 
         // --- SETTINGS BUTTON ---
-        Rectangle sBtn = { 0, 290, 300, 60 };
+        Rectangle sBtn = { 0, 360, 300, 60 };
         bool sHover = CheckCollisionPointRec(mouse, sBtn);
         if (sHover) {
             DrawRectangleRec(sBtn, Fade(accentColor, 0.3f));
@@ -194,7 +202,7 @@ void studentDashboard() {
                 settings();
             }
         }
-        DrawText("Settings", 60, 305, 24, WHITE);
+        DrawText("Settings", 60, 375, 24, WHITE);
 
         // 3. LOGOUT BUTTON
         Rectangle logoutBtn = { 20, (float)GetScreenHeight() - 80, 260, 50 };

@@ -15,21 +15,21 @@ void signup()
     int passwordLetterCount = 0;
     int repeatPasswordLetterCount = 0;
 
-    const Rectangle usernameBox = { GetScreenWidth() / 2 + 310, GetScreenHeight() / 2 - 165 , 550, 65 };
-    const Rectangle passwordBox = { GetScreenWidth() / 2 + 310, GetScreenHeight() / 2 - 15, 550, 65 };
-    const Rectangle repeatPasswordBox = { GetScreenWidth() / 2 + 310, GetScreenHeight() / 2 + 135, 550, 65 };
+    const Rectangle usernameBox = { GetScreenWidth() / 2 - 270, GetScreenHeight() / 2 - 165 , 550, 65 };
+    const Rectangle passwordBox = { GetScreenWidth() / 2 - 270, GetScreenHeight() / 2 - 15, 550, 65 };
+    const Rectangle repeatPasswordBox = { GetScreenWidth() / 2 - 270, GetScreenHeight() / 2 + 135, 550, 65 };
 
     Rectangle inputBoxes[] = { usernameBox, passwordBox, repeatPasswordBox };
 
     bool mouseOnInputBox[3] = { false };
 
-    const Rectangle signupButton = { GetScreenWidth() / 2 + 450, GetScreenHeight() / 2 + 260, 270, 90 };
+    const Rectangle signupButton = { GetScreenWidth() / 2 - 85, GetScreenHeight() / 2 + 250, 270, 90 };
 
     DataAccess account;
     Texture2D logoTexture = LoadTexture("../images/logo.png");
     SetTargetFPS(60);
 
-    Texture2D background = LoadTexture("../images/startingScreen.png");
+    Texture2D background = LoadTexture("../images/login signup background.png");
     while (!WindowShouldClose())
     {
         Vector2 mousePosition = GetMousePosition();
@@ -137,25 +137,25 @@ void signup()
 
 
         BeginDrawing();
-        DrawTexture(logoTexture, 0, 0, WHITE);
+        
         ClearBackground(RAYWHITE);
         DrawTexture(background, 0, 0, WHITE);
-        DrawText("Sign up from here!", GetScreenWidth() / 2 + 345, GetScreenHeight() / 2 - 380, 50, BLACK);
-        DrawText("  !Note: the password must contain at least one\n     uppercase, lowercase, number and symbol", GetScreenWidth() / 2 + 205, GetScreenHeight() / 2 - 315, 30, PINK);
-        DrawText("Username:", GetScreenWidth() / 2 + 440, GetScreenHeight() / 2 - 215, 50, BLACK);
-        DrawText("Password:", GetScreenWidth() / 2 + 440, GetScreenHeight() / 2 - 65, 50, BLACK);
-        DrawText("Repeat Password:", GetScreenWidth() / 2 + 340, GetScreenHeight() / 2 + 80, 50, BLACK);
+        DrawTexture(logoTexture, 0, 0, WHITE);
+        DrawText("Sign up from here!", GetScreenWidth() / 2 - 225, GetScreenHeight() / 2 - 380, 50, WHITE);
+        DrawText("  !Note: the password must contain at least one\n     uppercase, lowercase, number and symbol", GetScreenWidth() / 2 - 365, GetScreenHeight() / 2 - 315, 30, RED);
+        DrawText("Username:", GetScreenWidth() / 2 - 125, GetScreenHeight() / 2 - 215, 50, WHITE);
+        DrawText("Password:", GetScreenWidth() / 2 - 125, GetScreenHeight() / 2 - 65, 50, WHITE);
+        DrawText("Repeat Password:", GetScreenWidth() / 2 - 220, GetScreenHeight() / 2 + 80, 50, WHITE);
 
         for (int i = 0; i < 4; ++i) {
-            DrawRectangleLines(inputBoxes[i].x, inputBoxes[i].y, inputBoxes[i].width, inputBoxes[i].height, (mouseOnInputBox[i] ? PINK : BLACK));
+            DrawRectangleLines(inputBoxes[i].x, inputBoxes[i].y, inputBoxes[i].width, inputBoxes[i].height, (mouseOnInputBox[i] ? WHITE : GRAY));
         }
 
-        DrawText(username, usernameBox.x + 5, usernameBox.y + 8, 40, BLACK);
-        DrawText(TextFormat("%.*s", passwordLetterCount, "******************************************"), passwordBox.x + 5, passwordBox.y + 8, 40, BLACK);
-        DrawText(TextFormat("%.*s", repeatPasswordLetterCount, "******************************************"), repeatPasswordBox.x + 5, repeatPasswordBox.y + 8, 40, BLACK);
+        DrawText(username, usernameBox.x + 5, usernameBox.y + 8, 40, WHITE);
+        DrawText(TextFormat("%.*s", passwordLetterCount, "******************************************"), passwordBox.x + 5, passwordBox.y + 8, 40, WHITE);
+        DrawText(TextFormat("%.*s", repeatPasswordLetterCount, "******************************************"), repeatPasswordBox.x + 5, repeatPasswordBox.y + 8, 40, WHITE);
 
-        DrawRectangleRec(signupButton, (CheckCollisionPointRec(mousePosition, signupButton) ? Color{ 250,122,255,255 } : PINK));
-        DrawText("Sign up", GetScreenWidth() / 2 + 492, GetScreenHeight() / 2 + 280, 50, WHITE);
+        DrawText("Sign up", GetScreenWidth() / 2 - 85, GetScreenHeight() / 2 + 250,(CheckCollisionPointRec(mousePosition,signupButton) ? 60: 50), WHITE);
 
 
 
@@ -174,18 +174,18 @@ void login()
     int passwordLetterCount = 0;
     int roleLetterCount = 0;
 
-    const Rectangle usernameBox = { GetScreenWidth() / 2 + 295, GetScreenHeight() / 2 - 175 , 550, 65 };;
-    const Rectangle passwordBox = { GetScreenWidth() / 2 + 295, GetScreenHeight() / 2 - 25, 550, 65 };
-    const Rectangle roleBox = { GetScreenWidth() / 2 + 295, GetScreenHeight() / 2 + 125, 550, 65 };
+    const Rectangle usernameBox = { GetScreenWidth() / 2 - 300, GetScreenHeight() / 2 - 175 , 550, 65 };;
+    const Rectangle passwordBox = { GetScreenWidth() / 2 - 300, GetScreenHeight() / 2 - 25, 550, 65 };
+    const Rectangle roleBox = { GetScreenWidth() / 2 - 300, GetScreenHeight() / 2 + 125, 550, 65 };
 
     bool mouseOnUsername = false;
     bool mouseOnPassword = false;
     bool mouseOnRole = false;
     Texture2D logoTexture = LoadTexture("../images/logo.png");
-    const Rectangle loginButton = { GetScreenWidth() / 2 + 435, GetScreenHeight() / 2 + 250, 270, 90 };
+    const Rectangle loginButton = { GetScreenWidth() / 2 - 85, GetScreenHeight() / 2 + 250, 270, 90 };
 
     SetTargetFPS(60);
-    Texture2D background = LoadTexture("../images/startingScreen.png");
+    Texture2D background = LoadTexture("../images/login signup background.png");
 
     while (!WindowShouldClose()) {
         Vector2 mousePosition = GetMousePosition();
@@ -290,26 +290,26 @@ void login()
         BeginDrawing();
         
         ClearBackground(RAYWHITE);
-        DrawTexture(logoTexture, 0, 0, WHITE);
+        
         DrawTexture(background, 0, 0, WHITE);
+        DrawTexture(logoTexture, 0, 0, WHITE);
 
-        DrawText("Welcome back! Log in!", GetScreenWidth() / 2 + 285, GetScreenHeight() / 2 - 350, 50, BLACK);
+        DrawText("Welcome back! Log in!", GetScreenWidth() / 2 - 289, GetScreenHeight() / 2 - 350, 50, WHITE);
 
-        DrawRectangleLines(usernameBox.x, usernameBox.y, usernameBox.width, usernameBox.height, (mouseOnUsername ? PINK : BLACK));
-        DrawText(username, usernameBox.x + 5, usernameBox.y + 8, 40, BLACK);
+        DrawRectangleLines(usernameBox.x, usernameBox.y, usernameBox.width, usernameBox.height, (mouseOnUsername ? RAYWHITE : WHITE));
+        DrawText(username, usernameBox.x + 5, usernameBox.y + 8, 40, WHITE);
 
-        DrawRectangleLines(passwordBox.x, passwordBox.y, passwordBox.width, passwordBox.height, (mouseOnPassword ? PINK : BLACK));
-        DrawText(TextFormat("%.*s", passwordLetterCount, "**************************"), passwordBox.x + 5, passwordBox.y + 8, 40, BLACK);
+        DrawRectangleLines(passwordBox.x, passwordBox.y, passwordBox.width, passwordBox.height, (mouseOnPassword ? RAYWHITE : WHITE));
+        DrawText(TextFormat("%.*s", passwordLetterCount, "**************************"), passwordBox.x + 5, passwordBox.y + 8, 40, WHITE);
 
-        DrawRectangleLines(roleBox.x, roleBox.y, roleBox.width, roleBox.height, (mouseOnRole ? PINK : BLACK));
-        DrawText(role, roleBox.x + 5, roleBox.y + 8, 40, BLACK);
+        DrawRectangleLines(roleBox.x, roleBox.y, roleBox.width, roleBox.height, (mouseOnRole ? RAYWHITE : WHITE));
+        DrawText(role, roleBox.x + 5, roleBox.y + 8, 40, WHITE);
 
         bool isMouseOverButtonLogin = CheckCollisionPointRec(mousePosition, loginButton);
-        DrawRectangleRec(loginButton, (isMouseOverButtonLogin ? Color{ 250,122,255,255 } : PINK));
-        DrawText("Login", GetScreenWidth() / 2 + 505, GetScreenHeight() / 2 + 270, 50, WHITE);
-        DrawText("Username:", GetScreenWidth() / 2 + 445, GetScreenHeight() / 2 - 225, 50, BLACK);
-        DrawText("Password:", GetScreenWidth() / 2 + 445, GetScreenHeight() / 2 - 75, 50, BLACK);
-        DrawText("Role:", GetScreenWidth() / 2 + 505, GetScreenHeight() / 2 + 70, 50, BLACK);
+        DrawText("Login", GetScreenWidth() / 2 - 85, GetScreenHeight() / 2 + 250, (CheckCollisionPointRec(mousePosition, loginButton) ? 60 : 50), WHITE);
+        DrawText("Username:", GetScreenWidth() / 2 - 155, GetScreenHeight() / 2 - 225, 50, WHITE);
+        DrawText("Password:", GetScreenWidth() / 2 - 155, GetScreenHeight() / 2 - 75, 50, WHITE);
+        DrawText("Role:", GetScreenWidth() / 2 - 100, GetScreenHeight() / 2 + 70, 50, WHITE);
 
 
         EndDrawing();
@@ -348,7 +348,7 @@ void startingScreen(bool hasInit)
         DrawTexture(logoTexture, 0, 0, WHITE);
         DrawTexture(background, 0, 0, WHITE);
 
-        DrawText("Welcome to FutureMinds!", GetScreenWidth() / 2 -325, GetScreenHeight() / 2 - 350, 50, BLACK);
+        DrawText("Welcome to FutureMinds!", GetScreenWidth() / 2 -300, GetScreenHeight() / 2 - 350, 50, BLACK);
         bool isMouseOverLoginButton = CheckCollisionPointRec(mousePosition, loginButton);
         DrawRectangleRounded(loginButton, 5, (int)2, (isMouseOverLoginButton ? DARKGRAY : BLACK));
         DrawText("Login", loginButtonPosition.x +85, loginButtonPosition.y + 25, 50, WHITE);
