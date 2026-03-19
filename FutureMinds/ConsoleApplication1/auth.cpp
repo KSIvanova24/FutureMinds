@@ -26,7 +26,7 @@ void signup()
     const Rectangle signupButton = { GetScreenWidth() / 2 + 450, GetScreenHeight() / 2 + 260, 270, 90 };
 
     DataAccess account;
-
+    Texture2D logoTexture = LoadTexture("../images/logo.png");
     SetTargetFPS(60);
 
     Texture2D background = LoadTexture("../images/startingScreen.png");
@@ -137,7 +137,7 @@ void signup()
 
 
         BeginDrawing();
-
+        DrawTexture(logoTexture, 0, 0, WHITE);
         ClearBackground(RAYWHITE);
         DrawTexture(background, 0, 0, WHITE);
         DrawText("Sign up from here!", GetScreenWidth() / 2 + 345, GetScreenHeight() / 2 - 380, 50, BLACK);
@@ -181,7 +181,7 @@ void login()
     bool mouseOnUsername = false;
     bool mouseOnPassword = false;
     bool mouseOnRole = false;
-
+    Texture2D logoTexture = LoadTexture("../images/logo.png");
     const Rectangle loginButton = { GetScreenWidth() / 2 + 435, GetScreenHeight() / 2 + 250, 270, 90 };
 
     SetTargetFPS(60);
@@ -288,9 +288,9 @@ void login()
         }
 
         BeginDrawing();
-
+        
         ClearBackground(RAYWHITE);
-
+        DrawTexture(logoTexture, 0, 0, WHITE);
         DrawTexture(background, 0, 0, WHITE);
 
         DrawText("Welcome back! Log in!", GetScreenWidth() / 2 + 285, GetScreenHeight() / 2 - 350, 50, BLACK);
@@ -323,11 +323,12 @@ void startingScreen(bool hasInit)
     const int screenHeight = 975;
     if (!hasInit)
     {
-        InitWindow(screenWidth, screenHeight, "TLib");
+        InitWindow(screenWidth, screenHeight, "FutureMinds");
     }
     
-    Image logo = LoadImage("../../logo.png");
+    Image logo = LoadImage("../images/logo.png");
     SetWindowIcon(logo);
+    Texture2D logoTexture = LoadTexture("../images/logo.png");
     Vector2 loginButtonPosition = { 810, 250 };
     Vector2 signUpButtonPosition = { 810, 450 };
     Vector2 exitButtonPosition = { 810, 650 };
@@ -344,7 +345,7 @@ void startingScreen(bool hasInit)
         BeginDrawing();
 
         ClearBackground(RAYWHITE);
-
+        DrawTexture(logoTexture, 0, 0, WHITE);
         DrawTexture(background, 0, 0, WHITE);
 
         DrawText("Welcome to FutureMinds!", GetScreenWidth() / 2 -325, GetScreenHeight() / 2 - 350, 50, BLACK);

@@ -163,74 +163,79 @@ void teacherDashboard()
     CloseWindow();
 }
 
+void studentDashboard() {
+    const int screenWidth = 1920;
+    const int screenHeight = 1080;
 
-void studentDashboard()
-{
-    const int screenWidth = 1000;
-    const int screenHeight = 700;
+    Color sideBarColor = { 45, 55, 72, 255 };
+    Color accentColor = { 66, 153, 225, 255 };
 
-    if (!IsWindowReady()) {
-        InitWindow(screenWidth, screenHeight, "Student Dashboard - English");
-    }
-
-    bool isDropdownOpen = false;
-    bool itemHovered = false;
-    Rectangle dropdownHeader = { 350, 300, 300, 50 };
-    Rectangle startButton = { 400, 500, 200, 50 };
-    
-    SetTargetFPS(60);
-
-    while (!WindowShouldClose())
-    {
+    while (!WindowShouldClose()) {
         Vector2 mouse = GetMousePosition();
-        bool overHeader = CheckCollisionPointRec(mouse, dropdownHeader);
-        bool overStart = CheckCollisionPointRec(mouse, startButton);
-
-        if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) {
-            if (overHeader) isDropdownOpen = !isDropdownOpen;
-            else if (isDropdownOpen) {
-                Rectangle itemRect = { dropdownHeader.x, dropdownHeader.y + 50, dropdownHeader.width, 50 };
-                if (CheckCollisionPointRec(mouse, itemRect)) {
-                    isDropdownOpen = false;
-                } else {
-                    isDropdownOpen = false;
-                }
-            }
-        }
 
         BeginDrawing();
-        ClearBackground(GetColor(0xF5F7FAFF)); 
+        ClearBackground({ 240, 244, 248, 255 });
 
-        DrawRectangle(0, 0, screenWidth, 100, WHITE);
-        DrawText("LEARNER PORTAL", 40, 35, 28, GetColor(0x2D3436FF));
-        DrawCircle(920, 50, 20, LIGHTGRAY);
-        DrawText("JD", 912, 42, 15, DARKGRAY);
+        // 1. DRAW SIDEBAR BACKGROUND
+        DrawRectangle(0, 0, 300, GetScreenHeight(), sideBarColor);
+        DrawText("FutureMinds", 40, 50, 35, WHITE);
+        DrawLineEx({ 30, 110 }, { 270, 110 }, 2, Fade(GRAY, 0.5f));
 
-        DrawText("Welcome back, Student!", 380, 180, 24, DARKGRAY);
-        DrawText("Select your current course to begin the assessment", 310, 220, 16, GRAY);
-
-        DrawRectangleRounded(dropdownHeader, 0.2f, 8, WHITE);
-        DrawRectangleRoundedLines(dropdownHeader, 0.2f, 8, 2, isDropdownOpen ? SKYBLUE : LIGHTGRAY);
-        DrawText("English Language", dropdownHeader.x + 20, dropdownHeader.y + 15, 20, DARKGRAY);
-        DrawText(isDropdownOpen ? "▲" : "▼", dropdownHeader.x + 260, dropdownHeader.y + 15, 18, GRAY);
-
-        if (isDropdownOpen) {
-            Rectangle itemRect = { dropdownHeader.x, dropdownHeader.y + 55, dropdownHeader.width, 50 };
-            itemHovered = CheckCollisionPointRec(mouse, itemRect);
-            
-            DrawRectangleRounded(itemRect, 0.2f, 8, itemHovered ? GetColor(0xF0F9FFFF) : WHITE);
-            DrawRectangleRoundedLines(itemRect, 0.2f, 8, 1, SKYBLUE);
-            DrawText("English Language", itemRect.x + 20, itemRect.y + 15, 20, itemHovered ? SKYBLUE : DARKGRAY);
-        }
-
-        if (!isDropdownOpen) {
-            DrawRectangleRounded(startButton, 0.3f, 8, overStart ? GetColor(0x0984E3FF) : SKYBLUE);
-            DrawText("START QUIZ", startButton.x + 45, startButton.y + 15, 20, WHITE);
-            
-            if (overStart && IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) {
-                break; 
+        // --- QUIZZES BUTTON ---
+        Rectangle qBtn = { 0, 150, 300, 60 };
+        bool qHover = CheckCollisionPointRec(mouse, qBtn);
+        if (qHover) {
+            DrawRectangleRec(qBtn, Fade(accentColor, 0.3f));
+            DrawRectangle(qBtn.x, qBtn.y, 5, qBtn.height, accentColor); // The indicator line
+            if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) {
+                quizes();
             }
         }
+        DrawText("Quizzes", 60, 165, 24, WHITE);
+
+        // --- GRADES BUTTON ---
+        Rectangle gBtn = { 0, 220, 300, 60 };
+        bool gHover = CheckCollisionPointRec(mouse, gBtn);
+        if (gHover) {
+            DrawRectangleRec(gBtn, Fade(accentColor, 0.3f));
+            DrawRectangle(gBtn.x, gBtn.y, 5, gBtn.height, accentColor); // The indicator line
+            if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) {
+                ; // Placeholder for grades function
+            }
+        }
+        DrawText("Grades", 60, 235, 24, WHITE);
+
+        // --- SETTINGS BUTTON ---
+        Rectangle sBtn = { 0, 290, 300, 60 };
+        bool sHover = CheckCollisionPointRec(mouse, sBtn);
+        if (sHover) {
+            DrawRectangleRec(sBtn, Fade(accentColor, 0.3f));
+            DrawRectangle(sBtn.x, sBtn.y, 5, sBtn.height, accentColor); // The indicator line
+            if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) {
+                settings();
+            }
+        }
+        DrawText("Settings", 60, 305, 24, WHITE);
+
+        // 3. LOGOUT BUTTON
+        Rectangle logoutBtn = { 20, (float)GetScreenHeight() - 80, 260, 50 };
+        bool logoutHover = CheckCollisionPointRec(mouse, logoutBtn);
+        DrawRectangleRounded(logoutBtn, 0.2f, 10, logoutHover ? RED : DARKGRAY);
+        DrawText("Logout", logoutBtn.x + 85, logoutBtn.y + 15, 20, WHITE);
+
+        if (logoutHover && IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) {
+            startingScreen(true);
+            break;
+        }
+
+        // 4. TOP BAR & CONTENT
+        DrawRectangle(300, 0, GetScreenWidth() - 300, 80, WHITE);
+        drawUsername(currentUser);
+
+        // Main Content Card
+        DrawRectangleRounded({ 350, 150, 400, 200 }, 0.1f, 10, WHITE);
+        DrawText("MY TOTAL XP", 370, 180, 20, GRAY);
+        DrawText("2,400", 370, 230, 50, BLACK);
 
         EndDrawing();
     }
