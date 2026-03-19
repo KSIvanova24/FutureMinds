@@ -10,3 +10,6 @@ public:
     // Adds an account to the database "accounts".
     void addAccount(const string& username, const string& password) const;
 };
+
+void drawStudentsCount();
+void drawUsername(string user);

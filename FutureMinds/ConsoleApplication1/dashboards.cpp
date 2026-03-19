@@ -4,27 +4,6 @@
 #include "settings.h"
 #include "quizes.h"
 
-void drawUsername(string user)
-{
-    ifstream file("../data/accounts.csv");
-    string line,storedUsername,storedPassword,storedRole;
-    string username;
-    string greeting = "Welcome back, ";
-    while (getline(file, line))
-    {
-        istringstream iss(line);
-        if (getline(iss, storedUsername, ',') && getline(iss, storedPassword, ',') && getline(iss, storedRole))
-        {
-            if (storedUsername == currentUser)
-            {
-                username = storedUsername;
-            }
-        }
-    }
-    string finalUsername = greeting + username;
-    DrawText(finalUsername.c_str(), GetScreenWidth() / 2 - 525, GetScreenHeight() / 2 - 467, 45, BLACK);
-    
-}
 
 void teacherDashboard()
 {
@@ -116,7 +95,7 @@ void teacherDashboard()
         // Card 1
         DrawRectangle(350, 150, 350, 180, WHITE);
         DrawText("ACTIVE STUDENTS", 370, 180, 20, GRAY);
-        DrawText("1,248", 370, 220, 45, BLACK);
+        drawStudentsCount();
         DrawRectangle(370, 290, 300, 8, Fade(accentColor, 0.3f));
         DrawRectangle(370, 290, 220, 8, accentColor);
 
