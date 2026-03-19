@@ -317,60 +317,105 @@ void login()
     }
 
 }
-void startingScreen(bool hasInit)
-{
+
+void startingScreen(bool hasInit) {
     const int screenWidth = 1920;
-    const int screenHeight = 975;
-    if (!hasInit)
-    {
-        InitWindow(screenWidth, screenHeight, "FutureMinds");
+    const int screenHeight = 1080;
+
+    if (!hasInit) {
+        SetConfigFlags(FLAG_MSAA_4X_HINT | FLAG_VSYNC_HINT);
+        InitWindow(screenWidth, screenHeight, "FutureMinds - The Future of Learning");
+        SetTargetFPS(60);
     }
-    
-    Image logo = LoadImage("../images/logo.png");
-    SetWindowIcon(logo);
-    Texture2D logoTexture = LoadTexture("../images/logo.png");
-    Vector2 loginButtonPosition = { 810, 250 };
-    Vector2 signUpButtonPosition = { 810, 450 };
-    Vector2 exitButtonPosition = { 810, 650 };
 
-    const Rectangle loginButton = { loginButtonPosition.x, loginButtonPosition.y, 300, 100 };
-    const Rectangle signUpButton = { signUpButtonPosition.x, signUpButtonPosition.y, 300, 100 };
-    const Rectangle exitButton = { exitButtonPosition.x, exitButtonPosition.y, 300, 100 };
+    Texture2D logo = LoadTexture("../images/logo.png");
 
-    Texture2D background = LoadTexture("../images/startingScreen.png");
+    Color accentColor = { 66, 153, 225, 255 };
+    Color signupBtnColor = { 48, 140, 230, 255 };
+    Color loginBtnColor = { 255, 161, 0, 255 };
 
-    while (!WindowShouldClose())
-    {
-        Vector2 mousePosition = GetMousePosition();
+    float timer = 0.0f;
+
+    while (!WindowShouldClose()) {
+        Vector2 mouse = GetMousePosition();
+        timer += GetFrameTime();
+
         BeginDrawing();
 
-        ClearBackground(RAYWHITE);
-        DrawTexture(logoTexture, 0, 0, WHITE);
-        DrawTexture(background, 0, 0, WHITE);
+        ClearBackground(WHITE);
+        DrawRectangleGradientV(0, 0, screenWidth, screenHeight, WHITE, { 230, 240, 255, 255 });
+        DrawCircleGradient(screenWidth / 2, screenHeight / 2, 800, Fade(accentColor, 0.05f), BLANK);
 
-        DrawText("Welcome to FutureMinds!", GetScreenWidth() / 2 -300, GetScreenHeight() / 2 - 350, 50, BLACK);
-        bool isMouseOverLoginButton = CheckCollisionPointRec(mousePosition, loginButton);
-        DrawRectangleRounded(loginButton, 5, (int)2, (isMouseOverLoginButton ? DARKGRAY : BLACK));
-        DrawText("Login", loginButtonPosition.x +85, loginButtonPosition.y + 25, 50, WHITE);
-        if (CheckCollisionPointRec(mousePosition, loginButton) && IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) {
+        DrawTexturePro(logo,
+            { 0, 0, (float)logo.width, (float)logo.height },
+            { 0, 0, (float)screenWidth, (float)screenHeight },
+            { 0, 0 }, 0, Fade(WHITE, 0.15f));
+
+        DrawRectangleRec({ 0, 0, (float)screenWidth, 100 }, Fade(WHITE, 0.9f));
+        DrawLineEx({ 0, 100 }, { (float)screenWidth, 100 }, 1, Fade(LIGHTGRAY, 0.5f));
+
+        DrawTextureEx(logo, { 27, 22 }, 0, 110.0f / logo.height, WHITE);
+        DrawText("FutureMinds", 130, 50, 32, { 40, 40, 50, 255 });
+
+        Rectangle loginBtnRec = { 1720, 40, 150, 50 };
+        bool loginHover = CheckCollisionPointRec(mouse, loginBtnRec);
+        DrawRectangleRoundedLines(loginBtnRec, 0.5f, 10, 2, loginHover ? BLACK : loginBtnColor);
+        DrawText("LOG IN", loginBtnRec.x + 35, loginBtnRec.y + 15, 20, loginHover ? BLACK : loginBtnColor);
+
+        if (loginHover && IsMouseButtonPressed(MOUSE_BUTTON_LEFT))
+        {
             login();
         }
 
+        float titleY = 350 + (sinf(timer * 2.0f) * 10.0f);
 
+        DrawText("FUTUREMINDS", screenWidth / 2 - MeasureText("FUTUREMINDS", 120) / 2, (int)titleY, 120, { 30, 30, 45, 255 });
 
-        bool isMouseOverSignUpButton = CheckCollisionPointRec(mousePosition, signUpButton);
-        DrawRectangleRounded(signUpButton, 5, (int)2, isMouseOverSignUpButton ? DARKGRAY : BLACK);
-        DrawText("Sign up", signUpButtonPosition.x +55, signUpButtonPosition.y + 25, 50, WHITE);
-        if (CheckCollisionPointRec(mousePosition, signUpButton) && IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) {
+        float lineGrow = 300 + (sinf(timer * 1.5f) * 50.0f);
+        DrawRectangleV({ (float)screenWidth / 2 - lineGrow / 2, titleY + 130 }, { lineGrow, 4 }, accentColor);
+
+        DrawText("Master English through the power of our app.", screenWidth / 2 - MeasureText("Master English through the power of our app.", 28) / 2, (int)titleY + 160, 28, GRAY);
+
+        Rectangle signupBtnRec = { screenWidth / 2 - 150, 650, 300, 80 };
+        bool signupHover = CheckCollisionPointRec(mouse, signupBtnRec);
+
+        if (signupHover) {
+            DrawRectangleRounded({ signupBtnRec.x - 5, signupBtnRec.y - 5, signupBtnRec.width + 10, signupBtnRec.height + 10 }, 0.5f, 10, Fade(accentColor, 0.3f));
+        }
+
+        DrawRectangleRounded(signupBtnRec, 0.5f, 10, signupHover ? BLACK : signupBtnColor);
+        DrawText("GET STARTED", signupBtnRec.x + 60, signupBtnRec.y + 25, 26, WHITE);
+
+        if (signupHover && IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) {
             signup();
         }
 
-        bool isMouseOverExitButton = CheckCollisionPointRec(mousePosition, exitButton);
-        DrawRectangleRounded(exitButton, 5, (int)2, (isMouseOverExitButton ? DARKGRAY : BLACK));
-        DrawText("Exit", exitButtonPosition.x +100, exitButtonPosition.y + 25, 50, WHITE);
-        if (CheckCollisionPointRec(mousePosition, exitButton) && IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) {
+        DrawRectangle(0, 955, screenWidth, 125, Fade(WHITE, 0.8f));
+        DrawLine(0, 955, screenWidth, 955, Fade(LIGHTGRAY, 0.5f));
+
+        DrawText("Crafted for Excellence", 50, 985, 18, DARKGRAY);
+        DrawText("© 2026 FutureMinds Inc. All Rights Reserved.", 50, 1015, 16, GRAY);
+
+        DrawText("Terms of Service", 450, 1000, 16, accentColor);
+        DrawText("Privacy Policy", 600, 1000, 16, accentColor);
+        DrawText("Support", 750, 1000, 16, accentColor);
+
+
+        Rectangle exitBtnRec = { 1780, 980, 100, 40 };
+        bool exitHover = CheckCollisionPointRec(mouse, exitBtnRec);
+        DrawRectangleRounded(exitBtnRec, 0.3f, 10, exitHover ? RED : Fade(RED, 0.1f));
+        DrawRectangleRoundedLines(exitBtnRec, 0.3f, 10, 1, RED);
+        DrawText("EXIT", exitBtnRec.x + 30, exitBtnRec.y + 12, 18, exitHover ? WHITE : RED);
+
+        if (exitHover && IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) {
+            UnloadTexture(logo);
             CloseWindow();
+            return;
         }
+
         EndDrawing();
     }
+
+    UnloadTexture(logo);
+    CloseWindow();
 }
