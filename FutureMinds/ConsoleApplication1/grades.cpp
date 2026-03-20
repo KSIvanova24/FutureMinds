@@ -130,9 +130,6 @@ void gradesStudent()
             if (CheckCollisionPointRec(mouse, sBtn)) settingsStudent();
             if (CheckCollisionPointRec(mouse, logoutBtn)) startingScreen(true);
 
-            // Grade Actions
-            if (CheckCollisionPointRec(mouse, viewGradesRect)) { /* Show grade list logic */ }
-            if (CheckCollisionPointRec(mouse, avgGradeRect)) { /* Show GPA logic */ }
         }
 
         BeginDrawing();
@@ -176,7 +173,9 @@ void gradesStudent()
             viewStudentGradesList();
         }
         DrawMenuOption(avgGradeRect, "Calculate My Average", 2, mouse, accentColor, borderColor, textColor, bgWhite);
-
+        if (CheckCollisionPointRec(mouse, avgGradeRect) && IsMouseButtonPressed(MOUSE_BUTTON_LEFT)) {
+            calculateAverage();
+        }
         // Footer links
         DrawText("Terms of Service", 500, 1000, 20, GRAY);
         DrawText("Privacy Policy", 750, 1000, 20, GRAY);
@@ -247,6 +246,92 @@ void viewStudentGradesList() {
                 DrawText(TextFormat("%s XP", myGrades[i].score.c_str()), (int)row.x + row.width - 150, (int)row.y + 25, 25, scoreColor);
             }
         }
+        EndDrawing();
+    }
+}
+
+void calculateAverage() {
+    Color bgWhite = { 240, 242, 245, 255 };
+    Color headerCol = { 45, 55, 72, 255 };
+    Color grammarColor = { 66, 153, 225, 255 };
+    Color vocabColor = { 128, 90, 213, 255 };
+
+    float grammarSum = 0, vocabSum = 0;
+    int grammarCount = 0, vocabCount = 0;
+
+    ifstream file("../data/notebook.csv");
+    string line;
+    while (getline(file, line)) {
+        stringstream ss(line);
+        string name;
+        getline(ss, name, ',');
+
+        if (name == currentUser) {
+            string entry;
+            while (getline(ss, entry, ',')) {
+                size_t lastSpace = entry.find_last_of(' ');
+                if (lastSpace != string::npos) {
+                    string quizName = entry.substr(0, lastSpace);
+                    int score = stoi(entry.substr(lastSpace + 1));
+
+                    if (quizName.find("Grammar") != string::npos) {
+                        grammarSum += score;
+                        grammarCount++;
+                    }
+                    else if (quizName.find("Vocabulary") != string::npos || quizName.find("Vocab") != string::npos) {
+                        vocabSum += score;
+                        vocabCount++;
+                    }
+                }
+            }
+            break;
+        }
+    }
+    file.close();
+
+    int avgGrammar = (grammarCount > 0) ? (int)(grammarSum / grammarCount) : 0;
+    int avgVocab = (vocabCount > 0) ? (int)(vocabSum / vocabCount) : 0;
+
+    while (!WindowShouldClose()) {
+        Vector2 mouse = GetMousePosition();
+        BeginDrawing();
+        ClearBackground(bgWhite);
+
+        DrawRectangle(0, 0, GetScreenWidth(), 100, headerCol);
+        DrawText("AVERAGE PERFORMANCE", 40, 35, 30, WHITE);
+
+ 
+        Rectangle backBtn = { 40, 130, 120, 40 };
+        bool backHover = CheckCollisionPointRec(mouse, backBtn);
+        DrawRectangleRounded(backBtn, 0.5f, 10, backHover ? BLACK : DARKGRAY);
+        DrawText("< BACK", (int)backBtn.x + 25, (int)backBtn.y + 12, 18, WHITE);
+        if (backHover && IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) break;
+
+        Rectangle cardGrammar = { (float)GetScreenWidth() / 2 - 450, 250, 400, 300 };
+        Rectangle cardVocab = { (float)GetScreenWidth() / 2 + 50, 250, 400, 300 };
+
+
+        DrawRectangleRounded(cardGrammar, 0.1f, 10, WHITE);
+        DrawRectangleRoundedLines(cardGrammar, 0.1f, 10, 3, grammarColor);
+        DrawText("GRAMMAR", (int)cardGrammar.x + 100, (int)cardGrammar.y + 40, 30, DARKGRAY);
+        DrawLineEx({ cardGrammar.x + 50, cardGrammar.y + 90 }, { cardGrammar.x + 350, cardGrammar.y + 90 }, 2, LIGHTGRAY);
+
+        const char* gScoreText = TextFormat("%d%%", avgGrammar);
+        DrawText(gScoreText, (int)cardGrammar.x + 200 - MeasureText(gScoreText, 80) / 2, (int)cardGrammar.y + 150, 80, grammarColor);
+
+ 
+        DrawRectangleRounded(cardVocab, 0.1f, 10, WHITE);
+        DrawRectangleRoundedLines(cardVocab, 0.1f, 10, 3, vocabColor);
+        DrawText("VOCABULARY", (int)cardVocab.x + 85, (int)cardVocab.y + 40, 30, DARKGRAY);
+        DrawLineEx({ cardVocab.x + 50, cardVocab.y + 90 }, { cardVocab.x + 350, cardVocab.y + 90 }, 2, LIGHTGRAY);
+
+        const char* vScoreText = TextFormat("%d%%", avgVocab);
+        DrawText(vScoreText, (int)cardVocab.x + 200 - MeasureText(vScoreText, 80) / 2, (int)cardVocab.y + 150, 80, vocabColor);
+
+        DrawText("Overall Progress is calculated based on completed quiz sessions.",
+            GetScreenWidth() / 2 - MeasureText("Overall Progress is calculated based on completed quiz sessions.", 20) / 2,
+            650, 20, GRAY);
+
         EndDrawing();
     }
 }

@@ -3,20 +3,20 @@
   "WorkspaceRootPath": "D:\\FutureMinds project\\FutureMinds\\FutureMinds\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{7B9AC0AF-D8F0-4DC7-95D5-8753B0CC44FD}|ConsoleApplication1\\ConsoleApplication1.vcxproj|D:\\FutureMinds project\\FutureMinds\\FutureMinds\\ConsoleApplication1\\quizes.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{7B9AC0AF-D8F0-4DC7-95D5-8753B0CC44FD}|ConsoleApplication1\\ConsoleApplication1.vcxproj|solutionrelative:ConsoleApplication1\\quizes.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7B9AC0AF-D8F0-4DC7-95D5-8753B0CC44FD}|ConsoleApplication1\\ConsoleApplication1.vcxproj|D:\\FutureMinds project\\FutureMinds\\FutureMinds\\ConsoleApplication1\\dashboards.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{7B9AC0AF-D8F0-4DC7-95D5-8753B0CC44FD}|ConsoleApplication1\\ConsoleApplication1.vcxproj|solutionrelative:ConsoleApplication1\\dashboards.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{7B9AC0AF-D8F0-4DC7-95D5-8753B0CC44FD}|ConsoleApplication1\\ConsoleApplication1.vcxproj|D:\\FutureMinds project\\FutureMinds\\FutureMinds\\ConsoleApplication1\\grades.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{7B9AC0AF-D8F0-4DC7-95D5-8753B0CC44FD}|ConsoleApplication1\\ConsoleApplication1.vcxproj|solutionrelative:ConsoleApplication1\\grades.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7B9AC0AF-D8F0-4DC7-95D5-8753B0CC44FD}|ConsoleApplication1\\ConsoleApplication1.vcxproj|D:\\FutureMinds project\\FutureMinds\\FutureMinds\\ConsoleApplication1\\Grades.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{7B9AC0AF-D8F0-4DC7-95D5-8753B0CC44FD}|ConsoleApplication1\\ConsoleApplication1.vcxproj|solutionrelative:ConsoleApplication1\\Grades.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7B9AC0AF-D8F0-4DC7-95D5-8753B0CC44FD}|ConsoleApplication1\\ConsoleApplication1.vcxproj|D:\\FutureMinds project\\FutureMinds\\FutureMinds\\ConsoleApplication1\\quizes.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{7B9AC0AF-D8F0-4DC7-95D5-8753B0CC44FD}|ConsoleApplication1\\ConsoleApplication1.vcxproj|solutionrelative:ConsoleApplication1\\quizes.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7B9AC0AF-D8F0-4DC7-95D5-8753B0CC44FD}|ConsoleApplication1\\ConsoleApplication1.vcxproj|D:\\FutureMinds project\\FutureMinds\\FutureMinds\\ConsoleApplication1\\dashboards.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{7B9AC0AF-D8F0-4DC7-95D5-8753B0CC44FD}|ConsoleApplication1\\ConsoleApplication1.vcxproj|solutionrelative:ConsoleApplication1\\dashboards.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7B9AC0AF-D8F0-4DC7-95D5-8753B0CC44FD}|ConsoleApplication1\\ConsoleApplication1.vcxproj|D:\\FutureMinds project\\FutureMinds\\FutureMinds\\ConsoleApplication1\\accessData.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -74,7 +74,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -82,26 +82,26 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "grades.h",
               "DocumentMoniker": "D:\\FutureMinds project\\FutureMinds\\FutureMinds\\ConsoleApplication1\\grades.h",
               "RelativeDocumentMoniker": "ConsoleApplication1\\grades.h",
               "ToolTip": "D:\\FutureMinds project\\FutureMinds\\FutureMinds\\ConsoleApplication1\\grades.h",
               "RelativeToolTip": "ConsoleApplication1\\grades.h",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAUAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAYAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2026-03-20T15:55:46.708Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "grades.cpp",
               "DocumentMoniker": "D:\\FutureMinds project\\FutureMinds\\FutureMinds\\ConsoleApplication1\\grades.cpp",
               "RelativeDocumentMoniker": "ConsoleApplication1\\grades.cpp",
               "ToolTip": "D:\\FutureMinds project\\FutureMinds\\FutureMinds\\ConsoleApplication1\\grades.cpp",
               "RelativeToolTip": "ConsoleApplication1\\grades.cpp",
-              "ViewState": "AQIAAOgAAAAAAAAAAAAQwL4AAAAbAAAA",
+              "ViewState": "AQIAAFABAAAAAAAAAAAAAAQBAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2026-03-20T15:55:32.979Z",
               "EditorCaption": ""
@@ -140,8 +140,7 @@
               "RelativeToolTip": "ConsoleApplication1\\auth.cpp",
               "ViewState": "AQIAAEEBAAAAAAAAAAAAAKAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-03-16T21:05:56.607Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-16T21:05:56.607Z"
             },
             {
               "$type": "Document",
@@ -153,8 +152,7 @@
               "RelativeToolTip": "ConsoleApplication1\\accessData.cpp",
               "ViewState": "AQIAAEoAAAAAAAAAAAAgwFYAAAAdAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-03-16T21:13:58.207Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-16T21:13:58.207Z"
             },
             {
               "$type": "Document",
@@ -170,7 +168,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "quizes.cpp",
               "DocumentMoniker": "D:\\FutureMinds project\\FutureMinds\\FutureMinds\\ConsoleApplication1\\quizes.cpp",
               "RelativeDocumentMoniker": "ConsoleApplication1\\quizes.cpp",
@@ -191,8 +189,7 @@
               "RelativeToolTip": "ConsoleApplication1\\accessData.h",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAABZAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-03-16T21:08:43.363Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-16T21:08:43.363Z"
             },
             {
               "$type": "Document",
@@ -220,7 +217,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "dashboards.cpp",
               "DocumentMoniker": "D:\\FutureMinds project\\FutureMinds\\FutureMinds\\ConsoleApplication1\\dashboards.cpp",
               "RelativeDocumentMoniker": "ConsoleApplication1\\dashboards.cpp",
@@ -228,8 +225,7 @@
               "RelativeToolTip": "ConsoleApplication1\\dashboards.cpp",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-03-17T21:31:21.181Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-17T21:31:21.181Z"
             },
             {
               "$type": "Document",

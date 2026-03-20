@@ -1,3 +1,18 @@
 ﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(531,5): warning MSB8028: The intermediate directory (x64\Debug\) contains files shared from another project (ConsoleApplication1.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+  grades.cpp
+D:\FutureMinds project\FutureMinds\FutureMinds\ConsoleApplication1\grades.cpp(68,72): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+D:\FutureMinds project\FutureMinds\FutureMinds\ConsoleApplication1\grades.cpp(68,55): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+D:\FutureMinds project\FutureMinds\FutureMinds\ConsoleApplication1\grades.cpp(68,41): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+D:\FutureMinds project\FutureMinds\FutureMinds\ConsoleApplication1\grades.cpp(152,72): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+D:\FutureMinds project\FutureMinds\FutureMinds\ConsoleApplication1\grades.cpp(152,55): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+D:\FutureMinds project\FutureMinds\FutureMinds\ConsoleApplication1\grades.cpp(152,41): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+D:\FutureMinds project\FutureMinds\FutureMinds\ConsoleApplication1\grades.cpp(236,28): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+D:\FutureMinds project\FutureMinds\FutureMinds\ConsoleApplication1\grades.cpp(241,52): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+D:\FutureMinds project\FutureMinds\FutureMinds\ConsoleApplication1\grades.cpp(241,41): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+D:\FutureMinds project\FutureMinds\FutureMinds\ConsoleApplication1\grades.cpp(241,34): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+D:\FutureMinds project\FutureMinds\FutureMinds\ConsoleApplication1\grades.cpp(246,97): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  pch.h
   quizes.cpp
+  Generating Code...
+raylib.lib(rcore.c.obj) : warning LNK4099: PDB '' was not found with 'raylib.lib(rcore.c.obj)' or at ''; linking object as if no debug info
   ConsoleApplication1.vcxproj -> D:\FutureMinds project\FutureMinds\FutureMinds\x64\Debug\FutureMinds.exe
