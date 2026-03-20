@@ -3,121 +3,96 @@
 #include "accessData.h"
 #include "validation.h"
 
+void DrawModernInput(Rectangle box, const char* label, const char* text, bool isHovered, bool isPassword, int fontSize) {
+    DrawText(label, box.x, box.y - 30, 20, DARKGRAY);
+    DrawRectangleRounded(box, 0.2f, 10, WHITE);
 
-void signup()
-{
+    Color borderColor = isHovered ? Color ({ 66, 153, 225, 255 }) : LIGHTGRAY;
+    DrawRectangleRoundedLines(box, 0.2f, 10, 2, borderColor);
 
+    if (isPassword) {
+        std::string dots(strlen(text), '*');
+        DrawText(dots.c_str(), box.x + 15, box.y + (box.height / 2 - fontSize / 2), fontSize, BLACK);
+    }
+    else {
+        DrawText(text, box.x + 15, box.y + (box.height / 2 - fontSize / 2), fontSize, BLACK);
+    }
+}
+
+void signup() {
     char username[25] = "";
     char password[25] = "";
     char repeatPassword[25] = "";
-
     int usernameLetterCount = 0;
     int passwordLetterCount = 0;
     int repeatPasswordLetterCount = 0;
 
-    const Rectangle usernameBox = { GetScreenWidth() / 2 - 270, GetScreenHeight() / 2 - 165 , 550, 65 };
-    const Rectangle passwordBox = { GetScreenWidth() / 2 - 270, GetScreenHeight() / 2 - 15, 550, 65 };
-    const Rectangle repeatPasswordBox = { GetScreenWidth() / 2 - 270, GetScreenHeight() / 2 + 135, 550, 65 };
+    Color fmBlue = { 66, 153, 225, 255 };
+    Color fmPurple = { 128, 90, 213, 255 };
+    Color bgLight = { 240, 244, 248, 255 };
 
-    Rectangle inputBoxes[] = { usernameBox, passwordBox, repeatPasswordBox };
-
-    bool mouseOnInputBox[3] = { false };
-
-    const Rectangle signupButton = { GetScreenWidth() / 2 - 85, GetScreenHeight() / 2 + 250, 270, 90 };
+    Rectangle mainPanel = { GetScreenWidth() / 2 - 350, GetScreenHeight() / 2 - 400, 700, 800 };
 
     DataAccess account;
-    Texture2D logoTexture = LoadTexture("../images/logo.png");
-    SetTargetFPS(60);
+    Validate validator;
+    Texture2D logo = LoadTexture("../images/logo.png");
 
-    Texture2D background = LoadTexture("../images/login signup background.png");
-    while (!WindowShouldClose())
-    {
-        Vector2 mousePosition = GetMousePosition();
+    while (!WindowShouldClose()) {
+        Vector2 mouse = GetMousePosition();
 
-        // Input box hover check
-        for (int i = 0; i < 3; ++i) {
-            mouseOnInputBox[i] = CheckCollisionPointRec(mousePosition, inputBoxes[i]);
-        }
+        Rectangle userBox = { mainPanel.x + 75, mainPanel.y + 250, 550, 60 };
+        Rectangle passBox = { mainPanel.x + 75, mainPanel.y + 360, 550, 60 };
+        Rectangle repPassBox = { mainPanel.x + 75, mainPanel.y + 470, 550, 60 };
+        Rectangle signupButton = { mainPanel.x + 75, mainPanel.y + 580, 550, 75 };
 
-        bool anyInputBoxHovered = false;
-        for (int i = 0; i < 3; ++i) {
-            if (mouseOnInputBox[i]) {
-                anyInputBoxHovered = true;
-                break;
-            }
-        }
+        bool hoverUser = CheckCollisionPointRec(mouse, userBox);
+        bool hoverPass = CheckCollisionPointRec(mouse, passBox);
+        bool hoverRep = CheckCollisionPointRec(mouse, repPassBox);
+        bool hoverBtn = CheckCollisionPointRec(mouse, signupButton);
 
-        SetMouseCursor(anyInputBoxHovered ? MOUSE_CURSOR_IBEAM : MOUSE_CURSOR_DEFAULT);
-        for (int i = 0; i < 3; ++i) {
-            if (mouseOnInputBox[i]) {
-                int key = GetCharPressed();
-                while (key > 0) {
-                    if ((key >= 32) && (key <= 125)) {
-                        switch (i) {
-                        case 0:
-                            if (usernameLetterCount < 50) {
-                                username[usernameLetterCount++] = (char)key;
-                                username[usernameLetterCount] = '\0';
-                            }
-                            break;
-                        case 1:
-                            if (passwordLetterCount < 50) {
-                                password[passwordLetterCount++] = (char)key;
-                                password[passwordLetterCount] = '\0';
-                            }
-                            break;
-                        case 2:
-                            if (repeatPasswordLetterCount < 50) {
-                                repeatPassword[repeatPasswordLetterCount++] = (char)key;
-                                repeatPassword[repeatPasswordLetterCount] = '\0';
-                            }
-                            break;
-                        }
-                    }
+        if (hoverUser || hoverPass || hoverRep) SetMouseCursor(MOUSE_CURSOR_IBEAM);
+        else SetMouseCursor(MOUSE_CURSOR_DEFAULT);
 
-                    key = GetCharPressed();
+        // --- PRESERVED BACKEND INPUT LOGIC ---
+        int key = GetCharPressed();
+        if (hoverUser) {
+            while (key > 0) {
+                if ((key >= 32) && (key <= 125) && (usernameLetterCount < 24)) {
+                    username[usernameLetterCount++] = (char)key;
+                    username[usernameLetterCount] = '\0';
                 }
-
-                if (IsKeyPressed(KEY_BACKSPACE))
-                {
-                    switch (i) {
-                    case 0:
-                        if (usernameLetterCount > 0) {
-                            usernameLetterCount--;
-                            username[usernameLetterCount] = '\0';
-                        }
-                        break;
-                    case 1:
-                        if (passwordLetterCount > 0) {
-                            passwordLetterCount--;
-                            password[passwordLetterCount] = '\0';
-                        }
-                        break;
-                    case 2:
-                        if (repeatPasswordLetterCount > 0) {
-                            repeatPasswordLetterCount--;
-                            repeatPassword[repeatPasswordLetterCount] = '\0';
-                        }
-                        break;
-                    }
-                }
+                key = GetCharPressed();
             }
+            if (IsKeyPressed(KEY_BACKSPACE) && usernameLetterCount > 0) username[--usernameLetterCount] = '\0';
         }
-        Validate validator;
-        bool showMismatchError = false;
-        bool showRequirementError = false;
+        if (hoverPass) {
+            while (key > 0) {
+                if ((key >= 32) && (key <= 125) && (passwordLetterCount < 24)) {
+                    password[passwordLetterCount++] = (char)key;
+                    password[passwordLetterCount] = '\0';
+                }
+                key = GetCharPressed();
+            }
+            if (IsKeyPressed(KEY_BACKSPACE) && passwordLetterCount > 0) password[--passwordLetterCount] = '\0';
+        }
+        if (hoverRep) {
+            while (key > 0) {
+                if ((key >= 32) && (key <= 125) && (repeatPasswordLetterCount < 24)) {
+                    repeatPassword[repeatPasswordLetterCount++] = (char)key;
+                    repeatPassword[repeatPasswordLetterCount] = '\0';
+                }
+                key = GetCharPressed();
+            }
+            if (IsKeyPressed(KEY_BACKSPACE) && repeatPasswordLetterCount > 0) repeatPassword[--repeatPasswordLetterCount] = '\0';
+        }
 
-        if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON) && CheckCollisionPointRec(mousePosition, signupButton)) {
+        // --- PRESERVED SIGNUP VALIDATION ---
+        if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON) && hoverBtn) {
             if (strcmp(password, repeatPassword) != 0) {
-                password[0] = '\0';
-                repeatPassword[0] = '\0';
-                passwordLetterCount = 0;
-                repeatPasswordLetterCount = 0;
-                showMismatchError = true;
-                showRequirementError = false;
+                password[0] = '\0'; repeatPassword[0] = '\0';
+                passwordLetterCount = 0; repeatPasswordLetterCount = 0;
             }
             else {
-
                 if (validator.containsUppercase(password) && validator.containsLowercase(password) &&
                     validator.containsDigit(password) && validator.containsSpecial(password)) {
                     account.addAccount(username, password);
@@ -125,198 +100,126 @@ void signup()
                     studentDashboard();
                 }
                 else {
-
-                    password[0] = '\0';
-                    repeatPassword[0] = '\0';
-                    passwordLetterCount = 0;
-                    repeatPasswordLetterCount = 0;
-
+                    password[0] = '\0'; repeatPassword[0] = '\0';
+                    passwordLetterCount = 0; repeatPasswordLetterCount = 0;
                 }
             }
         }
 
-
         BeginDrawing();
-        
-        ClearBackground(RAYWHITE);
-        DrawTexture(background, 0, 0, WHITE);
-        DrawTexture(logoTexture, 0, 0, WHITE);
-        DrawText("Sign up from here!", GetScreenWidth() / 2 - 225, GetScreenHeight() / 2 - 380, 50, WHITE);
-        DrawText("  !Note: the password must contain at least one\n     uppercase, lowercase, number and symbol", GetScreenWidth() / 2 - 365, GetScreenHeight() / 2 - 315, 30, RED);
-        DrawText("Username:", GetScreenWidth() / 2 - 125, GetScreenHeight() / 2 - 215, 50, WHITE);
-        DrawText("Password:", GetScreenWidth() / 2 - 125, GetScreenHeight() / 2 - 65, 50, WHITE);
-        DrawText("Repeat Password:", GetScreenWidth() / 2 - 220, GetScreenHeight() / 2 + 80, 50, WHITE);
+        ClearBackground(bgLight);
+        DrawRectangleGradientH(0, 0, GetScreenWidth() / 2, GetScreenHeight(), fmBlue, bgLight);
 
-        for (int i = 0; i < 4; ++i) {
-            DrawRectangleLines(inputBoxes[i].x, inputBoxes[i].y, inputBoxes[i].width, inputBoxes[i].height, (mouseOnInputBox[i] ? WHITE : GRAY));
-        }
+        DrawRectangleRounded(mainPanel, 0.05f, 10, WHITE);
+        DrawRectangleRoundedLines(mainPanel, 0.05f, 10, 1, Fade(LIGHTGRAY, 0.5f));
 
-        DrawText(username, usernameBox.x + 5, usernameBox.y + 8, 40, WHITE);
-        DrawText(TextFormat("%.*s", passwordLetterCount, "******************************************"), passwordBox.x + 5, passwordBox.y + 8, 40, WHITE);
-        DrawText(TextFormat("%.*s", repeatPasswordLetterCount, "******************************************"), repeatPasswordBox.x + 5, repeatPasswordBox.y + 8, 40, WHITE);
+        DrawTextureEx(logo, { mainPanel.x + mainPanel.width / 2 - 50, mainPanel.y + 40 }, 0, 100.0f / logo.height, WHITE);
+        DrawText("Create your Account", mainPanel.x + 190, mainPanel.y + 160, 32, { 45, 55, 72, 255 });
+        DrawText("Password must contain: Upper, Lower, Digit, Special", mainPanel.x + 135, mainPanel.y + 200, 18, RED);
 
-        DrawText("Sign up", GetScreenWidth() / 2 - 85, GetScreenHeight() / 2 + 250,(CheckCollisionPointRec(mousePosition,signupButton) ? 60: 50), WHITE);
+        DrawModernInput(userBox, "Username", username, hoverUser, false, 25);
+        DrawModernInput(passBox, "Password", password, hoverPass, true, 25);
+        DrawModernInput(repPassBox, "Repeat Password", repeatPassword, hoverRep, true, 25);
 
-
+        DrawRectangleRounded(signupButton, 0.2f, 10, hoverBtn ? fmPurple : fmBlue);
+        DrawText("SIGN UP", signupButton.x + (signupButton.width / 2 - MeasureText("SIGN UP", 25) / 2), signupButton.y + 25, 25, WHITE);
 
         EndDrawing();
     }
+    UnloadTexture(logo);
 }
-void login()
-{
 
-    bool isAnswerTrue = false;
+void login() {
+    char username[25] = "";
+    char password[25] = "";
+    char role[25] = "";
+    int usernameLetterCount = 0, passwordLetterCount = 0, roleLetterCount = 0;
 
-    char username[25] = "\0";
-    char password[25] = "\0";
-    char role[25] = "\0";
-    int usernameLetterCount = 0;
-    int passwordLetterCount = 0;
-    int roleLetterCount = 0;
+    Color fmBlue = { 66, 153, 225, 255 };
+    Color bgLight = { 240, 244, 248, 255 };
+    Rectangle mainPanel = { GetScreenWidth() / 2 - 350, GetScreenHeight() / 2 - 350, 700, 700 };
 
-    const Rectangle usernameBox = { GetScreenWidth() / 2 - 300, GetScreenHeight() / 2 - 175 , 550, 65 };;
-    const Rectangle passwordBox = { GetScreenWidth() / 2 - 300, GetScreenHeight() / 2 - 25, 550, 65 };
-    const Rectangle roleBox = { GetScreenWidth() / 2 - 300, GetScreenHeight() / 2 + 125, 550, 65 };
-
-    bool mouseOnUsername = false;
-    bool mouseOnPassword = false;
-    bool mouseOnRole = false;
-    Texture2D logoTexture = LoadTexture("../images/logo.png");
-    const Rectangle loginButton = { GetScreenWidth() / 2 - 85, GetScreenHeight() / 2 + 250, 270, 90 };
-
-    SetTargetFPS(60);
-    Texture2D background = LoadTexture("../images/login signup background.png");
+    Validate validator;
+    Texture2D logo = LoadTexture("../images/logo.png");
 
     while (!WindowShouldClose()) {
-        Vector2 mousePosition = GetMousePosition();
+        Vector2 mouse = GetMousePosition();
 
-        if (CheckCollisionPointRec(mousePosition, usernameBox)) mouseOnUsername = true;
-        else mouseOnUsername = false;
+        Rectangle userBox = { mainPanel.x + 75, mainPanel.y + 250, 550, 60 };
+        Rectangle passBox = { mainPanel.x + 75, mainPanel.y + 360, 550, 60 };
+        Rectangle roleBox = { mainPanel.x + 75, mainPanel.y + 470, 550, 60 };
+        Rectangle loginButton = { mainPanel.x + 75, mainPanel.y + 570, 550, 75 };
 
-        if (CheckCollisionPointRec(mousePosition, passwordBox)) mouseOnPassword = true;
-        else mouseOnPassword = false;
+        bool hoverUser = CheckCollisionPointRec(mouse, userBox);
+        bool hoverPass = CheckCollisionPointRec(mouse, passBox);
+        bool hoverRole = CheckCollisionPointRec(mouse, roleBox);
+        bool hoverBtn = CheckCollisionPointRec(mouse, loginButton);
 
-        if (CheckCollisionPointRec(mousePosition, roleBox)) mouseOnRole = true;
-        else mouseOnRole = false;
-
-        if (mouseOnUsername || mouseOnPassword || mouseOnRole) SetMouseCursor(MOUSE_CURSOR_IBEAM);
+        if (hoverUser || hoverPass || hoverRole) SetMouseCursor(MOUSE_CURSOR_IBEAM);
         else SetMouseCursor(MOUSE_CURSOR_DEFAULT);
 
-        if (mouseOnUsername) {
-            int key = GetCharPressed();
+        // --- PRESERVED BACKEND INPUT LOGIC ---
+        int key = GetCharPressed();
+        if (hoverUser) {
             while (key > 0) {
-                if ((key >= 32) && (key <= 125) && (usernameLetterCount < 25)) {
-                    username[usernameLetterCount] = (char)key;
-                    username[usernameLetterCount + 1] = '\0';
-                    usernameLetterCount++;
-                }
-
+                if (usernameLetterCount < 24) { username[usernameLetterCount++] = (char)key; username[usernameLetterCount] = '\0'; }
                 key = GetCharPressed();
             }
-
-            if (IsKeyPressed(KEY_BACKSPACE)) {
-                usernameLetterCount--;
-                if (usernameLetterCount < 0) usernameLetterCount = 0;
-                username[usernameLetterCount] = '\0';
-            }
+            if (IsKeyPressed(KEY_BACKSPACE) && usernameLetterCount > 0) username[--usernameLetterCount] = '\0';
         }
-
-        if (mouseOnPassword) {
-            int key = GetCharPressed();
+        if (hoverPass) {
             while (key > 0) {
-                if ((key >= 32) && (key <= 125) && (passwordLetterCount < 25)) {
-                    password[passwordLetterCount] = (char)key;
-                    password[passwordLetterCount + 1] = '\0';
-                    passwordLetterCount++;
-                }
-
+                if (passwordLetterCount < 24) { password[passwordLetterCount++] = (char)key; password[passwordLetterCount] = '\0'; }
                 key = GetCharPressed();
             }
-
-            if (IsKeyPressed(KEY_BACKSPACE)) {
-                passwordLetterCount--;
-                if (passwordLetterCount < 0) passwordLetterCount = 0;
-                password[passwordLetterCount] = '\0';
-            }
+            if (IsKeyPressed(KEY_BACKSPACE) && passwordLetterCount > 0) password[--passwordLetterCount] = '\0';
         }
-        if (mouseOnRole) {
-            int key = GetCharPressed();
+        if (hoverRole) {
             while (key > 0) {
-                if ((key >= 32) && (key <= 125) && (roleLetterCount < 25)) {
-                    role[roleLetterCount] = (char)key;
-                    role[roleLetterCount + 1] = '\0';
-                    roleLetterCount++;
-                }
-
+                if (roleLetterCount < 24) { role[roleLetterCount++] = (char)key; role[roleLetterCount] = '\0'; }
                 key = GetCharPressed();
             }
-
-            if (IsKeyPressed(KEY_BACKSPACE)) {
-                roleLetterCount--;
-                if (roleLetterCount < 0) roleLetterCount = 0;
-                role[roleLetterCount] = '\0';
-            }
+            if (IsKeyPressed(KEY_BACKSPACE) && roleLetterCount > 0) role[--roleLetterCount] = '\0';
         }
 
-
-        if ((IsMouseButtonPressed(MOUSE_LEFT_BUTTON) && CheckCollisionPointRec(mousePosition, loginButton)) || IsKeyPressed(KEY_ENTER)) {
-            Validate validator;
+        // --- PRESERVED LOGIN VALIDATION ---
+        if ((IsMouseButtonPressed(MOUSE_LEFT_BUTTON) && hoverBtn) || IsKeyPressed(KEY_ENTER)) {
             if (validator.doesAccountExist(username)) {
                 if (validator.isPasswordCorrect(username, password, role)) {
                     strcpy_s(currentUser, username);
-                    if (strcmp(role, "student") == 0) {
-
-                        studentDashboard();
-                    }
-                    else if (strcmp(role, "teacher") == 0) {
-
-                        teacherDashboard();
-                    }
+                    if (strcmp(role, "student") == 0) studentDashboard();
+                    else if (strcmp(role, "teacher") == 0) teacherDashboard();
                 }
-
-                if (!validator.doesAccountExist(username) || !validator.isPasswordCorrect(username, password, role)) {
-
-                    password[0] = '\0';
-                    username[0] = '\0';
-                    role[0] = '\0';
-                    usernameLetterCount = 0;
-                    passwordLetterCount = 0;
-                    roleLetterCount = 0;
+                else {
+                    username[0] = '\0'; password[0] = '\0'; role[0] = '\0';
+                    usernameLetterCount = 0; passwordLetterCount = 0; roleLetterCount = 0;
                 }
             }
-
         }
 
         BeginDrawing();
-        
-        ClearBackground(RAYWHITE);
-        
-        DrawTexture(background, 0, 0, WHITE);
-        DrawTexture(logoTexture, 0, 0, WHITE);
+        ClearBackground(bgLight);
+        DrawRectangleGradientV(0, 0, GetScreenWidth(), GetScreenHeight(), fmBlue, Color ({ 128, 90, 213, 255 }));
 
-        DrawText("Welcome back! Log in!", GetScreenWidth() / 2 - 289, GetScreenHeight() / 2 - 350, 50, WHITE);
+        DrawRectangleRounded(mainPanel, 0.05f, 10, WHITE);
 
-        DrawRectangleLines(usernameBox.x, usernameBox.y, usernameBox.width, usernameBox.height, (mouseOnUsername ? RAYWHITE : WHITE));
-        DrawText(username, usernameBox.x + 5, usernameBox.y + 8, 40, WHITE);
+        DrawTextureEx(logo, { mainPanel.x + 75, mainPanel.y + 50 }, 0, 80.0f / logo.height, WHITE);
+        DrawText("Welcome Back!", mainPanel.x + 75, mainPanel.y + 150, 35, { 45, 55, 72, 255 });
+        DrawText("Log in to continue your learning journey", mainPanel.x + 75, mainPanel.y + 195, 18, GRAY);
 
-        DrawRectangleLines(passwordBox.x, passwordBox.y, passwordBox.width, passwordBox.height, (mouseOnPassword ? RAYWHITE : WHITE));
-        DrawText(TextFormat("%.*s", passwordLetterCount, "**************************"), passwordBox.x + 5, passwordBox.y + 8, 40, WHITE);
+        DrawModernInput(userBox, "Username / Email", username, hoverUser, false, 25);
+        DrawModernInput(passBox, "Password", password, hoverPass, true, 25);
+        DrawModernInput(roleBox, "Role (student/teacher)", role, hoverRole, false, 25);
 
-        DrawRectangleLines(roleBox.x, roleBox.y, roleBox.width, roleBox.height, (mouseOnRole ? RAYWHITE : WHITE));
-        DrawText(role, roleBox.x + 5, roleBox.y + 8, 40, WHITE);
-
-        bool isMouseOverButtonLogin = CheckCollisionPointRec(mousePosition, loginButton);
-        DrawText("Login", GetScreenWidth() / 2 - 85, GetScreenHeight() / 2 + 250, (CheckCollisionPointRec(mousePosition, loginButton) ? 60 : 50), WHITE);
-        DrawText("Username:", GetScreenWidth() / 2 - 155, GetScreenHeight() / 2 - 225, 50, WHITE);
-        DrawText("Password:", GetScreenWidth() / 2 - 155, GetScreenHeight() / 2 - 75, 50, WHITE);
-        DrawText("Role:", GetScreenWidth() / 2 - 100, GetScreenHeight() / 2 + 70, 50, WHITE);
-
+        DrawRectangleRounded(loginButton, 0.2f, 10, hoverBtn ? Color ({ 48, 140, 230, 255 }) : fmBlue);
+        DrawText("LOG IN", loginButton.x + (loginButton.width / 2 - MeasureText("LOG IN", 25) / 2), loginButton.y + 25, 25, WHITE);
 
         EndDrawing();
-
     }
-
+    UnloadTexture(logo);
 }
+
+
 
 void startingScreen(bool hasInit) {
     const int screenWidth = 1920;
@@ -393,12 +296,12 @@ void startingScreen(bool hasInit) {
         DrawRectangle(0, 955, screenWidth, 125, Fade(WHITE, 0.8f));
         DrawLine(0, 955, screenWidth, 955, Fade(LIGHTGRAY, 0.5f));
 
-        DrawText("Crafted for Excellence", 50, 985, 18, DARKGRAY);
-        DrawText("© 2026 FutureMinds Inc. All Rights Reserved.", 50, 1015, 16, GRAY);
+        DrawText("Crafted for Excellence", 50, 985, 20, DARKGRAY);
+        DrawText("© 2026 FutureMinds Inc. All Rights Reserved.", 50, 1015, 20, GRAY);
 
-        DrawText("Terms of Service", 450, 1000, 16, accentColor);
-        DrawText("Privacy Policy", 600, 1000, 16, accentColor);
-        DrawText("Support", 750, 1000, 16, accentColor);
+        DrawText("Terms of Service", 550, 1000, 24, accentColor);
+        DrawText("Privacy Policy", 800, 1000, 24, accentColor);
+        DrawText("Support", 1000, 1000, 24, accentColor);
 
 
         Rectangle exitBtnRec = { 1780, 980, 100, 40 };

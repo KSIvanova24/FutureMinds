@@ -51,5 +51,5 @@ void drawStudentsCount()
         }
     }
     string countFinal = to_string(count);
-    DrawText(countFinal.c_str(), 370, 220, 45, BLACK);
+    DrawText(countFinal.c_str(), 460, 220, 45, BLACK);
 }

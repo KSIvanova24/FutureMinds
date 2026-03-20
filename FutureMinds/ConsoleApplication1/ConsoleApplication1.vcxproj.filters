@@ -39,6 +39,9 @@
     <ClCompile Include="quizes.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="grades.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="dashboards.h">
@@ -57,6 +60,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="quizes.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="grades.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

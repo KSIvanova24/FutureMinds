@@ -3,48 +3,40 @@
   "WorkspaceRootPath": "D:\\FutureMinds project\\FutureMinds\\FutureMinds\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{7B9AC0AF-D8F0-4DC7-95D5-8753B0CC44FD}|ConsoleApplication1\\ConsoleApplication1.vcxproj|D:\\FutureMinds project\\FutureMinds\\FutureMinds\\ConsoleApplication1\\auth.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{7B9AC0AF-D8F0-4DC7-95D5-8753B0CC44FD}|ConsoleApplication1\\ConsoleApplication1.vcxproj|solutionrelative:ConsoleApplication1\\auth.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7B9AC0AF-D8F0-4DC7-95D5-8753B0CC44FD}|ConsoleApplication1\\ConsoleApplication1.vcxproj|D:\\FutureMinds project\\FutureMinds\\FutureMinds\\ConsoleApplication1\\dashboards.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{7B9AC0AF-D8F0-4DC7-95D5-8753B0CC44FD}|ConsoleApplication1\\ConsoleApplication1.vcxproj|solutionrelative:ConsoleApplication1\\dashboards.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{7B9AC0AF-D8F0-4DC7-95D5-8753B0CC44FD}|ConsoleApplication1\\ConsoleApplication1.vcxproj|D:\\FutureMinds project\\FutureMinds\\FutureMinds\\ConsoleApplication1\\quizes.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{7B9AC0AF-D8F0-4DC7-95D5-8753B0CC44FD}|ConsoleApplication1\\ConsoleApplication1.vcxproj|solutionrelative:ConsoleApplication1\\quizes.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7B9AC0AF-D8F0-4DC7-95D5-8753B0CC44FD}|ConsoleApplication1\\ConsoleApplication1.vcxproj|D:\\FutureMinds project\\FutureMinds\\FutureMinds\\ConsoleApplication1\\settings.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{7B9AC0AF-D8F0-4DC7-95D5-8753B0CC44FD}|ConsoleApplication1\\ConsoleApplication1.vcxproj|solutionrelative:ConsoleApplication1\\settings.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7B9AC0AF-D8F0-4DC7-95D5-8753B0CC44FD}|ConsoleApplication1\\ConsoleApplication1.vcxproj|D:\\FutureMinds project\\FutureMinds\\FutureMinds\\ConsoleApplication1\\quizes.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{7B9AC0AF-D8F0-4DC7-95D5-8753B0CC44FD}|ConsoleApplication1\\ConsoleApplication1.vcxproj|solutionrelative:ConsoleApplication1\\quizes.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{7B9AC0AF-D8F0-4DC7-95D5-8753B0CC44FD}|ConsoleApplication1\\ConsoleApplication1.vcxproj|D:\\FutureMinds project\\FutureMinds\\FutureMinds\\ConsoleApplication1\\dashboards.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{7B9AC0AF-D8F0-4DC7-95D5-8753B0CC44FD}|ConsoleApplication1\\ConsoleApplication1.vcxproj|solutionrelative:ConsoleApplication1\\dashboards.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7B9AC0AF-D8F0-4DC7-95D5-8753B0CC44FD}|ConsoleApplication1\\ConsoleApplication1.vcxproj|D:\\FutureMinds project\\FutureMinds\\FutureMinds\\ConsoleApplication1\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{7B9AC0AF-D8F0-4DC7-95D5-8753B0CC44FD}|ConsoleApplication1\\ConsoleApplication1.vcxproj|solutionrelative:ConsoleApplication1\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7B9AC0AF-D8F0-4DC7-95D5-8753B0CC44FD}|ConsoleApplication1\\ConsoleApplication1.vcxproj|D:\\FutureMinds project\\FutureMinds\\FutureMinds\\ConsoleApplication1\\auth.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{7B9AC0AF-D8F0-4DC7-95D5-8753B0CC44FD}|ConsoleApplication1\\ConsoleApplication1.vcxproj|solutionrelative:ConsoleApplication1\\auth.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{7B9AC0AF-D8F0-4DC7-95D5-8753B0CC44FD}|ConsoleApplication1\\ConsoleApplication1.vcxproj|D:\\FutureMinds project\\FutureMinds\\FutureMinds\\ConsoleApplication1\\auth.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{7B9AC0AF-D8F0-4DC7-95D5-8753B0CC44FD}|ConsoleApplication1\\ConsoleApplication1.vcxproj|solutionrelative:ConsoleApplication1\\auth.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7B9AC0AF-D8F0-4DC7-95D5-8753B0CC44FD}|ConsoleApplication1\\ConsoleApplication1.vcxproj|D:\\FutureMinds project\\FutureMinds\\FutureMinds\\ConsoleApplication1\\accessData.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{7B9AC0AF-D8F0-4DC7-95D5-8753B0CC44FD}|ConsoleApplication1\\ConsoleApplication1.vcxproj|solutionrelative:ConsoleApplication1\\accessData.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7B9AC0AF-D8F0-4DC7-95D5-8753B0CC44FD}|ConsoleApplication1\\ConsoleApplication1.vcxproj|D:\\FutureMinds project\\FutureMinds\\FutureMinds\\ConsoleApplication1\\accessData.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{7B9AC0AF-D8F0-4DC7-95D5-8753B0CC44FD}|ConsoleApplication1\\ConsoleApplication1.vcxproj|solutionrelative:ConsoleApplication1\\accessData.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{7B9AC0AF-D8F0-4DC7-95D5-8753B0CC44FD}|ConsoleApplication1\\ConsoleApplication1.vcxproj|D:\\FutureMinds project\\FutureMinds\\FutureMinds\\ConsoleApplication1\\grades.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{7B9AC0AF-D8F0-4DC7-95D5-8753B0CC44FD}|ConsoleApplication1\\ConsoleApplication1.vcxproj|solutionrelative:ConsoleApplication1\\grades.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7B9AC0AF-D8F0-4DC7-95D5-8753B0CC44FD}|ConsoleApplication1\\ConsoleApplication1.vcxproj|D:\\FutureMinds project\\FutureMinds\\FutureMinds\\ConsoleApplication1\\Grades.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{7B9AC0AF-D8F0-4DC7-95D5-8753B0CC44FD}|ConsoleApplication1\\ConsoleApplication1.vcxproj|solutionrelative:ConsoleApplication1\\Grades.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7B9AC0AF-D8F0-4DC7-95D5-8753B0CC44FD}|ConsoleApplication1\\ConsoleApplication1.vcxproj|D:\\FutureMinds project\\FutureMinds\\FutureMinds\\ConsoleApplication1\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{7B9AC0AF-D8F0-4DC7-95D5-8753B0CC44FD}|ConsoleApplication1\\ConsoleApplication1.vcxproj|solutionrelative:ConsoleApplication1\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7B9AC0AF-D8F0-4DC7-95D5-8753B0CC44FD}|ConsoleApplication1\\ConsoleApplication1.vcxproj|D:\\FutureMinds project\\FutureMinds\\FutureMinds\\ConsoleApplication1\\validation.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{7B9AC0AF-D8F0-4DC7-95D5-8753B0CC44FD}|ConsoleApplication1\\ConsoleApplication1.vcxproj|solutionrelative:ConsoleApplication1\\validation.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7B9AC0AF-D8F0-4DC7-95D5-8753B0CC44FD}|ConsoleApplication1\\ConsoleApplication1.vcxproj|D:\\FutureMinds project\\FutureMinds\\FutureMinds\\ConsoleApplication1\\dashboards.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{7B9AC0AF-D8F0-4DC7-95D5-8753B0CC44FD}|ConsoleApplication1\\ConsoleApplication1.vcxproj|solutionrelative:ConsoleApplication1\\dashboards.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7B9AC0AF-D8F0-4DC7-95D5-8753B0CC44FD}|ConsoleApplication1\\ConsoleApplication1.vcxproj|D:\\FutureMinds project\\FutureMinds\\FutureMinds\\ConsoleApplication1\\quizes.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{7B9AC0AF-D8F0-4DC7-95D5-8753B0CC44FD}|ConsoleApplication1\\ConsoleApplication1.vcxproj|solutionrelative:ConsoleApplication1\\quizes.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7B9AC0AF-D8F0-4DC7-95D5-8753B0CC44FD}|ConsoleApplication1\\ConsoleApplication1.vcxproj|D:\\FutureMinds project\\FutureMinds\\FutureMinds\\ConsoleApplication1\\validation.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -55,8 +47,24 @@
       "RelativeMoniker": "D:0:0:{7B9AC0AF-D8F0-4DC7-95D5-8753B0CC44FD}|ConsoleApplication1\\ConsoleApplication1.vcxproj|solutionrelative:ConsoleApplication1\\settings.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{7B9AC0AF-D8F0-4DC7-95D5-8753B0CC44FD}|ConsoleApplication1\\ConsoleApplication1.vcxproj|D:\\FutureMinds project\\FutureMinds\\FutureMinds\\ConsoleApplication1\\quizes.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{7B9AC0AF-D8F0-4DC7-95D5-8753B0CC44FD}|ConsoleApplication1\\ConsoleApplication1.vcxproj|solutionrelative:ConsoleApplication1\\quizes.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{7B9AC0AF-D8F0-4DC7-95D5-8753B0CC44FD}|ConsoleApplication1\\ConsoleApplication1.vcxproj|D:\\FutureMinds project\\FutureMinds\\FutureMinds\\ConsoleApplication1\\pch.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{7B9AC0AF-D8F0-4DC7-95D5-8753B0CC44FD}|ConsoleApplication1\\ConsoleApplication1.vcxproj|solutionrelative:ConsoleApplication1\\pch.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7B9AC0AF-D8F0-4DC7-95D5-8753B0CC44FD}|ConsoleApplication1\\ConsoleApplication1.vcxproj|D:\\FutureMinds project\\FutureMinds\\FutureMinds\\ConsoleApplication1\\dashboards.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{7B9AC0AF-D8F0-4DC7-95D5-8753B0CC44FD}|ConsoleApplication1\\ConsoleApplication1.vcxproj|solutionrelative:ConsoleApplication1\\dashboards.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7B9AC0AF-D8F0-4DC7-95D5-8753B0CC44FD}|ConsoleApplication1\\ConsoleApplication1.vcxproj|D:\\FutureMinds project\\FutureMinds\\FutureMinds\\ConsoleApplication1\\auth.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{7B9AC0AF-D8F0-4DC7-95D5-8753B0CC44FD}|ConsoleApplication1\\ConsoleApplication1.vcxproj|solutionrelative:ConsoleApplication1\\auth.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7B9AC0AF-D8F0-4DC7-95D5-8753B0CC44FD}|ConsoleApplication1\\ConsoleApplication1.vcxproj|D:\\FutureMinds project\\FutureMinds\\FutureMinds\\ConsoleApplication1\\accessData.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{7B9AC0AF-D8F0-4DC7-95D5-8753B0CC44FD}|ConsoleApplication1\\ConsoleApplication1.vcxproj|solutionrelative:ConsoleApplication1\\accessData.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -66,7 +74,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Bookmark",
@@ -74,15 +82,42 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
+              "Title": "grades.h",
+              "DocumentMoniker": "D:\\FutureMinds project\\FutureMinds\\FutureMinds\\ConsoleApplication1\\grades.h",
+              "RelativeDocumentMoniker": "ConsoleApplication1\\grades.h",
+              "ToolTip": "D:\\FutureMinds project\\FutureMinds\\FutureMinds\\ConsoleApplication1\\grades.h",
+              "RelativeToolTip": "ConsoleApplication1\\grades.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-03-20T15:55:46.708Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "grades.cpp",
+              "DocumentMoniker": "D:\\FutureMinds project\\FutureMinds\\FutureMinds\\ConsoleApplication1\\grades.cpp",
+              "RelativeDocumentMoniker": "ConsoleApplication1\\grades.cpp",
+              "ToolTip": "D:\\FutureMinds project\\FutureMinds\\FutureMinds\\ConsoleApplication1\\grades.cpp",
+              "RelativeToolTip": "ConsoleApplication1\\grades.cpp",
+              "ViewState": "AQIAAC0AAAAAAAAAAAAAADgAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-03-20T15:55:32.979Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "main.cpp",
               "DocumentMoniker": "D:\\FutureMinds project\\FutureMinds\\FutureMinds\\ConsoleApplication1\\main.cpp",
               "RelativeDocumentMoniker": "ConsoleApplication1\\main.cpp",
               "ToolTip": "D:\\FutureMinds project\\FutureMinds\\FutureMinds\\ConsoleApplication1\\main.cpp",
               "RelativeToolTip": "ConsoleApplication1\\main.cpp",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAVAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAARAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2022-12-06T16:03:06.197Z"
+              "WhenOpened": "2022-12-06T16:03:06.197Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -92,62 +127,65 @@
               "RelativeDocumentMoniker": "ConsoleApplication1\\validation.cpp",
               "ToolTip": "D:\\FutureMinds project\\FutureMinds\\FutureMinds\\ConsoleApplication1\\validation.cpp",
               "RelativeToolTip": "ConsoleApplication1\\validation.cpp",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAAAAgAAAAgAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAgAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2026-03-16T21:15:05.778Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "auth.cpp",
               "DocumentMoniker": "D:\\FutureMinds project\\FutureMinds\\FutureMinds\\ConsoleApplication1\\auth.cpp",
               "RelativeDocumentMoniker": "ConsoleApplication1\\auth.cpp",
               "ToolTip": "D:\\FutureMinds project\\FutureMinds\\FutureMinds\\ConsoleApplication1\\auth.cpp",
               "RelativeToolTip": "ConsoleApplication1\\auth.cpp",
-              "ViewState": "AQIAAHQBAAAAAAAAAAAQwIIBAAAzAAAA",
+              "ViewState": "AQIAAM4AAAAAAAAAAAAAAOEAAAAiAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2026-03-16T21:05:56.607Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 4,
               "Title": "accessData.cpp",
               "DocumentMoniker": "D:\\FutureMinds project\\FutureMinds\\FutureMinds\\ConsoleApplication1\\accessData.cpp",
               "RelativeDocumentMoniker": "ConsoleApplication1\\accessData.cpp",
               "ToolTip": "D:\\FutureMinds project\\FutureMinds\\FutureMinds\\ConsoleApplication1\\accessData.cpp",
               "RelativeToolTip": "ConsoleApplication1\\accessData.cpp",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAABEAAAA",
+              "ViewState": "AQIAACIAAAAAAAAAAAAAADUAAAAkAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-03-16T21:13:58.207Z"
+              "WhenOpened": "2026-03-16T21:13:58.207Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "settings.cpp",
               "DocumentMoniker": "D:\\FutureMinds project\\FutureMinds\\FutureMinds\\ConsoleApplication1\\settings.cpp",
               "RelativeDocumentMoniker": "ConsoleApplication1\\settings.cpp",
               "ToolTip": "D:\\FutureMinds project\\FutureMinds\\FutureMinds\\ConsoleApplication1\\settings.cpp",
               "RelativeToolTip": "ConsoleApplication1\\settings.cpp",
-              "ViewState": "AQIAAJ0AAAAAAAAAAAAAAFgAAAAgAAAA",
+              "ViewState": "AQIAAGgAAAAAAAAAAAAQwHMAAAAzAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-03-18T18:18:50.311Z"
+              "WhenOpened": "2026-03-18T18:18:50.311Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "quizes.cpp",
               "DocumentMoniker": "D:\\FutureMinds project\\FutureMinds\\FutureMinds\\ConsoleApplication1\\quizes.cpp",
               "RelativeDocumentMoniker": "ConsoleApplication1\\quizes.cpp",
               "ToolTip": "D:\\FutureMinds project\\FutureMinds\\FutureMinds\\ConsoleApplication1\\quizes.cpp",
               "RelativeToolTip": "ConsoleApplication1\\quizes.cpp",
-              "ViewState": "AQIAAE4AAAAAAAAAAAAAAHgAAAA4AAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAAATAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-03-18T22:23:51.574Z"
+              "WhenOpened": "2026-03-18T22:23:51.574Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 15,
               "Title": "accessData.h",
               "DocumentMoniker": "D:\\FutureMinds project\\FutureMinds\\FutureMinds\\ConsoleApplication1\\accessData.h",
               "RelativeDocumentMoniker": "ConsoleApplication1\\accessData.h",
@@ -159,7 +197,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 13,
               "Title": "dashboards.h",
               "DocumentMoniker": "D:\\FutureMinds project\\FutureMinds\\FutureMinds\\ConsoleApplication1\\dashboards.h",
               "RelativeDocumentMoniker": "ConsoleApplication1\\dashboards.h",
@@ -171,32 +209,32 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 14,
               "Title": "auth.h",
               "DocumentMoniker": "D:\\FutureMinds project\\FutureMinds\\FutureMinds\\ConsoleApplication1\\auth.h",
               "RelativeDocumentMoniker": "ConsoleApplication1\\auth.h",
               "ToolTip": "D:\\FutureMinds project\\FutureMinds\\FutureMinds\\ConsoleApplication1\\auth.h",
               "RelativeToolTip": "ConsoleApplication1\\auth.h",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAgAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAOAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2026-03-16T21:06:29.511Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "dashboards.cpp",
               "DocumentMoniker": "D:\\FutureMinds project\\FutureMinds\\FutureMinds\\ConsoleApplication1\\dashboards.cpp",
               "RelativeDocumentMoniker": "ConsoleApplication1\\dashboards.cpp",
               "ToolTip": "D:\\FutureMinds project\\FutureMinds\\FutureMinds\\ConsoleApplication1\\dashboards.cpp",
               "RelativeToolTip": "ConsoleApplication1\\dashboards.cpp",
-              "ViewState": "AQIAAIUAAAAAAAAAAAAQwLsAAAAiAAAA",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAQwBcAAABFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2026-03-17T21:31:21.181Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 9,
               "Title": "validation.h",
               "DocumentMoniker": "D:\\FutureMinds project\\FutureMinds\\FutureMinds\\ConsoleApplication1\\validation.h",
               "RelativeDocumentMoniker": "ConsoleApplication1\\validation.h",
@@ -208,7 +246,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 10,
               "Title": "settings.h",
               "DocumentMoniker": "D:\\FutureMinds project\\FutureMinds\\FutureMinds\\ConsoleApplication1\\settings.h",
               "RelativeDocumentMoniker": "ConsoleApplication1\\settings.h",
@@ -220,7 +258,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 12,
               "Title": "pch.h",
               "DocumentMoniker": "D:\\FutureMinds project\\FutureMinds\\FutureMinds\\ConsoleApplication1\\pch.h",
               "RelativeDocumentMoniker": "ConsoleApplication1\\pch.h",
@@ -232,7 +270,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "quizes.h",
               "DocumentMoniker": "D:\\FutureMinds project\\FutureMinds\\FutureMinds\\ConsoleApplication1\\quizes.h",
               "RelativeDocumentMoniker": "ConsoleApplication1\\quizes.h",

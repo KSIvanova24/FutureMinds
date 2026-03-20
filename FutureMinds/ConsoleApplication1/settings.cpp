@@ -11,7 +11,7 @@ void settings()
     const int screenHeight = 1080;
 
     string username = currentUser;
-    std::string password = "password123";
+    string password = "password123";
     int level = 42;
     int rank = 1;
 
@@ -40,7 +40,7 @@ void settings()
         Rectangle qBtn = { 0, 220, 300, 60 };
         Rectangle gBtn = { 0, 290, 300, 60 };
         Rectangle sBtn = { 0, 360, 300, 60 };
-        Rectangle logoutBtn = { 20, (float)GetScreenHeight() - 80, 260, 50 };
+        Rectangle logoutBtn = { 20, (float)GetScreenHeight() -100, 260, 50 };
 
         Vector2 dashPosition = { 0, 150 };
         Rectangle dashButton = { dashPosition.x, dashPosition.y, 300, 60 };
@@ -58,7 +58,7 @@ void settings()
         }
 
         // Typing Logic
-        std::string* currentStr = (activeField == 1) ? &username : (activeField == 2 ? &password : nullptr);
+        string* currentStr = (activeField == 1) ? &username : (activeField == 2 ? &password : nullptr);
         if (currentStr != nullptr) {
             int key = GetCharPressed();
             while (key > 0) {
@@ -143,7 +143,7 @@ void settings()
         DrawText("SECURITY PASSWORD", passBtn.x + 5, passBtn.y - 35, 20, GRAY);
         DrawRectangleRounded(passBtn, 0.15f, 10, (activeField == 2) ? WHITE : inputBg);
         DrawRectangleRoundedLines(passBtn, 0.15f, 10, 2, (activeField == 2) ? accentColor : borderColor);
-        std::string stars(password.length(), '*');
+        string stars(password.length(), '*');
         DrawText(stars.c_str(), passBtn.x + 25, passBtn.y + 28, 45, textColor);
 
         // Cursor blink

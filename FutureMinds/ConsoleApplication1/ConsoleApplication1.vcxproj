@@ -134,6 +134,7 @@
     <ClCompile Include="accessData.cpp" />
     <ClCompile Include="auth.cpp" />
     <ClCompile Include="dashboards.cpp" />
+    <ClCompile Include="grades.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="pch.h" />
     <ClCompile Include="quizes.cpp" />
@@ -144,6 +145,7 @@
     <ClInclude Include="accessData.h" />
     <ClInclude Include="auth.h" />
     <ClInclude Include="dashboards.h" />
+    <ClInclude Include="grades.h" />
     <ClInclude Include="quizes.h" />
     <ClInclude Include="settings.h" />
     <ClInclude Include="validation.h" />
