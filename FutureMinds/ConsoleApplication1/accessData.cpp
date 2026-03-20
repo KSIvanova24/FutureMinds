@@ -28,7 +28,7 @@ void drawUsername(string user)
         }
     }
     string finalUsername = greeting + username;
-    DrawText(finalUsername.c_str(), GetScreenWidth() / 2 - 525, GetScreenHeight() / 2 - 467, 45, BLACK);
+    DrawText(finalUsername.c_str(), GetScreenWidth() / 2 - 525, GetScreenHeight() / 2 - 500, 45, BLACK);
 
 }
 

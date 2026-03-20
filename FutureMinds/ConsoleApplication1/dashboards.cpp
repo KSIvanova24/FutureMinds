@@ -109,6 +109,31 @@ void studentDashboard() {
     Color sideBarColor = { 45, 55, 72, 255 };
     Color accentColor = { 66, 153, 225, 255 };
 
+    // --- REAL XP CALCULATION ---
+    int totalXP = 0;
+    ifstream file("../data/notebook.csv");
+    string line;
+
+    while (getline(file, line)) {
+        stringstream ss(line);
+        string name;
+        getline(ss, name, ','); // Get username
+
+        if (name == currentUser) {
+            string entry;
+            // Parse all "QuizName Score" pairs in the row
+            while (getline(ss, entry, ',')) {
+                size_t lastSpace = entry.find_last_of(' ');
+                if (lastSpace != string::npos) {
+                    // Extract the score part after the last space and add to total
+                    totalXP += stoi(entry.substr(lastSpace + 1));
+                }
+            }
+            break; // Found our user, no need to keep reading
+        }
+    }
+    file.close();
+
     while (!WindowShouldClose()) {
         Vector2 mouse = GetMousePosition();
 
@@ -120,24 +145,26 @@ void studentDashboard() {
         DrawLineEx({ 30, 110 }, { 270, 110 }, 2, Fade(GRAY, 0.5f));
 
         Rectangle navs[] = {
-            { 0, 150, 300, 60 }, 
-            { 0, 220, 300, 60 }, 
-            { 0, 290, 300, 60 }, 
-            { 0, 360, 300, 60 }  
+            { 0, 150, 300, 60 },
+            { 0, 220, 300, 60 },
+            { 0, 290, 300, 60 },
+            { 0, 360, 300, 60 }
         };
         const char* labels[] = { "Dashboard", "Quizzes", "Grades", "Settings" };
 
         for (int i = 0; i < 4; i++) {
-            if (CheckCollisionPointRec(mouse, navs[i])) {
+            bool hover = CheckCollisionPointRec(mouse, navs[i]);
+            if (i == 0 || hover) { // Dashboard is active
                 DrawRectangleRec(navs[i], Fade(accentColor, 0.3f));
                 DrawRectangle(0, navs[i].y, 5, 60, accentColor);
-                if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) {
-                    if (i == 1) quizes();
-                    if (i == 2) gradesStudent();
-                    if (i == 3) settingsStudent();
-                }
             }
             DrawText(labels[i], 60, navs[i].y + 15, 24, WHITE);
+
+            if (hover && IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) {
+                if (i == 1) quizes();
+                if (i == 2) gradesStudent();
+                if (i == 3) settingsStudent();
+            }
         }
 
         Rectangle logoutBtn = { 20, (float)GetScreenHeight() - 95, 260, 50 };
@@ -155,7 +182,9 @@ void studentDashboard() {
 
         DrawRectangleRounded({ 350, 150, 400, 200 }, 0.1f, 10, WHITE);
         DrawText("MY TOTAL XP", 370, 180, 20, GRAY);
-        DrawText("2,400", 370, 230, 50, BLACK);
+
+        const char* xpText = TextFormat("%d", totalXP);
+        DrawText(xpText, 370, 230, 50, BLACK);
 
         EndDrawing();
     }

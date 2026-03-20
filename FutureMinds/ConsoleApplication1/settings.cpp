@@ -92,6 +92,10 @@ void settingsStudent()
         if (CheckCollisionPointRec(mouse, gBtn)) {
             DrawRectangleRec(gBtn, Fade(accentColor, 0.3f));
             DrawRectangle(gBtn.x, gBtn.y, 5, gBtn.height, accentColor);
+            if (CheckCollisionPointRec(mouse,gBtn) && IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) {
+                gradesStudent();
+
+            }
         }
         DrawText("Grades", 60, 305, 24, WHITE);
 

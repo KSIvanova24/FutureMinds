@@ -3,6 +3,7 @@
 #include "settings.h"
 #include "auth.h"
 #include "accessData.h"
+#include "dashboards.h"
 
 
 using namespace std;
@@ -66,10 +67,10 @@ void quizes() {
             }
         }
         else {
-            // --- STUDENT SIDEBAR (4 Buttons) ---
+ 
             Rectangle navs[] = { {0, 150, 300, 60}, {0, 220, 300, 60}, {0, 290, 300, 60}, {0, 360, 300, 60} };
             const char* labels[] = { "Dashboard", "Quizzes", "Grades", "Settings" };
-            int activeIndex = 1; // Quizzes is index 1 in student menu
+            int activeIndex = 1; 
 
             for (int i = 0; i < 4; i++) {
                 bool hover = CheckCollisionPointRec(mouse, navs[i]);
@@ -80,7 +81,7 @@ void quizes() {
                 DrawText(labels[i], 60, (int)navs[i].y + 15, 24, WHITE);
 
                 if (hover && IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) {
-                    if (i == 0) return; // Dashboard
+                    if (i == 0) studentDashboard();
                     if (i == 2) gradesStudent();
                     if (i == 3) settingsStudent();
                 }
