@@ -158,7 +158,6 @@ void login() {
         if (hoverUser || hoverPass || hoverRole) SetMouseCursor(MOUSE_CURSOR_IBEAM);
         else SetMouseCursor(MOUSE_CURSOR_DEFAULT);
 
-        // --- PRESERVED BACKEND INPUT LOGIC ---
         int key = GetCharPressed();
         if (hoverUser) {
             while (key > 0) {
@@ -182,7 +181,6 @@ void login() {
             if (IsKeyPressed(KEY_BACKSPACE) && roleLetterCount > 0) role[--roleLetterCount] = '\0';
         }
 
-        // --- PRESERVED LOGIN VALIDATION ---
         if ((IsMouseButtonPressed(MOUSE_LEFT_BUTTON) && hoverBtn) || IsKeyPressed(KEY_ENTER)) {
             if (validator.doesAccountExist(username)) {
                 if (validator.isPasswordCorrect(username, password, role)) {
