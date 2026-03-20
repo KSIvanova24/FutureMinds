@@ -1,9 +1,3 @@
 ﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(531,5): warning MSB8028: The intermediate directory (x64\Debug\) contains files shared from another project (ConsoleApplication1.vcxproj).  This can lead to incorrect clean and rebuild behavior.
-  grades.cpp
-D:\FutureMinds project\FutureMinds\FutureMinds\ConsoleApplication1\grades.cpp(68,72): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-D:\FutureMinds project\FutureMinds\FutureMinds\ConsoleApplication1\grades.cpp(68,55): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-D:\FutureMinds project\FutureMinds\FutureMinds\ConsoleApplication1\grades.cpp(68,41): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-D:\FutureMinds project\FutureMinds\FutureMinds\ConsoleApplication1\grades.cpp(155,72): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-D:\FutureMinds project\FutureMinds\FutureMinds\ConsoleApplication1\grades.cpp(155,55): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-D:\FutureMinds project\FutureMinds\FutureMinds\ConsoleApplication1\grades.cpp(155,41): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  quizes.cpp
   ConsoleApplication1.vcxproj -> D:\FutureMinds project\FutureMinds\FutureMinds\x64\Debug\FutureMinds.exe

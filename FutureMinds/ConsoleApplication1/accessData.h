@@ -9,6 +9,7 @@ class DataAccess {
 public:
     // Adds an account to the database "accounts".
     void addAccount(const string& username, const string& password) const;
+    void saveQuizResult(const string& username, const string& quizType, int score) const;
 };
 
 void drawStudentsCount();

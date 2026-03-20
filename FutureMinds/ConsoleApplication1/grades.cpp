@@ -161,11 +161,9 @@ void gradesStudent()
         DrawRectangleRounded(logoutBtn, 0.2f, 10, logoutHover ? RED : DARKGRAY);
         DrawText("Logout", (int)logoutBtn.x + 85, (int)logoutBtn.y + 15, 20, WHITE);
 
-        // --- MAIN CONTENT ---
         DrawRectangle(300, 0, GetScreenWidth() - 300, 80, WHITE);
         DrawText("STUDENT PORTAL", 330, 25, 25, sideBarColor);
 
-        // Grades Card
         DrawRectangleRounded(card, 0.02f, 10, WHITE);
         DrawRectangleRoundedLines(card, 0.02f, 10, 2, borderColor);
 
@@ -174,6 +172,9 @@ void gradesStudent()
 
         // Action Options
         DrawMenuOption(viewGradesRect, "View My Grades", 1, mouse, accentColor, borderColor, textColor, bgWhite);
+        if (CheckCollisionPointRec(mouse, viewGradesRect) && IsMouseButtonPressed(MOUSE_BUTTON_LEFT)) {
+            viewStudentGradesList();
+        }
         DrawMenuOption(avgGradeRect, "Calculate My Average", 2, mouse, accentColor, borderColor, textColor, bgWhite);
 
         // Footer links
@@ -181,6 +182,71 @@ void gradesStudent()
         DrawText("Privacy Policy", 750, 1000, 20, GRAY);
         DrawText("Support", 1000, 1000, 20, GRAY);
 
+        EndDrawing();
+    }
+}
+
+void viewStudentGradesList() {
+    Color bgWhite = { 240, 242, 245, 255 };
+    Color headerCol = { 45, 55, 72, 255 };
+    Color accentColor = { 0, 110, 230, 255 };
+
+    struct GradeEntry { string name; string score; };
+    vector<GradeEntry> myGrades;
+
+    ifstream file("../data/notebook.csv");
+    string line;
+    while (getline(file, line)) {
+        stringstream ss(line);
+        string name;
+        getline(ss, name, ',');
+        if (name == currentUser) {
+            string entry;
+            while (getline(ss, entry, ',')) {
+                size_t lastSpace = entry.find_last_of(' ');
+                if (lastSpace != string::npos) {
+                    myGrades.push_back({ entry.substr(0, lastSpace), entry.substr(lastSpace + 1) });
+                }
+            }
+            break; 
+        }
+    }
+    file.close();
+
+    while (!WindowShouldClose()) {
+        Vector2 mouse = GetMousePosition();
+        BeginDrawing();
+        ClearBackground(bgWhite);
+
+        DrawRectangle(0, 0, GetScreenWidth(), 100, headerCol);
+        DrawText("MY PERFORMANCE", 40, 35, 30, WHITE);
+        DrawText(currentUser, GetScreenWidth() - MeasureText(currentUser, 20) - 40, 40, 20, Fade(WHITE, 0.7f));
+
+        Rectangle backBtn = { 40, 130, 120, 40 };
+        bool backHover = CheckCollisionPointRec(mouse, backBtn);
+        DrawRectangleRounded(backBtn, 0.5f, 10, backHover ? BLACK : DARKGRAY);
+        DrawText("< BACK", (int)backBtn.x + 25, (int)backBtn.y + 12, 18, WHITE);
+
+        if (backHover && IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) break;
+
+        if (myGrades.empty()) {
+            DrawText("No grades recorded yet. Take a quiz!", GetScreenWidth() / 2 - 150, GetScreenHeight() / 2, 20, GRAY);
+        }
+        else {
+            for (int i = 0; i < myGrades.size(); i++) {
+                float yPos = 200 + (i * 90);
+                Rectangle row = { 100, yPos, (float)GetScreenWidth() - 200, 75 };
+                DrawRectangleRounded({ row.x + 2, row.y + 2, row.width, row.height }, 0.2f, 10, Fade(GRAY, 0.2f));
+                DrawRectangleRounded(row, 0.2f, 10, WHITE);
+
+                DrawRectangle(row.x, row.y, 10, row.height, accentColor);
+                DrawText(myGrades[i].name.c_str(), (int)row.x + 40, (int)row.y + 25, 25, BLACK);
+                int scoreVal = stoi(myGrades[i].score);
+                Color scoreColor = (scoreVal >= 70) ? DARKGREEN : (scoreVal >= 40 ? ORANGE : RED);
+
+                DrawText(TextFormat("%s XP", myGrades[i].score.c_str()), (int)row.x + row.width - 150, (int)row.y + 25, 25, scoreColor);
+            }
+        }
         EndDrawing();
     }
 }

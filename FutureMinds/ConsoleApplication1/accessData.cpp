@@ -53,3 +53,38 @@ void drawStudentsCount()
     string countFinal = to_string(count);
     DrawText(countFinal.c_str(), 460, 220, 45, BLACK);
 }
+
+void DataAccess::saveQuizResult(const string& username, const string& quizType, int score) const {
+    ifstream inFile("../data/notebook.csv");
+    vector<string> lines;
+    string line;
+    bool studentFound = false;
+
+    if (inFile.is_open()) {
+        while (getline(inFile, line)) {
+            if (line.empty()) continue;
+
+            stringstream ss(line);
+            string storedName;
+            getline(ss, storedName, ',');
+
+            if (storedName == username) {
+                line += "," + quizType + " " + to_string(score);
+                studentFound = true;
+            }
+            lines.push_back(line);
+        }
+        inFile.close();
+    }
+
+    if (!studentFound) {
+        string newLine = username + "," + quizType + " " + to_string(score);
+        lines.push_back(newLine);
+    }
+
+    ofstream outFile("../data/notebook.csv");
+    for (const auto& l : lines) {
+        outFile << l << "\n";
+    }
+    outFile.close();
+}
