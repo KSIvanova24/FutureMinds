@@ -2,6 +2,7 @@
 #include "grades.h"
 #include "settings.h"
 #include "auth.h"
+#include "accessData.h"
 
 void quizes() {
     Color sideBarColor = { 45, 55, 72, 255 };
@@ -31,7 +32,17 @@ void quizes() {
             if (hover && IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) {
                 if (i == 0) return;
                 if (i == 2) gradesStudent();
-                if (i == 3) settings();
+                if (i == 3)
+                {
+                    if (currentUser == "admin")
+                    {
+                        settingsTeacher();
+                    }
+                    else
+                    {
+                        settingsStudent();
+                    }
+                };
             }
         }
 

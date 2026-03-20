@@ -63,7 +63,7 @@ void teacherDashboard()
         if (CheckCollisionPointRec(mouse, setBtn)) {
             DrawRectangleRec(setBtn, Fade(accentColor, 0.3f));
             DrawRectangle(0, 430, 5, 60, accentColor);
-            if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) settings();
+            if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) settingsTeacher();
         }
         DrawText("Settings", 60, 445, 24, WHITE);
 
@@ -134,7 +134,7 @@ void studentDashboard() {
                 if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) {
                     if (i == 1) quizes();
                     if (i == 2) gradesStudent();
-                    if (i == 3) settings();
+                    if (i == 3) settingsStudent();
                 }
             }
             DrawText(labels[i], 60, navs[i].y + 15, 24, WHITE);
