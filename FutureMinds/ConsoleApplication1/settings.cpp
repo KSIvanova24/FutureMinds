@@ -4,6 +4,7 @@
 #include "auth.h"
 #include "dashboards.h"
 #include "grades.h"
+#include "students.h"
 
 void settingsStudent()
 {
@@ -47,7 +48,7 @@ void settingsStudent()
             else activeField = 0;
 
             if (CheckCollisionPointRec(mouse, qBtn)) quizes();
-            if (CheckCollisionPointRec(mouse, gBtn)) { ; } 
+            if (CheckCollisionPointRec(mouse, gBtn)) { gradesStudent(); } 
             if (CheckCollisionPointRec(mouse, saveBtn)) break; 
             if (CheckCollisionPointRec(mouse, logoutBtn)) { startingScreen(true);  }
         }
@@ -188,6 +189,7 @@ void settingsTeacher()
 
             if (CheckCollisionPointRec(mouse, dashBtn)) teacherDashboard(); 
             if (CheckCollisionPointRec(mouse, gBtn)) gradesTeacher();
+            if (CheckCollisionPointRec(mouse, studentsBtn)) viewAllStudents();
             if (CheckCollisionPointRec(mouse, quizBtn)) quizes();
             if (CheckCollisionPointRec(mouse, logoutBtn)) startingScreen(true);
             if (CheckCollisionPointRec(mouse, saveBtn)) {

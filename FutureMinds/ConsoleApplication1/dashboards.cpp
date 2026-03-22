@@ -4,6 +4,7 @@
 #include "settings.h"
 #include "quizes.h"
 #include "grades.h"
+#include "students.h"
 
 void teacherDashboard()
 {
@@ -40,6 +41,7 @@ void teacherDashboard()
         if (CheckCollisionPointRec(mouse, studentsBtn)) {
             DrawRectangleRec(studentsBtn, Fade(accentColor, 0.3f));
             DrawRectangle(0, 220, 5, 60, accentColor);
+            if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) viewAllStudents();
         }
         DrawText("Students", 60, 235, 24, WHITE);
 
@@ -92,8 +94,6 @@ void teacherDashboard()
         DrawRectangle(300 + spacing * 3 + cardWidth * 2 + 20, 290, 200, 8, ORANGE);
 
         bool actionHover = CheckCollisionPointRec(mouse, actionButton);
-        DrawRectangleRounded(actionButton, 0.5f, 10, actionHover ? DARKBLUE : accentColor);
-        DrawText("+ Create New Quiz", actionButton.x + 45, actionButton.y + 25, 25, WHITE);
 
         bool logoutHover = CheckCollisionPointRec(mouse, logoutButton);
         DrawRectangleRounded(logoutButton, 0.2f, 10, logoutHover ? RED : DARKGRAY);

@@ -4,6 +4,7 @@
 #include "auth.h"
 #include "dashboards.h"
 #include "grades.h"
+#include "students.h"
 
 // Helper function to draw menu items without using auto/lambdas
 void DrawMenuOption(Rectangle rect, const char* text, int index, Vector2 mouse, Color accentColor, Color borderColor, Color textColor, Color bgWhite) {
@@ -16,14 +17,13 @@ void DrawMenuOption(Rectangle rect, const char* text, int index, Vector2 mouse, 
 void gradesTeacher() {
     Color bgWhite = { 240, 242, 245, 255 };
     Color sideBarColor = { 45, 55, 72, 255 };
-    Color accentColor = { 66, 153, 225, 255 }; // Teacher Blue
+    Color accentColor = { 66, 153, 225, 255 }; 
     Color textColor = { 20, 20, 20, 255 };
     Color borderColor = { 200, 200, 205, 255 };
 
     while (!WindowShouldClose()) {
         Vector2 mouse = GetMousePosition();
 
-        // Sidebar Rectangles
         Rectangle dashBtn = { 0, 150, 300, 60 };
         Rectangle studentsBtn = { 0, 220, 300, 60 };
         Rectangle gBtn = { 0, 290, 300, 60 };
@@ -31,15 +31,13 @@ void gradesTeacher() {
         Rectangle sBtn = { 0, 430, 300, 60 };
         Rectangle logoutBtn = { 20, (float)GetScreenHeight() - 100, 260, 50 };
 
-        // Main Content Rectangles
         Rectangle card = { 350, 120, 1100, 600 };
         Rectangle viewGradesRect = { card.x + 50, card.y + 150, 1000, 80 };
         Rectangle addGradeRect = { card.x + 50, card.y + 250, 1000, 80 };
 
-        // Interaction Logic
         if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) {
             if (CheckCollisionPointRec(mouse, dashBtn)) teacherDashboard();
-            if (CheckCollisionPointRec(mouse, studentsBtn)) { /* Go to students */ }
+            if (CheckCollisionPointRec(mouse, studentsBtn)) { viewAllStudents(); }
             if (CheckCollisionPointRec(mouse, qBtn)) quizes();
             if (CheckCollisionPointRec(mouse, sBtn)) settingsTeacher();
             if (CheckCollisionPointRec(mouse, logoutBtn)) startingScreen(true);
@@ -255,9 +253,11 @@ void calculateAverage() {
     Color headerCol = { 45, 55, 72, 255 };
     Color grammarColor = { 66, 153, 225, 255 };
     Color vocabColor = { 128, 90, 213, 255 };
+    Color readingColor = { 56, 178, 172, 255 }; 
+    Color idiomsColor = { 237, 137, 54, 255 };  
 
-    float grammarSum = 0, vocabSum = 0;
-    int grammarCount = 0, vocabCount = 0;
+    float grammarSum = 0, vocabSum = 0, readingSum = 0, idiomsSum = 0;
+    int grammarCount = 0, vocabCount = 0, readingCount = 0, idiomsCount = 0;
 
     ifstream file("../data/notebook.csv");
     string line;
@@ -282,6 +282,14 @@ void calculateAverage() {
                         vocabSum += score;
                         vocabCount++;
                     }
+                    else if (quizName.find("Reading") != string::npos) { // Добавено четене
+                        readingSum += score;
+                        readingCount++;
+                    }
+                    else if (quizName.find("Idioms") != string::npos) { // Добавени идиоми
+                        idiomsSum += score;
+                        idiomsCount++;
+                    }
                 }
             }
             break;
@@ -291,6 +299,8 @@ void calculateAverage() {
 
     int avgGrammar = (grammarCount > 0) ? (int)(grammarSum / grammarCount) : 0;
     int avgVocab = (vocabCount > 0) ? (int)(vocabSum / vocabCount) : 0;
+    int avgReading = (readingCount > 0) ? (int)(readingSum / readingCount) : 0;
+    int avgIdioms = (idiomsCount > 0) ? (int)(idiomsSum / idiomsCount) : 0;
 
     while (!WindowShouldClose()) {
         Vector2 mouse = GetMousePosition();
@@ -300,37 +310,56 @@ void calculateAverage() {
         DrawRectangle(0, 0, GetScreenWidth(), 100, headerCol);
         DrawText("AVERAGE PERFORMANCE", 40, 35, 30, WHITE);
 
- 
         Rectangle backBtn = { 40, 130, 120, 40 };
         bool backHover = CheckCollisionPointRec(mouse, backBtn);
         DrawRectangleRounded(backBtn, 0.5f, 10, backHover ? BLACK : DARKGRAY);
         DrawText("< BACK", (int)backBtn.x + 25, (int)backBtn.y + 12, 18, WHITE);
         if (backHover && IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) break;
 
-        Rectangle cardGrammar = { (float)GetScreenWidth() / 2 - 450, 250, 400, 300 };
-        Rectangle cardVocab = { (float)GetScreenWidth() / 2 + 50, 250, 400, 300 };
+        float startX = (float)GetScreenWidth() / 2 - 425;
+        float startY = 200.0f;
+        float cardWidth = 400.0f;
+        float cardHeight = 250.0f; 
+        float gapX = 50.0f;
+        float gapY = 30.0f;
 
+        Rectangle cardGrammar = { startX, startY, cardWidth, cardHeight };
+        Rectangle cardVocab = { startX + cardWidth + gapX, startY, cardWidth, cardHeight };
+        Rectangle cardReading = { startX, startY + cardHeight + gapY, cardWidth, cardHeight };
+        Rectangle cardIdioms = { startX + cardWidth + gapX, startY + cardHeight + gapY, cardWidth, cardHeight };
 
         DrawRectangleRounded(cardGrammar, 0.1f, 10, WHITE);
         DrawRectangleRoundedLines(cardGrammar, 0.1f, 10, 3, grammarColor);
-        DrawText("GRAMMAR", (int)cardGrammar.x + 100, (int)cardGrammar.y + 40, 30, DARKGRAY);
-        DrawLineEx({ cardGrammar.x + 50, cardGrammar.y + 90 }, { cardGrammar.x + 350, cardGrammar.y + 90 }, 2, LIGHTGRAY);
-
+        DrawText("GRAMMAR", (int)cardGrammar.x + 100, (int)cardGrammar.y + 30, 30, DARKGRAY);
+        DrawLineEx({ cardGrammar.x + 50, cardGrammar.y + 75 }, { cardGrammar.x + 350, cardGrammar.y + 75 }, 2, LIGHTGRAY);
         const char* gScoreText = TextFormat("%d%%", avgGrammar);
-        DrawText(gScoreText, (int)cardGrammar.x + 200 - MeasureText(gScoreText, 80) / 2, (int)cardGrammar.y + 150, 80, grammarColor);
+        DrawText(gScoreText, (int)cardGrammar.x + 200 - MeasureText(gScoreText, 60) / 2, (int)cardGrammar.y + 120, 60, grammarColor);
 
- 
+
         DrawRectangleRounded(cardVocab, 0.1f, 10, WHITE);
         DrawRectangleRoundedLines(cardVocab, 0.1f, 10, 3, vocabColor);
-        DrawText("VOCABULARY", (int)cardVocab.x + 85, (int)cardVocab.y + 40, 30, DARKGRAY);
-        DrawLineEx({ cardVocab.x + 50, cardVocab.y + 90 }, { cardVocab.x + 350, cardVocab.y + 90 }, 2, LIGHTGRAY);
-
+        DrawText("VOCABULARY", (int)cardVocab.x + 85, (int)cardVocab.y + 30, 30, DARKGRAY);
+        DrawLineEx({ cardVocab.x + 50, cardVocab.y + 75 }, { cardVocab.x + 350, cardVocab.y + 75 }, 2, LIGHTGRAY);
         const char* vScoreText = TextFormat("%d%%", avgVocab);
-        DrawText(vScoreText, (int)cardVocab.x + 200 - MeasureText(vScoreText, 80) / 2, (int)cardVocab.y + 150, 80, vocabColor);
+        DrawText(vScoreText, (int)cardVocab.x + 200 - MeasureText(vScoreText, 60) / 2, (int)cardVocab.y + 120, 60, vocabColor);
+
+        DrawRectangleRounded(cardReading, 0.1f, 10, WHITE);
+        DrawRectangleRoundedLines(cardReading, 0.1f, 10, 3, readingColor);
+        DrawText("READING", (int)cardReading.x + 110, (int)cardReading.y + 30, 30, DARKGRAY);
+        DrawLineEx({ cardReading.x + 50, cardReading.y + 75 }, { cardReading.x + 350, cardReading.y + 75 }, 2, LIGHTGRAY);
+        const char* rScoreText = TextFormat("%d%%", avgReading);
+        DrawText(rScoreText, (int)cardReading.x + 200 - MeasureText(rScoreText, 60) / 2, (int)cardReading.y + 120, 60, readingColor);
+
+        DrawRectangleRounded(cardIdioms, 0.1f, 10, WHITE);
+        DrawRectangleRoundedLines(cardIdioms, 0.1f, 10, 3, idiomsColor);
+        DrawText("IDIOMS", (int)cardIdioms.x + 130, (int)cardIdioms.y + 30, 30, DARKGRAY);
+        DrawLineEx({ cardIdioms.x + 50, cardIdioms.y + 75 }, { cardIdioms.x + 350, cardIdioms.y + 75 }, 2, LIGHTGRAY);
+        const char* iScoreText = TextFormat("%d%%", avgIdioms);
+        DrawText(iScoreText, (int)cardIdioms.x + 200 - MeasureText(iScoreText, 60) / 2, (int)cardIdioms.y + 120, 60, idiomsColor);
 
         DrawText("Overall Progress is calculated based on completed quiz sessions.",
             GetScreenWidth() / 2 - MeasureText("Overall Progress is calculated based on completed quiz sessions.", 20) / 2,
-            650, 20, GRAY);
+            GetScreenHeight() - 50, 20, GRAY); 
 
         EndDrawing();
     }

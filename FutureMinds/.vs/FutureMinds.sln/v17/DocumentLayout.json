@@ -1,69 +1,77 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\FutureMinds project\\FutureMinds\\FutureMinds\\",
+  "WorkspaceRootPath": "D:\\Users\\ASUS\\Desktop\\futureminds\\FutureMinds\\FutureMinds\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{7B9AC0AF-D8F0-4DC7-95D5-8753B0CC44FD}|ConsoleApplication1\\ConsoleApplication1.vcxproj|D:\\FutureMinds project\\FutureMinds\\FutureMinds\\ConsoleApplication1\\accessData.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{7B9AC0AF-D8F0-4DC7-95D5-8753B0CC44FD}|ConsoleApplication1\\ConsoleApplication1.vcxproj|solutionrelative:ConsoleApplication1\\accessData.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7B9AC0AF-D8F0-4DC7-95D5-8753B0CC44FD}|ConsoleApplication1\\ConsoleApplication1.vcxproj|D:\\FutureMinds project\\FutureMinds\\FutureMinds\\ConsoleApplication1\\dashboards.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{7B9AC0AF-D8F0-4DC7-95D5-8753B0CC44FD}|ConsoleApplication1\\ConsoleApplication1.vcxproj|solutionrelative:ConsoleApplication1\\dashboards.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7B9AC0AF-D8F0-4DC7-95D5-8753B0CC44FD}|ConsoleApplication1\\ConsoleApplication1.vcxproj|D:\\FutureMinds project\\FutureMinds\\FutureMinds\\ConsoleApplication1\\grades.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{7B9AC0AF-D8F0-4DC7-95D5-8753B0CC44FD}|ConsoleApplication1\\ConsoleApplication1.vcxproj|D:\\Users\\ASUS\\Desktop\\futureminds\\FutureMinds\\FutureMinds\\ConsoleApplication1\\grades.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{7B9AC0AF-D8F0-4DC7-95D5-8753B0CC44FD}|ConsoleApplication1\\ConsoleApplication1.vcxproj|solutionrelative:ConsoleApplication1\\grades.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7B9AC0AF-D8F0-4DC7-95D5-8753B0CC44FD}|ConsoleApplication1\\ConsoleApplication1.vcxproj|D:\\FutureMinds project\\FutureMinds\\FutureMinds\\ConsoleApplication1\\quizes.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{7B9AC0AF-D8F0-4DC7-95D5-8753B0CC44FD}|ConsoleApplication1\\ConsoleApplication1.vcxproj|solutionrelative:ConsoleApplication1\\quizes.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{7B9AC0AF-D8F0-4DC7-95D5-8753B0CC44FD}|ConsoleApplication1\\ConsoleApplication1.vcxproj|D:\\Users\\ASUS\\Desktop\\futureminds\\FutureMinds\\FutureMinds\\ConsoleApplication1\\students.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{7B9AC0AF-D8F0-4DC7-95D5-8753B0CC44FD}|ConsoleApplication1\\ConsoleApplication1.vcxproj|solutionrelative:ConsoleApplication1\\students.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7B9AC0AF-D8F0-4DC7-95D5-8753B0CC44FD}|ConsoleApplication1\\ConsoleApplication1.vcxproj|D:\\FutureMinds project\\FutureMinds\\FutureMinds\\ConsoleApplication1\\settings.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{7B9AC0AF-D8F0-4DC7-95D5-8753B0CC44FD}|ConsoleApplication1\\ConsoleApplication1.vcxproj|D:\\Users\\ASUS\\Desktop\\futureminds\\FutureMinds\\FutureMinds\\ConsoleApplication1\\dashboards.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{7B9AC0AF-D8F0-4DC7-95D5-8753B0CC44FD}|ConsoleApplication1\\ConsoleApplication1.vcxproj|solutionrelative:ConsoleApplication1\\dashboards.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7B9AC0AF-D8F0-4DC7-95D5-8753B0CC44FD}|ConsoleApplication1\\ConsoleApplication1.vcxproj|D:\\Users\\ASUS\\Desktop\\futureminds\\FutureMinds\\FutureMinds\\ConsoleApplication1\\settings.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{7B9AC0AF-D8F0-4DC7-95D5-8753B0CC44FD}|ConsoleApplication1\\ConsoleApplication1.vcxproj|solutionrelative:ConsoleApplication1\\settings.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7B9AC0AF-D8F0-4DC7-95D5-8753B0CC44FD}|ConsoleApplication1\\ConsoleApplication1.vcxproj|D:\\FutureMinds project\\FutureMinds\\FutureMinds\\ConsoleApplication1\\Grades.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{7B9AC0AF-D8F0-4DC7-95D5-8753B0CC44FD}|ConsoleApplication1\\ConsoleApplication1.vcxproj|solutionrelative:ConsoleApplication1\\Grades.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{7B9AC0AF-D8F0-4DC7-95D5-8753B0CC44FD}|ConsoleApplication1\\ConsoleApplication1.vcxproj|D:\\Users\\ASUS\\Desktop\\futureminds\\FutureMinds\\FutureMinds\\ConsoleApplication1\\quizes.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{7B9AC0AF-D8F0-4DC7-95D5-8753B0CC44FD}|ConsoleApplication1\\ConsoleApplication1.vcxproj|solutionrelative:ConsoleApplication1\\quizes.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7B9AC0AF-D8F0-4DC7-95D5-8753B0CC44FD}|ConsoleApplication1\\ConsoleApplication1.vcxproj|D:\\FutureMinds project\\FutureMinds\\FutureMinds\\ConsoleApplication1\\accessData.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{7B9AC0AF-D8F0-4DC7-95D5-8753B0CC44FD}|ConsoleApplication1\\ConsoleApplication1.vcxproj|solutionrelative:ConsoleApplication1\\accessData.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{7B9AC0AF-D8F0-4DC7-95D5-8753B0CC44FD}|ConsoleApplication1\\ConsoleApplication1.vcxproj|D:\\Users\\ASUS\\Desktop\\futureminds\\FutureMinds\\FutureMinds\\ConsoleApplication1\\students.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{7B9AC0AF-D8F0-4DC7-95D5-8753B0CC44FD}|ConsoleApplication1\\ConsoleApplication1.vcxproj|solutionrelative:ConsoleApplication1\\students.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7B9AC0AF-D8F0-4DC7-95D5-8753B0CC44FD}|ConsoleApplication1\\ConsoleApplication1.vcxproj|D:\\FutureMinds project\\FutureMinds\\FutureMinds\\ConsoleApplication1\\auth.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{7B9AC0AF-D8F0-4DC7-95D5-8753B0CC44FD}|ConsoleApplication1\\ConsoleApplication1.vcxproj|D:\\Users\\ASUS\\Desktop\\futureminds\\FutureMinds\\FutureMinds\\ConsoleApplication1\\auth.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{7B9AC0AF-D8F0-4DC7-95D5-8753B0CC44FD}|ConsoleApplication1\\ConsoleApplication1.vcxproj|solutionrelative:ConsoleApplication1\\auth.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7B9AC0AF-D8F0-4DC7-95D5-8753B0CC44FD}|ConsoleApplication1\\ConsoleApplication1.vcxproj|D:\\FutureMinds project\\FutureMinds\\FutureMinds\\ConsoleApplication1\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{7B9AC0AF-D8F0-4DC7-95D5-8753B0CC44FD}|ConsoleApplication1\\ConsoleApplication1.vcxproj|solutionrelative:ConsoleApplication1\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{7B9AC0AF-D8F0-4DC7-95D5-8753B0CC44FD}|ConsoleApplication1\\ConsoleApplication1.vcxproj|D:\\Users\\ASUS\\Desktop\\futureminds\\FutureMinds\\FutureMinds\\ConsoleApplication1\\accessData.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{7B9AC0AF-D8F0-4DC7-95D5-8753B0CC44FD}|ConsoleApplication1\\ConsoleApplication1.vcxproj|solutionrelative:ConsoleApplication1\\accessData.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7B9AC0AF-D8F0-4DC7-95D5-8753B0CC44FD}|ConsoleApplication1\\ConsoleApplication1.vcxproj|D:\\FutureMinds project\\FutureMinds\\FutureMinds\\ConsoleApplication1\\settings.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{7B9AC0AF-D8F0-4DC7-95D5-8753B0CC44FD}|ConsoleApplication1\\ConsoleApplication1.vcxproj|solutionrelative:ConsoleApplication1\\settings.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7B9AC0AF-D8F0-4DC7-95D5-8753B0CC44FD}|ConsoleApplication1\\ConsoleApplication1.vcxproj|D:\\FutureMinds project\\FutureMinds\\FutureMinds\\ConsoleApplication1\\quizes.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{7B9AC0AF-D8F0-4DC7-95D5-8753B0CC44FD}|ConsoleApplication1\\ConsoleApplication1.vcxproj|D:\\Users\\ASUS\\Desktop\\futureminds\\FutureMinds\\FutureMinds\\ConsoleApplication1\\quizes.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{7B9AC0AF-D8F0-4DC7-95D5-8753B0CC44FD}|ConsoleApplication1\\ConsoleApplication1.vcxproj|solutionrelative:ConsoleApplication1\\quizes.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7B9AC0AF-D8F0-4DC7-95D5-8753B0CC44FD}|ConsoleApplication1\\ConsoleApplication1.vcxproj|D:\\FutureMinds project\\FutureMinds\\FutureMinds\\ConsoleApplication1\\validation.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{7B9AC0AF-D8F0-4DC7-95D5-8753B0CC44FD}|ConsoleApplication1\\ConsoleApplication1.vcxproj|D:\\Users\\ASUS\\Desktop\\futureminds\\FutureMinds\\FutureMinds\\ConsoleApplication1\\validation.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{7B9AC0AF-D8F0-4DC7-95D5-8753B0CC44FD}|ConsoleApplication1\\ConsoleApplication1.vcxproj|solutionrelative:ConsoleApplication1\\validation.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7B9AC0AF-D8F0-4DC7-95D5-8753B0CC44FD}|ConsoleApplication1\\ConsoleApplication1.vcxproj|D:\\FutureMinds project\\FutureMinds\\FutureMinds\\ConsoleApplication1\\validation.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{7B9AC0AF-D8F0-4DC7-95D5-8753B0CC44FD}|ConsoleApplication1\\ConsoleApplication1.vcxproj|D:\\Users\\ASUS\\Desktop\\futureminds\\FutureMinds\\FutureMinds\\ConsoleApplication1\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{7B9AC0AF-D8F0-4DC7-95D5-8753B0CC44FD}|ConsoleApplication1\\ConsoleApplication1.vcxproj|solutionrelative:ConsoleApplication1\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7B9AC0AF-D8F0-4DC7-95D5-8753B0CC44FD}|ConsoleApplication1\\ConsoleApplication1.vcxproj|D:\\Users\\ASUS\\Desktop\\futureminds\\FutureMinds\\FutureMinds\\ConsoleApplication1\\settings.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{7B9AC0AF-D8F0-4DC7-95D5-8753B0CC44FD}|ConsoleApplication1\\ConsoleApplication1.vcxproj|solutionrelative:ConsoleApplication1\\settings.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7B9AC0AF-D8F0-4DC7-95D5-8753B0CC44FD}|ConsoleApplication1\\ConsoleApplication1.vcxproj|D:\\Users\\ASUS\\Desktop\\futureminds\\FutureMinds\\FutureMinds\\ConsoleApplication1\\accessData.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{7B9AC0AF-D8F0-4DC7-95D5-8753B0CC44FD}|ConsoleApplication1\\ConsoleApplication1.vcxproj|solutionrelative:ConsoleApplication1\\accessData.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7B9AC0AF-D8F0-4DC7-95D5-8753B0CC44FD}|ConsoleApplication1\\ConsoleApplication1.vcxproj|D:\\Users\\ASUS\\Desktop\\futureminds\\FutureMinds\\FutureMinds\\ConsoleApplication1\\Grades.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{7B9AC0AF-D8F0-4DC7-95D5-8753B0CC44FD}|ConsoleApplication1\\ConsoleApplication1.vcxproj|solutionrelative:ConsoleApplication1\\Grades.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7B9AC0AF-D8F0-4DC7-95D5-8753B0CC44FD}|ConsoleApplication1\\ConsoleApplication1.vcxproj|D:\\Users\\ASUS\\Desktop\\futureminds\\FutureMinds\\FutureMinds\\ConsoleApplication1\\validation.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{7B9AC0AF-D8F0-4DC7-95D5-8753B0CC44FD}|ConsoleApplication1\\ConsoleApplication1.vcxproj|solutionrelative:ConsoleApplication1\\validation.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7B9AC0AF-D8F0-4DC7-95D5-8753B0CC44FD}|ConsoleApplication1\\ConsoleApplication1.vcxproj|D:\\FutureMinds project\\FutureMinds\\FutureMinds\\ConsoleApplication1\\pch.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{7B9AC0AF-D8F0-4DC7-95D5-8753B0CC44FD}|ConsoleApplication1\\ConsoleApplication1.vcxproj|D:\\Users\\ASUS\\Desktop\\futureminds\\FutureMinds\\FutureMinds\\ConsoleApplication1\\pch.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{7B9AC0AF-D8F0-4DC7-95D5-8753B0CC44FD}|ConsoleApplication1\\ConsoleApplication1.vcxproj|solutionrelative:ConsoleApplication1\\pch.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7B9AC0AF-D8F0-4DC7-95D5-8753B0CC44FD}|ConsoleApplication1\\ConsoleApplication1.vcxproj|D:\\FutureMinds project\\FutureMinds\\FutureMinds\\ConsoleApplication1\\dashboards.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{7B9AC0AF-D8F0-4DC7-95D5-8753B0CC44FD}|ConsoleApplication1\\ConsoleApplication1.vcxproj|D:\\Users\\ASUS\\Desktop\\futureminds\\FutureMinds\\FutureMinds\\ConsoleApplication1\\dashboards.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{7B9AC0AF-D8F0-4DC7-95D5-8753B0CC44FD}|ConsoleApplication1\\ConsoleApplication1.vcxproj|solutionrelative:ConsoleApplication1\\dashboards.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7B9AC0AF-D8F0-4DC7-95D5-8753B0CC44FD}|ConsoleApplication1\\ConsoleApplication1.vcxproj|D:\\FutureMinds project\\FutureMinds\\FutureMinds\\ConsoleApplication1\\auth.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{7B9AC0AF-D8F0-4DC7-95D5-8753B0CC44FD}|ConsoleApplication1\\ConsoleApplication1.vcxproj|D:\\Users\\ASUS\\Desktop\\futureminds\\FutureMinds\\FutureMinds\\ConsoleApplication1\\auth.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{7B9AC0AF-D8F0-4DC7-95D5-8753B0CC44FD}|ConsoleApplication1\\ConsoleApplication1.vcxproj|solutionrelative:ConsoleApplication1\\auth.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
@@ -74,7 +82,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -83,10 +91,34 @@
             {
               "$type": "Document",
               "DocumentIndex": 5,
+              "Title": "students.h",
+              "DocumentMoniker": "D:\\Users\\ASUS\\Desktop\\futureminds\\FutureMinds\\FutureMinds\\ConsoleApplication1\\students.h",
+              "RelativeDocumentMoniker": "ConsoleApplication1\\students.h",
+              "ToolTip": "D:\\Users\\ASUS\\Desktop\\futureminds\\FutureMinds\\FutureMinds\\ConsoleApplication1\\students.h",
+              "RelativeToolTip": "ConsoleApplication1\\students.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAXAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-03-22T19:34:31.274Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "students.cpp",
+              "DocumentMoniker": "D:\\Users\\ASUS\\Desktop\\futureminds\\FutureMinds\\FutureMinds\\ConsoleApplication1\\students.cpp",
+              "RelativeDocumentMoniker": "ConsoleApplication1\\students.cpp",
+              "ToolTip": "D:\\Users\\ASUS\\Desktop\\futureminds\\FutureMinds\\FutureMinds\\ConsoleApplication1\\students.cpp",
+              "RelativeToolTip": "ConsoleApplication1\\students.cpp",
+              "ViewState": "AQIAAFwAAAAAAAAAAAAiwGoAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-03-22T19:34:21.699Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
               "Title": "grades.h",
-              "DocumentMoniker": "D:\\FutureMinds project\\FutureMinds\\FutureMinds\\ConsoleApplication1\\grades.h",
+              "DocumentMoniker": "D:\\Users\\ASUS\\Desktop\\futureminds\\FutureMinds\\FutureMinds\\ConsoleApplication1\\grades.h",
               "RelativeDocumentMoniker": "ConsoleApplication1\\grades.h",
-              "ToolTip": "D:\\FutureMinds project\\FutureMinds\\FutureMinds\\ConsoleApplication1\\grades.h",
+              "ToolTip": "D:\\Users\\ASUS\\Desktop\\futureminds\\FutureMinds\\FutureMinds\\ConsoleApplication1\\grades.h",
               "RelativeToolTip": "ConsoleApplication1\\grades.h",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAYAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
@@ -94,24 +126,24 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "grades.cpp",
-              "DocumentMoniker": "D:\\FutureMinds project\\FutureMinds\\FutureMinds\\ConsoleApplication1\\grades.cpp",
+              "DocumentMoniker": "D:\\Users\\ASUS\\Desktop\\futureminds\\FutureMinds\\FutureMinds\\ConsoleApplication1\\grades.cpp",
               "RelativeDocumentMoniker": "ConsoleApplication1\\grades.cpp",
-              "ToolTip": "D:\\FutureMinds project\\FutureMinds\\FutureMinds\\ConsoleApplication1\\grades.cpp",
+              "ToolTip": "D:\\Users\\ASUS\\Desktop\\futureminds\\FutureMinds\\FutureMinds\\ConsoleApplication1\\grades.cpp",
               "RelativeToolTip": "ConsoleApplication1\\grades.cpp",
-              "ViewState": "AQIAADgBAAAAAAAAAAAAAAQBAAAAAAAA",
+              "ViewState": "AQIAACQAAAAAAAAAAAAAACkAAABHAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2026-03-20T15:55:32.979Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 10,
               "Title": "main.cpp",
-              "DocumentMoniker": "D:\\FutureMinds project\\FutureMinds\\FutureMinds\\ConsoleApplication1\\main.cpp",
+              "DocumentMoniker": "D:\\Users\\ASUS\\Desktop\\futureminds\\FutureMinds\\FutureMinds\\ConsoleApplication1\\main.cpp",
               "RelativeDocumentMoniker": "ConsoleApplication1\\main.cpp",
-              "ToolTip": "D:\\FutureMinds project\\FutureMinds\\FutureMinds\\ConsoleApplication1\\main.cpp",
+              "ToolTip": "D:\\Users\\ASUS\\Desktop\\futureminds\\FutureMinds\\FutureMinds\\ConsoleApplication1\\main.cpp",
               "RelativeToolTip": "ConsoleApplication1\\main.cpp",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAARAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
@@ -119,11 +151,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 9,
               "Title": "validation.cpp",
-              "DocumentMoniker": "D:\\FutureMinds project\\FutureMinds\\FutureMinds\\ConsoleApplication1\\validation.cpp",
+              "DocumentMoniker": "D:\\Users\\ASUS\\Desktop\\futureminds\\FutureMinds\\FutureMinds\\ConsoleApplication1\\validation.cpp",
               "RelativeDocumentMoniker": "ConsoleApplication1\\validation.cpp",
-              "ToolTip": "D:\\FutureMinds project\\FutureMinds\\FutureMinds\\ConsoleApplication1\\validation.cpp",
+              "ToolTip": "D:\\Users\\ASUS\\Desktop\\futureminds\\FutureMinds\\FutureMinds\\ConsoleApplication1\\validation.cpp",
               "RelativeToolTip": "ConsoleApplication1\\validation.cpp",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAgAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
@@ -131,74 +163,71 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 6,
               "Title": "auth.cpp",
-              "DocumentMoniker": "D:\\FutureMinds project\\FutureMinds\\FutureMinds\\ConsoleApplication1\\auth.cpp",
+              "DocumentMoniker": "D:\\Users\\ASUS\\Desktop\\futureminds\\FutureMinds\\FutureMinds\\ConsoleApplication1\\auth.cpp",
               "RelativeDocumentMoniker": "ConsoleApplication1\\auth.cpp",
-              "ToolTip": "D:\\FutureMinds project\\FutureMinds\\FutureMinds\\ConsoleApplication1\\auth.cpp",
+              "ToolTip": "D:\\Users\\ASUS\\Desktop\\futureminds\\FutureMinds\\FutureMinds\\ConsoleApplication1\\auth.cpp",
               "RelativeToolTip": "ConsoleApplication1\\auth.cpp",
-              "ViewState": "AQIAAEEBAAAAAAAAAAAAAKAAAAAAAAAA",
+              "ViewState": "AQIAADIBAAAAAAAAAAAAAKAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2026-03-16T21:05:56.607Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 7,
               "Title": "accessData.cpp",
-              "DocumentMoniker": "D:\\FutureMinds project\\FutureMinds\\FutureMinds\\ConsoleApplication1\\accessData.cpp",
+              "DocumentMoniker": "D:\\Users\\ASUS\\Desktop\\futureminds\\FutureMinds\\FutureMinds\\ConsoleApplication1\\accessData.cpp",
               "RelativeDocumentMoniker": "ConsoleApplication1\\accessData.cpp",
-              "ToolTip": "D:\\FutureMinds project\\FutureMinds\\FutureMinds\\ConsoleApplication1\\accessData.cpp",
+              "ToolTip": "D:\\Users\\ASUS\\Desktop\\futureminds\\FutureMinds\\FutureMinds\\ConsoleApplication1\\accessData.cpp",
               "RelativeToolTip": "ConsoleApplication1\\accessData.cpp",
-              "ViewState": "AQIAAA0AAAAAAAAAAAAQwB4AAABbAAAA",
+              "ViewState": "AQIAADAAAAAAAAAAAAAgwFsAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-03-16T21:13:58.207Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "settings.cpp",
-              "DocumentMoniker": "D:\\FutureMinds project\\FutureMinds\\FutureMinds\\ConsoleApplication1\\settings.cpp",
-              "RelativeDocumentMoniker": "ConsoleApplication1\\settings.cpp",
-              "ToolTip": "D:\\FutureMinds project\\FutureMinds\\FutureMinds\\ConsoleApplication1\\settings.cpp",
-              "RelativeToolTip": "ConsoleApplication1\\settings.cpp",
-              "ViewState": "AQIAAFIAAAAAAAAAAAAgwF8AAAAgAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-03-18T18:18:50.311Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-16T21:13:58.207Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "quizes.cpp",
-              "DocumentMoniker": "D:\\FutureMinds project\\FutureMinds\\FutureMinds\\ConsoleApplication1\\quizes.cpp",
-              "RelativeDocumentMoniker": "ConsoleApplication1\\quizes.cpp",
-              "ToolTip": "D:\\FutureMinds project\\FutureMinds\\FutureMinds\\ConsoleApplication1\\quizes.cpp",
-              "RelativeToolTip": "ConsoleApplication1\\quizes.cpp",
-              "ViewState": "AQIAADoAAAAAAAAAAAAQwFQAAAAwAAAA",
+              "Title": "settings.cpp",
+              "DocumentMoniker": "D:\\Users\\ASUS\\Desktop\\futureminds\\FutureMinds\\FutureMinds\\ConsoleApplication1\\settings.cpp",
+              "RelativeDocumentMoniker": "ConsoleApplication1\\settings.cpp",
+              "ToolTip": "D:\\Users\\ASUS\\Desktop\\futureminds\\FutureMinds\\FutureMinds\\ConsoleApplication1\\settings.cpp",
+              "RelativeToolTip": "ConsoleApplication1\\settings.cpp",
+              "ViewState": "AQIAALQAAAAAAAAAAAAAAL8AAAA5AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-03-18T22:23:51.574Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-18T18:18:50.311Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 4,
+              "Title": "quizes.cpp",
+              "DocumentMoniker": "D:\\Users\\ASUS\\Desktop\\futureminds\\FutureMinds\\FutureMinds\\ConsoleApplication1\\quizes.cpp",
+              "RelativeDocumentMoniker": "ConsoleApplication1\\quizes.cpp",
+              "ToolTip": "D:\\Users\\ASUS\\Desktop\\futureminds\\FutureMinds\\FutureMinds\\ConsoleApplication1\\quizes.cpp",
+              "RelativeToolTip": "ConsoleApplication1\\quizes.cpp",
+              "ViewState": "AQIAAIoBAAAAAAAAAAAiwJ4BAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-03-18T22:23:51.574Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
               "Title": "accessData.h",
-              "DocumentMoniker": "D:\\FutureMinds project\\FutureMinds\\FutureMinds\\ConsoleApplication1\\accessData.h",
+              "DocumentMoniker": "D:\\Users\\ASUS\\Desktop\\futureminds\\FutureMinds\\FutureMinds\\ConsoleApplication1\\accessData.h",
               "RelativeDocumentMoniker": "ConsoleApplication1\\accessData.h",
-              "ToolTip": "D:\\FutureMinds project\\FutureMinds\\FutureMinds\\ConsoleApplication1\\accessData.h",
+              "ToolTip": "D:\\Users\\ASUS\\Desktop\\futureminds\\FutureMinds\\FutureMinds\\ConsoleApplication1\\accessData.h",
               "RelativeToolTip": "ConsoleApplication1\\accessData.h",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAABZAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2026-03-16T21:08:43.363Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 16,
               "Title": "dashboards.h",
-              "DocumentMoniker": "D:\\FutureMinds project\\FutureMinds\\FutureMinds\\ConsoleApplication1\\dashboards.h",
+              "DocumentMoniker": "D:\\Users\\ASUS\\Desktop\\futureminds\\FutureMinds\\FutureMinds\\ConsoleApplication1\\dashboards.h",
               "RelativeDocumentMoniker": "ConsoleApplication1\\dashboards.h",
-              "ToolTip": "D:\\FutureMinds project\\FutureMinds\\FutureMinds\\ConsoleApplication1\\dashboards.h",
+              "ToolTip": "D:\\Users\\ASUS\\Desktop\\futureminds\\FutureMinds\\FutureMinds\\ConsoleApplication1\\dashboards.h",
               "RelativeToolTip": "ConsoleApplication1\\dashboards.h",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAYAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
@@ -206,11 +235,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 17,
               "Title": "auth.h",
-              "DocumentMoniker": "D:\\FutureMinds project\\FutureMinds\\FutureMinds\\ConsoleApplication1\\auth.h",
+              "DocumentMoniker": "D:\\Users\\ASUS\\Desktop\\futureminds\\FutureMinds\\FutureMinds\\ConsoleApplication1\\auth.h",
               "RelativeDocumentMoniker": "ConsoleApplication1\\auth.h",
-              "ToolTip": "D:\\FutureMinds project\\FutureMinds\\FutureMinds\\ConsoleApplication1\\auth.h",
+              "ToolTip": "D:\\Users\\ASUS\\Desktop\\futureminds\\FutureMinds\\FutureMinds\\ConsoleApplication1\\auth.h",
               "RelativeToolTip": "ConsoleApplication1\\auth.h",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAOAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
@@ -218,24 +247,23 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "dashboards.cpp",
-              "DocumentMoniker": "D:\\FutureMinds project\\FutureMinds\\FutureMinds\\ConsoleApplication1\\dashboards.cpp",
+              "DocumentMoniker": "D:\\Users\\ASUS\\Desktop\\futureminds\\FutureMinds\\FutureMinds\\ConsoleApplication1\\dashboards.cpp",
               "RelativeDocumentMoniker": "ConsoleApplication1\\dashboards.cpp",
-              "ToolTip": "D:\\FutureMinds project\\FutureMinds\\FutureMinds\\ConsoleApplication1\\dashboards.cpp",
+              "ToolTip": "D:\\Users\\ASUS\\Desktop\\futureminds\\FutureMinds\\FutureMinds\\ConsoleApplication1\\dashboards.cpp",
               "RelativeToolTip": "ConsoleApplication1\\dashboards.cpp",
-              "ViewState": "AQIAAKkAAAAAAAAAAAAQwLQAAAAUAAAA",
+              "ViewState": "AQIAAKIAAAAAAAAAAAAAALEAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-03-17T21:31:21.181Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-17T21:31:21.181Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 14,
               "Title": "validation.h",
-              "DocumentMoniker": "D:\\FutureMinds project\\FutureMinds\\FutureMinds\\ConsoleApplication1\\validation.h",
+              "DocumentMoniker": "D:\\Users\\ASUS\\Desktop\\futureminds\\FutureMinds\\FutureMinds\\ConsoleApplication1\\validation.h",
               "RelativeDocumentMoniker": "ConsoleApplication1\\validation.h",
-              "ToolTip": "D:\\FutureMinds project\\FutureMinds\\FutureMinds\\ConsoleApplication1\\validation.h",
+              "ToolTip": "D:\\Users\\ASUS\\Desktop\\futureminds\\FutureMinds\\FutureMinds\\ConsoleApplication1\\validation.h",
               "RelativeToolTip": "ConsoleApplication1\\validation.h",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
@@ -243,23 +271,23 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 11,
               "Title": "settings.h",
-              "DocumentMoniker": "D:\\FutureMinds project\\FutureMinds\\FutureMinds\\ConsoleApplication1\\settings.h",
+              "DocumentMoniker": "D:\\Users\\ASUS\\Desktop\\futureminds\\FutureMinds\\FutureMinds\\ConsoleApplication1\\settings.h",
               "RelativeDocumentMoniker": "ConsoleApplication1\\settings.h",
-              "ToolTip": "D:\\FutureMinds project\\FutureMinds\\FutureMinds\\ConsoleApplication1\\settings.h",
+              "ToolTip": "D:\\Users\\ASUS\\Desktop\\futureminds\\FutureMinds\\FutureMinds\\ConsoleApplication1\\settings.h",
               "RelativeToolTip": "ConsoleApplication1\\settings.h",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2026-03-18T21:16:32.5Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 15,
               "Title": "pch.h",
-              "DocumentMoniker": "D:\\FutureMinds project\\FutureMinds\\FutureMinds\\ConsoleApplication1\\pch.h",
+              "DocumentMoniker": "D:\\Users\\ASUS\\Desktop\\futureminds\\FutureMinds\\FutureMinds\\ConsoleApplication1\\pch.h",
               "RelativeDocumentMoniker": "ConsoleApplication1\\pch.h",
-              "ToolTip": "D:\\FutureMinds project\\FutureMinds\\FutureMinds\\ConsoleApplication1\\pch.h",
+              "ToolTip": "D:\\Users\\ASUS\\Desktop\\futureminds\\FutureMinds\\FutureMinds\\ConsoleApplication1\\pch.h",
               "RelativeToolTip": "ConsoleApplication1\\pch.h",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAUAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
@@ -267,13 +295,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 8,
               "Title": "quizes.h",
-              "DocumentMoniker": "D:\\FutureMinds project\\FutureMinds\\FutureMinds\\ConsoleApplication1\\quizes.h",
+              "DocumentMoniker": "D:\\Users\\ASUS\\Desktop\\futureminds\\FutureMinds\\FutureMinds\\ConsoleApplication1\\quizes.h",
               "RelativeDocumentMoniker": "ConsoleApplication1\\quizes.h",
-              "ToolTip": "D:\\FutureMinds project\\FutureMinds\\FutureMinds\\ConsoleApplication1\\quizes.h",
+              "ToolTip": "D:\\Users\\ASUS\\Desktop\\futureminds\\FutureMinds\\FutureMinds\\ConsoleApplication1\\quizes.h",
               "RelativeToolTip": "ConsoleApplication1\\quizes.h",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAXAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAATAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2026-03-18T22:24:14.181Z"
             }

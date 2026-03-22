@@ -139,6 +139,7 @@
     <ClCompile Include="pch.h" />
     <ClCompile Include="quizes.cpp" />
     <ClCompile Include="settings.cpp" />
+    <ClCompile Include="students.cpp" />
     <ClCompile Include="validation.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -148,6 +149,7 @@
     <ClInclude Include="grades.h" />
     <ClInclude Include="quizes.h" />
     <ClInclude Include="settings.h" />
+    <ClInclude Include="students.h" />
     <ClInclude Include="validation.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

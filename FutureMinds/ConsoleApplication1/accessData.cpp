@@ -1,5 +1,5 @@
 #include "accessData.h"
-
+#define _CRT_SECURE_NO_WARNINGS
 char currentUser[25] = "";
 
 void DataAccess::addAccount(const string& username, const string& password)const {
@@ -88,3 +88,4 @@ void DataAccess::saveQuizResult(const string& username, const string& quizType, 
     }
     outFile.close();
 }
+
