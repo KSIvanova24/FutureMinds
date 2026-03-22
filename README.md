@@ -28,8 +28,9 @@ We developed this project as a team by writing well-organized code and consisten
 
 ## 📃 Documentation and Presentation <a name="docs"></a>
 
-- 📄 Documentation –  
-- 📊 Presentation –   
+- 📄 Documentation – 📎 [Open document](https://codingburgas-my.sharepoint.com/:w:/g/personal/vmtsenova24_codingburgas_bg/IQCxpAhrqhF2TJmms7R0HLhwAce5X7lFrZEDVKaPrebtCRc?e=SfGVeR)
+- 📊 Presentation – 🎞️ [View presentation](https://codingburgas-my.sharepoint.com/:p:/g/personal/ksivanova24_codingburgas_bg/IQDmaSc-HjSfQKGAFry3wH-oAaxSoFayoclVGOwO9Q1PzDE?e=6xMXid)
+
 
 ---
 
