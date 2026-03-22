@@ -1,1 +1,87 @@
-# FutureMinds
+<h1 align="center">FutureMinds</h1>
+
+<p align="center">
+  <img src="https://github.com/KSIvanova24/FutureMinds/blob/main/FutureMinds/Images/logo.png?raw=true" alt="FutureMinds logo" width="150px" height="200px">
+</p>
+
+
+---
+
+## 📌 Table of contents
+- [About the Project](#about)
+- [Documentation](#docs)
+- [Installation & Setup](#install)
+- [Tech Stack](#technologies)
+- [Team](#team)
+
+---
+
+## 📚 About the Project <a name="about"></a>
+
+FutureMinds is an **e-school platform developed in C++** that allows users to log into the system with different roles, such as **students and teachers**, each having their own functionalities and permissions.
+
+The platform is designed to improve organization and communication in a school environment by providing structured access to features depending on the user role.
+
+We developed this project as a team by writing well-organized code and consistently uploading our progress. Additionally, we created detailed documentation explaining the system’s main features.
+
+---
+
+## 📃 Documentation and Presentation <a name="docs"></a>
+
+- 📄 Documentation –  
+- 📊 Presentation –   
+
+---
+
+## ⚙️ Installation and Setup <a name="install"></a>
+
+1️⃣ Clone the repository:
+```sh
+git clone https://github.com/KSIvanova24/FutureMinds.git
+```
+
+2️⃣ Open the project in your IDE and run it.
+
+---
+
+## 💻 Tech Stack <a name="technologies"></a>
+
+### 🛠️ Tools:
+<p>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Visual_Studio_Icon_2026.svg/1280px-Visual_Studio_Icon_2026.svg.png" width="75px">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0J6gbw93a3xfKblKgY3vFW3SqdSPoRrVNUA&s" width="75px">
+</p>
+
+### 👨‍💻 Languages:
+<p>
+  <img src="https://raw.githubusercontent.com/isocpp/logos/master/cpp_logo.png" width="75px">
+</p>
+
+### 💬 Communication:
+<p>
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSz_IbsCKcr6ZMALjmPT8e81wAW31gkZA30sw&s" width="75px">
+</p>
+
+### 📄 Documentation:
+<p>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Microsoft_Office_Word_%282019–2025%29.svg/3840px-Microsoft_Office_Word_%282019–2025%29.svg.png" width="75px">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqB7RvU4uKHZHFhfTphRw-BwjEbTLvbhFGqw&s" width="75px">
+</p>
+
+### 🎨 Design:
+<p>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Adobe_Photoshop_CC_icon.svg/3840px-Adobe_Photoshop_CC_icon.svg.png" width="75px">
+</p>
+
+---
+
+## 👥 Team <a name="team"></a>
+
+| Name | Role | Grade |
+|------|-------|:-----:|
+| Stoyan Tanev | Scrum Trainer | 9B |
+| Kristiyana Ivanova | Backend Developer | 9B |
+| Vanessa Tsenova | Backend Developer | 9B |
+| Zlati Georgakiev | Frontend Developer | 9G |
+
+
