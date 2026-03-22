@@ -51,7 +51,7 @@ void drawStudentsCount()
         }
     }
     string countFinal = to_string(count);
-    DrawText(countFinal.c_str(), 460, 220, 45, BLACK);
+    DrawText(countFinal.c_str(), 465, 185, 45, BLACK);
 }
 
 void DataAccess::saveQuizResult(const string& username, const string& quizType, int score) const {

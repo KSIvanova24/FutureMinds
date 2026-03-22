@@ -2,3 +2,4 @@
 
 void studentDashboard();
 void teacherDashboard();
+void saveBadgeToCSV(string studentName, string badgeType);

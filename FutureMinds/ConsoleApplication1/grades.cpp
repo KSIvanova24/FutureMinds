@@ -49,18 +49,16 @@ void gradesTeacher() {
         BeginDrawing();
         ClearBackground(bgWhite);
 
-        // --- SIDEBAR ---
         DrawRectangle(0, 0, 300, GetScreenHeight(), sideBarColor);
         DrawText("FutureMinds", 40, 50, 35, WHITE);
         DrawLineEx({ 30, 110 }, { 270, 110 }, 2, Fade(GRAY, 0.5f));
 
-        // Sidebar Navigation Rendering
         Rectangle navBtns[] = { dashBtn, studentsBtn, gBtn, qBtn, sBtn };
         const char* navLabels[] = { "Dashboard", "Students", "Grades", "Quizzes", "Settings" };
 
         for (int i = 0; i < 5; i++) {
             bool hover = CheckCollisionPointRec(mouse, navBtns[i]);
-            bool isActive = (i == 2); // Grades is index 2
+            bool isActive = (i == 2); 
             if (hover || isActive) {
                 DrawRectangleRec(navBtns[i], Fade(accentColor, 0.3f));
                 DrawRectangle(navBtns[i].x, navBtns[i].y, 5, navBtns[i].height, accentColor);
@@ -72,22 +70,18 @@ void gradesTeacher() {
         DrawRectangleRounded(logoutBtn, 0.2f, 10, logoutHover ? RED : DARKGRAY);
         DrawText("Logout", (int)logoutBtn.x + 85, (int)logoutBtn.y + 15, 20, WHITE);
 
-        // --- MAIN CONTENT ---
         DrawRectangle(300, 0, GetScreenWidth() - 300, 80, WHITE);
         DrawText("TEACHER PORTAL", 330, 25, 25, sideBarColor);
 
-        // Management Card
         DrawRectangleRounded(card, 0.02f, 10, WHITE);
         DrawRectangleRoundedLines(card, 0.02f, 10, 2, borderColor);
 
         DrawText("GRADE MANAGEMENT", (int)card.x + 50, (int)card.y + 40, 40, textColor);
         DrawLineEx({ card.x + 50, card.y + 95 }, { card.x + 1050, card.y + 95 }, 2, borderColor);
 
-        // Only Two Options as requested
         DrawMenuOption(viewGradesRect, "View Student Grades", 1, mouse, accentColor, borderColor, textColor, bgWhite);
         DrawMenuOption(addGradeRect, "Add/Modify Grades", 2, mouse, accentColor, borderColor, textColor, bgWhite);
 
-        // Footer
         DrawText("Terms of Service", 500, 1000, 20, GRAY);
         DrawText("Privacy Policy", 750, 1000, 20, GRAY);
         DrawText("Support", 1000, 1000, 20, GRAY);
@@ -98,10 +92,9 @@ void gradesTeacher() {
 
 void gradesStudent()
 {
-    // Design Colors (Matching Settings/Dashboard)
     Color bgWhite = { 240, 242, 245, 255 };
     Color sideBarColor = { 45, 55, 72, 255 };
-    Color accentColor = { 0, 110, 230, 255 }; // Student Blue
+    Color accentColor = { 0, 110, 230, 255 }; 
     Color textColor = { 20, 20, 20, 255 };
     Color borderColor = { 200, 200, 205, 255 };
 
@@ -109,19 +102,16 @@ void gradesStudent()
     {
         Vector2 mouse = GetMousePosition();
 
-        // Sidebar Rectangles
         Rectangle dashBtn = { 0, 150, 300, 60 };
         Rectangle qBtn = { 0, 220, 300, 60 };
-        Rectangle gBtn = { 0, 290, 300, 60 }; // Active Page
+        Rectangle gBtn = { 0, 290, 300, 60 }; 
         Rectangle sBtn = { 0, 360, 300, 60 };
         Rectangle logoutBtn = { 20, (float)GetScreenHeight() - 100, 260, 50 };
 
-        // Main Content Rectangles
         Rectangle card = { 350, 120, 1100, 600 };
         Rectangle viewGradesRect = { card.x + 50, card.y + 150, 1000, 80 };
         Rectangle avgGradeRect = { card.x + 50, card.y + 250, 1000, 80 };
 
-        // Logic for Clicks
         if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) {
             if (CheckCollisionPointRec(mouse, dashBtn)) studentDashboard();
             if (CheckCollisionPointRec(mouse, qBtn)) quizes();
@@ -133,18 +123,16 @@ void gradesStudent()
         BeginDrawing();
         ClearBackground(bgWhite);
 
-        // --- SIDEBAR RENDERING ---
         DrawRectangle(0, 0, 300, GetScreenHeight(), sideBarColor);
         DrawText("FutureMinds", 40, 50, 35, WHITE);
         DrawLineEx({ 30, 110 }, { 270, 110 }, 2, Fade(GRAY, 0.5f));
 
-        // Navigation Menu
         Rectangle navBtns[] = { dashBtn, qBtn, gBtn, sBtn };
         const char* navLabels[] = { "Dashboard", "Quizzes", "Grades", "Settings" };
 
         for (int i = 0; i < 4; i++) {
             bool hover = CheckCollisionPointRec(mouse, navBtns[i]);
-            bool isActive = (i == 2); // Grades is index 2
+            bool isActive = (i == 2); 
             if (hover || isActive) {
                 DrawRectangleRec(navBtns[i], Fade(accentColor, 0.3f));
                 DrawRectangle(navBtns[i].x, navBtns[i].y, 5, navBtns[i].height, accentColor);
@@ -165,7 +153,6 @@ void gradesStudent()
         DrawText("GRADE MANAGEMENT", (int)card.x + 50, (int)card.y + 40, 40, textColor);
         DrawLineEx({ card.x + 50, card.y + 95 }, { card.x + 1050, card.y + 95 }, 2, borderColor);
 
-        // Action Options
         DrawMenuOption(viewGradesRect, "View My Grades", 1, mouse, accentColor, borderColor, textColor, bgWhite);
         if (CheckCollisionPointRec(mouse, viewGradesRect) && IsMouseButtonPressed(MOUSE_BUTTON_LEFT)) {
             viewStudentGradesList();
@@ -174,7 +161,6 @@ void gradesStudent()
         if (CheckCollisionPointRec(mouse, avgGradeRect) && IsMouseButtonPressed(MOUSE_BUTTON_LEFT)) {
             calculateAverage();
         }
-        // Footer links
         DrawText("Terms of Service", 500, 1000, 20, GRAY);
         DrawText("Privacy Policy", 750, 1000, 20, GRAY);
         DrawText("Support", 1000, 1000, 20, GRAY);
