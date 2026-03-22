@@ -1,7 +1,7 @@
 <h1 align="center">FutureMinds</h1>
 
 <p align="center">
-  <img src="https://github.com/KSIvanova24/FutureMinds/blob/main/FutureMinds/Images/logo.png?raw=true" alt="FutureMinds logo" width="150px" height="200px">
+  <img src="https://github.com/KSIvanova24/FutureMinds/blob/main/FutureMinds/Images/logoDark.png?raw=true" alt="FutureMinds logo" width="150px" height="200px">
 </p>
 
 
