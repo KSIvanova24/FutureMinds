@@ -319,30 +319,64 @@ void teacherDashboard()
 void studentDashboard() {
     Color sideBarColor = { 45, 55, 72, 255 };
     Color accentColor = { 66, 153, 225, 255 };
+    Color textColor = { 45, 55, 72, 255 };
+    Color borderColor = { 226, 232, 240, 255 };
 
+    // --- 1. LOAD TOTAL XP ---
     int totalXP = 0;
     ifstream file("../data/notebook.csv");
     string line;
 
     while (getline(file, line)) {
+        if (line.empty()) continue;
         stringstream ss(line);
         string name;
-        getline(ss, name, ','); // Get username
+        getline(ss, name, ',');
 
         if (name == currentUser) {
             string entry;
-            // Parse all "QuizName Score" pairs in the row
             while (getline(ss, entry, ',')) {
                 size_t lastSpace = entry.find_last_of(' ');
                 if (lastSpace != string::npos) {
-                    // Extract the score part after the last space and add to total
                     totalXP += stoi(entry.substr(lastSpace + 1));
                 }
             }
-            break; // Found our user, no need to keep reading
+            break;
         }
     }
     file.close();
+
+    // --- 2. LOAD BADGES FROM BADGES.CSV ---
+    bool hasIdioms = false, hasGrammar = false, hasVocabulary = false, hasReading = false;
+
+    // ATTENTION: Check if your file is named 'badges.csv' or 'badge.csv' and match it!
+    ifstream badgeFile("../data/badges.csv");
+    while (getline(badgeFile, line)) {
+        if (line.empty()) continue;
+        stringstream ss(line);
+        string name, idioms, grammar, vocabulary, reading;
+
+        getline(ss, name, ',');
+        getline(ss, idioms, ',');
+        getline(ss, grammar, ',');
+        getline(ss, vocabulary, ',');
+        getline(ss, reading, ',');
+
+        if (name == currentUser) {
+            hasIdioms = (idioms == "1");
+            hasGrammar = (grammar == "1");
+            hasVocabulary = (vocabulary == "1");
+            hasReading = (reading == "1");
+            break;
+        }
+    }
+    badgeFile.close();
+
+    // --- 3. LOAD TEXTURES ---
+    Texture2D bGrammarTex = LoadTexture("../images/grammar.png");
+    Texture2D bVocabTex = LoadTexture("../images/vocab.png");
+    Texture2D bReadingTex = LoadTexture("../images/reading.png");
+    Texture2D bIdiomsTex = LoadTexture("../images/idioms.png");
 
     while (!WindowShouldClose()) {
         Vector2 mouse = GetMousePosition();
@@ -350,30 +384,26 @@ void studentDashboard() {
         BeginDrawing();
         ClearBackground({ 240, 244, 248, 255 });
 
+        // Sidebar
         DrawRectangle(0, 0, 300, GetScreenHeight(), sideBarColor);
         DrawText("FutureMinds", 40, 50, 35, WHITE);
         DrawLineEx({ 30, 110 }, { 270, 110 }, 2, Fade(GRAY, 0.5f));
 
-        Rectangle navs[] = {
-            { 0, 150, 300, 60 },
-            { 0, 220, 300, 60 },
-            { 0, 290, 300, 60 },
-            { 0, 360, 300, 60 }
-        };
+        Rectangle navs[] = { { 0, 150, 300, 60 }, { 0, 220, 300, 60 }, { 0, 290, 300, 60 }, { 0, 360, 300, 60 } };
         const char* labels[] = { "Dashboard", "Quizzes", "Grades", "Settings" };
 
         for (int i = 0; i < 4; i++) {
             bool hover = CheckCollisionPointRec(mouse, navs[i]);
-            if (i == 0 || hover) { // Dashboard is active
+            if (i == 0 || hover) {
                 DrawRectangleRec(navs[i], Fade(accentColor, 0.3f));
                 DrawRectangle(0, navs[i].y, 5, 60, accentColor);
             }
             DrawText(labels[i], 60, navs[i].y + 15, 24, WHITE);
 
             if (hover && IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) {
-                if (i == 1) quizes();
-                if (i == 2) gradesStudent();
-                if (i == 3) settingsStudent();
+                if (i == 1) { quizes(); return; }
+                if (i == 2) { gradesStudent(); return; }
+                if (i == 3) { settingsStudent(); return; }
             }
         }
 
@@ -384,18 +414,90 @@ void studentDashboard() {
 
         if (logoutHover && IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) {
             startingScreen(true);
-            break;
+            return;
         }
 
+        // Header
         DrawRectangle(300, 0, GetScreenWidth() - 300, 80, WHITE);
         drawUsername(currentUser);
 
-        DrawRectangleRounded({ 350, 150, 400, 200 }, 0.1f, 10, WHITE);
-        DrawText("MY TOTAL XP", 370, 180, 20, GRAY);
+        // --- STATS (XP CARD) ---
+        float startX = 350;
+        DrawRectangleRounded({ startX, 120, 400, 180 }, 0.05f, 10, WHITE);
+        DrawRectangleRoundedLines({ startX, 120, 400, 180 }, 0.05f, 10, 1, borderColor);
+        DrawText("MY TOTAL XP", startX + 25, 145, 18, GRAY);
+        DrawText(TextFormat("%d XP", totalXP), startX + 25, 180, 45, textColor);
 
-        const char* xpText = TextFormat("%d", totalXP);
-        DrawText(xpText, 370, 230, 50, BLACK);
+        DrawRectangle(startX + 25, 260, 350, 8, Fade(accentColor, 0.3f));
+        DrawRectangle(startX + 25, 260, 350 * 0.7f, 8, accentColor); // Progression bar
+
+        // --- BADGE AREA SECTION ---
+        Rectangle badgeArea = { startX, 330, GetScreenWidth() - startX - 50, 400 };
+        DrawRectangleRounded(badgeArea, 0.02f, 10, WHITE);
+        DrawRectangleRoundedLines(badgeArea, 0.02f, 10, 1, borderColor);
+
+        DrawText("MY BADGES", badgeArea.x + 40, badgeArea.y + 30, 25, textColor);
+        DrawLineEx({ badgeArea.x + 40, badgeArea.y + 70 }, { badgeArea.x + badgeArea.width - 40, badgeArea.y + 70 }, 1, borderColor);
+
+        float bWidth = 220;
+        float bHeight = 100;
+        float bSpacing = (badgeArea.width - 80 - (bWidth * 4)) / 3;
+        float badgeStartX = badgeArea.x + 40;
+        float badgeStartY = badgeArea.y + 120;
+
+        // 1. Grammar
+        Rectangle bGrammar = { badgeStartX, badgeStartY, bWidth, bHeight };
+        DrawRectangleRounded(bGrammar, 0.15f, 10, { 245, 246, 250, 255 });
+        DrawRectangleRoundedLines(bGrammar, 0.15f, 10, 1, borderColor);
+        if (hasGrammar && bGrammarTex.id > 0) {
+            DrawTexturePro(bGrammarTex, { 0,0,(float)bGrammarTex.width, (float)bGrammarTex.height }, { bGrammar.x + 10, bGrammar.y + 10, bGrammar.width - 20, bGrammar.height - 20 }, { 0,0 }, 0.0f, WHITE);
+        }
+        else {
+            DrawText("Locked", bGrammar.x + 70, bGrammar.y + 40, 20, LIGHTGRAY);
+        }
+        DrawText("Grammar", bGrammar.x + (bWidth - MeasureText("Grammar", 18)) / 2, bGrammar.y + bHeight + 15, 18, textColor);
+
+        // 2. Vocabulary
+        Rectangle bVocab = { badgeStartX + bWidth + bSpacing, badgeStartY, bWidth, bHeight };
+        DrawRectangleRounded(bVocab, 0.15f, 10, { 245, 246, 250, 255 });
+        DrawRectangleRoundedLines(bVocab, 0.15f, 10, 1, borderColor);
+        if (hasVocabulary && bVocabTex.id > 0) {
+            DrawTexturePro(bVocabTex, { 0,0,(float)bVocabTex.width, (float)bVocabTex.height }, { bVocab.x + 10, bVocab.y + 10, bVocab.width - 20, bVocab.height - 20 }, { 0,0 }, 0.0f, WHITE);
+        }
+        else {
+            DrawText("Locked", bVocab.x + 70, bVocab.y + 40, 20, LIGHTGRAY);
+        }
+        DrawText("Vocabulary", bVocab.x + (bWidth - MeasureText("Vocabulary", 18)) / 2, bVocab.y + bHeight + 15, 18, textColor);
+
+        // 3. Reading
+        Rectangle bRead = { badgeStartX + (bWidth + bSpacing) * 2, badgeStartY, bWidth, bHeight };
+        DrawRectangleRounded(bRead, 0.15f, 10, { 245, 246, 250, 255 });
+        DrawRectangleRoundedLines(bRead, 0.15f, 10, 1, borderColor);
+        if (hasReading && bReadingTex.id > 0) {
+            DrawTexturePro(bReadingTex, { 0,0,(float)bReadingTex.width, (float)bReadingTex.height }, { bRead.x + 10, bRead.y + 10, bRead.width - 20, bRead.height - 20 }, { 0,0 }, 0.0f, WHITE);
+        }
+        else {
+            DrawText("Locked", bRead.x + 70, bRead.y + 40, 20, LIGHTGRAY);
+        }
+        DrawText("Reading", bRead.x + (bWidth - MeasureText("Reading", 18)) / 2, bRead.y + bHeight + 15, 18, textColor);
+
+        // 4. Idioms
+        Rectangle bIdioms = { badgeStartX + (bWidth + bSpacing) * 3, badgeStartY, bWidth, bHeight };
+        DrawRectangleRounded(bIdioms, 0.15f, 10, { 245, 246, 250, 255 });
+        DrawRectangleRoundedLines(bIdioms, 0.15f, 10, 1, borderColor);
+        if (hasIdioms && bIdiomsTex.id > 0) {
+            DrawTexturePro(bIdiomsTex, { 0,0,(float)bIdiomsTex.width, (float)bIdiomsTex.height }, { bIdioms.x + 10, bIdioms.y + 10, bIdioms.width - 20, bIdioms.height - 20 }, { 0,0 }, 0.0f, WHITE);
+        }
+        else {
+            DrawText("Locked", bIdioms.x + 70, bIdioms.y + 40, 20, LIGHTGRAY);
+        }
+        DrawText("Idioms", bIdioms.x + (bWidth - MeasureText("Idioms", 18)) / 2, bIdioms.y + bHeight + 15, 18, textColor);
 
         EndDrawing();
     }
+
+    UnloadTexture(bGrammarTex);
+    UnloadTexture(bVocabTex);
+    UnloadTexture(bReadingTex);
+    UnloadTexture(bIdiomsTex);
 }
