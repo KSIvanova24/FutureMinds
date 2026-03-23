@@ -15,10 +15,12 @@
 
 ## 📌 Table of contents
 - [About the Project](#about)
-- [Documentation](#docs)
+- [Screenshots](#screenshots)
+- [Documentation and Presentation](#docs)
 - [Installation & Setup](#install)
 - [Tech Stack](#technologies)
 - [Team](#team)
+- [Key Features](#features)
 
 ---
 
@@ -31,6 +33,21 @@ The platform is designed to improve organization and communication in a school e
 We developed this project as a team by writing well-organized code and consistently uploading our progress. Additionally, we created detailed documentation explaining the system’s main features.
 
 ---
+## 📸 Screenshots <a name="screenshots"></a>
+🖥️ Home Page
+<p align="center">
+<img src="https://github.com/KSIvanova24/FutureMinds/blob/main/FutureMinds/Images/screenshot1.png?raw=true" alt="Home Page" width="450px">
+<br>
+<em>Начален екран на FutureMinds – изчистен и модерен интерфейс.</em>
+</p>
+
+🛠️ Admin Dashboard
+<p align="center">
+<img src="https://github.com/KSIvanova24/FutureMinds/blob/main/FutureMinds/Images/screenshot2.png?raw=true" alt="Admin Dashboard" width="450px">
+<br>
+<em>Админ панел – статистики, управление на ученици и акредитиране на значки.</em>
+</p>
+
 
 ## 📃 Documentation and Presentation <a name="docs"></a>
 
