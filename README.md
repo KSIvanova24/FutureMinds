@@ -15,10 +15,12 @@
 
 ## 📌 Table of contents
 - [About the Project](#about)
-- [Documentation](#docs)
+- [Screenshots](#screenshots)
+- [Documentation and Presentation](#docs)
 - [Installation & Setup](#install)
 - [Tech Stack](#technologies)
 - [Team](#team)
+- [Key Features](#features)
 
 ---
 
