@@ -3,6 +3,12 @@
 <p align="center">
   <img src="https://github.com/KSIvanova24/FutureMinds/blob/main/FutureMinds/Images/logoDark.png?raw=true" alt="FutureMinds logo" width="150px" height="200px">
 </p>
+<p align="center">
+  <img src="https://github.com/KSIvanova24/FutureMinds/blob/main/FutureMinds/Images/idioms.png?raw=true" alt="Idioms" width="100px">
+  <img src="https://github.com/KSIvanova24/FutureMinds/blob/main/FutureMinds/Images/grammar.png?raw=true" alt="Grammar" width="100px">
+  <img src="https://github.com/KSIvanova24/FutureMinds/blob/main/FutureMinds/Images/reading.png?raw=true" alt="Reading" width="100px">
+  <img src="https://github.com/KSIvanova24/FutureMinds/blob/main/FutureMinds/Images/vocab.png?raw=true" alt="Vocab" width="100px">
+</p>
 
 
 ---
