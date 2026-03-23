@@ -91,4 +91,11 @@ git clone https://github.com/KSIvanova24/FutureMinds.git
 | Vanessa Tsenova | Backend Developer | 9B |
 | Zlati Georgakiev | Frontend Developer | 9G |
 
+## 🚀 Key Features <a name="features"></a>
+
+- 🔐 **Secure Login** – Authentication system for different user roles.
+- 👨‍🎓 **Student Dashboard** – View grades, schedules, and assignments.
+- 👩‍🏫 **Teacher Tools** – Manage student records and input evaluations.
+- 📂 **Data Persistence** – Information is saved and loaded correctly from files.
+
 
