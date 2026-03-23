@@ -103,10 +103,10 @@ git clone https://github.com/KSIvanova24/FutureMinds.git
 
 | Name | Role | Grade |
 |------|-------|:-----:|
-| Stoyan Tanev | Scrum Trainer | 9B |
-| Kristiyana Ivanova | Backend Developer | 9B |
-| Vanessa Tsenova | Backend Developer | 9B |
-| Zlati Georgakiev | Frontend Developer | 9G |
+| Stoyan Tanev | Scrum Trainer | 🔴 9B 🔴 |
+| Kristiyana Ivanova | Backend Developer | 🔴 9B 🔴 |
+| Vanessa Tsenova | Backend Developer | 🔴 9B 🔴 |
+| Zlati Georgakiev | Frontend Developer | 🔵 9G 🔵 |
 
 ## 🚀 Key Features <a name="features"></a>
 
