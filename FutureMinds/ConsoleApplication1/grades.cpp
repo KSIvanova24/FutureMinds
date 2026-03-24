@@ -13,7 +13,6 @@ void DrawStudentsProgressTable() {
     Color borderColor = { 226, 232, 240, 255 };
     Color textColor = { 45, 55, 72, 255 };
 
-    // 1. Прочитаме и сортираме данните ВЕДНЪЖ при извикване на функцията
     vector<TabStudentGrade> leaderboard;
     ifstream file("../data/notebook.csv");
     string line;

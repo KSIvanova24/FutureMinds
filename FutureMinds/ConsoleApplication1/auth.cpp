@@ -19,7 +19,7 @@ void DrawModernInput(Rectangle box, const char* label, const char* text, bool is
 
     if (isPassword) {
 
-        std::string dots(strlen(text), '*');
+        string dots(strlen(text), '*');
 
         DrawText(dots.c_str(), box.x + 15, box.y + (box.height / 2 - fontSize / 2), fontSize, BLACK);
 

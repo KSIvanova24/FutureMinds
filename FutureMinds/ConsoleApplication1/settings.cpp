@@ -154,7 +154,7 @@ void settingsTeacher()
     const int screenHeight = GetScreenHeight();
 
     string username = currentUser; 
-    string password = "password123";
+    string password = "admin";
     int activeField = 0; 
     const int MAX_CHARS = 15;
 
