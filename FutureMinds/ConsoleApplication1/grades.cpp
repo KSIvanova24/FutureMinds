@@ -6,6 +6,88 @@
 #include "grades.h"
 #include "students.h"
 
+
+
+void DrawStudentsProgressTable() {
+    Color sideBarColor = { 45, 55, 72, 255 };
+    Color borderColor = { 226, 232, 240, 255 };
+    Color textColor = { 45, 55, 72, 255 };
+
+    // 1. Прочитаме и сортираме данните ВЕДНЪЖ при извикване на функцията
+    vector<TabStudentGrade> leaderboard;
+    ifstream file("../data/notebook.csv");
+    string line;
+
+    while (getline(file, line)) {
+        if (line.empty()) continue;
+        stringstream ss(line);
+        string name;
+        getline(ss, name, ',');
+
+        TabStudentGrade sg;
+        sg.name = name;
+        int sumScores = 0;
+
+        string entry;
+        while (getline(ss, entry, ',')) {
+            size_t lastSpace = entry.find_last_of(' ');
+            if (lastSpace != string::npos) {
+                int score = stoi(entry.substr(lastSpace + 1));
+                sumScores += score;
+                sg.quizzesCount++;
+            }
+        }
+        sg.totalXP = sumScores;
+        if (sg.quizzesCount > 0) sg.averagePercentage = (float)sumScores / sg.quizzesCount;
+        leaderboard.push_back(sg);
+    }
+    file.close();
+
+    for (size_t i = 0; i < leaderboard.size(); i++) {
+        for (size_t j = i + 1; j < leaderboard.size(); j++) {
+            if (leaderboard[i].totalXP < leaderboard[j].totalXP) {
+                swap(leaderboard[i], leaderboard[j]);
+            }
+        }
+    }
+
+    Rectangle tableArea = { 350, 120, (float)GetScreenWidth() - 400, (float)GetScreenHeight() - 170 };
+
+    DrawRectangleRounded(tableArea, 0.02f, 10, WHITE);
+    DrawRectangleRoundedLines(tableArea, 0.02f, 10, 1, borderColor);
+
+    DrawText("CLASSROOM ACADEMIC PROGRESS", tableArea.x + 40, tableArea.y + 30, 26, textColor);
+    DrawLineEx({ tableArea.x + 40, tableArea.y + 70 }, { tableArea.x + tableArea.width - 40, tableArea.y + 70 }, 1, borderColor);
+
+    float rowY = tableArea.y + 100;
+    DrawText("Student Name", tableArea.x + 50, rowY, 20, GRAY);
+    DrawText("Tests Count", tableArea.x + 300, rowY, 20, GRAY);
+    DrawText("Total Score (XP)", tableArea.x + 500, rowY, 20, GRAY);
+    DrawText("Avg success", tableArea.x + 720, rowY, 20, GRAY);
+    DrawLineEx({ tableArea.x + 40, rowY + 30 }, { tableArea.x + tableArea.width - 40, rowY + 30 }, 1, borderColor);
+
+    rowY += 50;
+
+    if (leaderboard.empty()) {
+        DrawText("No data found in notebook.csv", tableArea.x + 50, rowY + 50, 22, RED);
+    }
+    else {
+        for (size_t i = 0; i < leaderboard.size(); i++) {
+            if (rowY > tableArea.y + tableArea.height - 40) break;
+
+            if (i % 2 == 0) {
+                DrawRectangle(tableArea.x + 30, rowY - 10, tableArea.width - 60, 40, { 245, 246, 250, 255 });
+            }
+
+            DrawText(leaderboard[i].name.c_str(), tableArea.x + 50, rowY, 18, textColor);
+            DrawText(TextFormat("%d", leaderboard[i].quizzesCount), tableArea.x + 300, rowY, 18, textColor);
+            DrawText(TextFormat("%d XP", leaderboard[i].totalXP), tableArea.x + 500, rowY, 18, textColor);
+            DrawText(TextFormat("%.1f%%", leaderboard[i].averagePercentage), tableArea.x + 720, rowY, 18, textColor);
+
+            rowY += 40;
+        }
+    }
+}
 void DrawMenuOption(Rectangle rect, const char* text, int index, Vector2 mouse, Color accentColor, Color borderColor, Color textColor, Color bgWhite) {
     bool hover = CheckCollisionPointRec(mouse, rect);
     DrawRectangleRounded(rect, 0.15f, 10, hover ? Fade(accentColor, 0.1f) : bgWhite);
@@ -16,9 +98,11 @@ void DrawMenuOption(Rectangle rect, const char* text, int index, Vector2 mouse, 
 void gradesTeacher() {
     Color bgWhite = { 240, 242, 245, 255 };
     Color sideBarColor = { 45, 55, 72, 255 };
-    Color accentColor = { 66, 153, 225, 255 }; 
+    Color accentColor = { 66, 153, 225, 255 };
     Color textColor = { 20, 20, 20, 255 };
     Color borderColor = { 200, 200, 205, 255 };
+
+    bool showTable = false; 
 
     while (!WindowShouldClose()) {
         Vector2 mouse = GetMousePosition();
@@ -36,13 +120,14 @@ void gradesTeacher() {
 
         if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) {
             if (CheckCollisionPointRec(mouse, dashBtn)) teacherDashboard();
-            if (CheckCollisionPointRec(mouse, studentsBtn)) { viewAllStudents(); }
+            if (CheckCollisionPointRec(mouse, studentsBtn)) viewAllStudents();
             if (CheckCollisionPointRec(mouse, qBtn)) quizes();
             if (CheckCollisionPointRec(mouse, sBtn)) settingsTeacher();
             if (CheckCollisionPointRec(mouse, logoutBtn)) startingScreen(true);
 
-            if (CheckCollisionPointRec(mouse, viewGradesRect)) { /* Logic */ }
-            if (CheckCollisionPointRec(mouse, addGradeRect)) { /* Logic */ }
+            if (CheckCollisionPointRec(mouse, viewGradesRect)) {
+                showTable = true;
+            }
         }
 
         BeginDrawing();
@@ -57,7 +142,7 @@ void gradesTeacher() {
 
         for (int i = 0; i < 5; i++) {
             bool hover = CheckCollisionPointRec(mouse, navBtns[i]);
-            bool isActive = (i == 2); 
+            bool isActive = (i == 2);
             if (hover || isActive) {
                 DrawRectangleRec(navBtns[i], Fade(accentColor, 0.3f));
                 DrawRectangle(navBtns[i].x, navBtns[i].y, 5, navBtns[i].height, accentColor);
@@ -72,13 +157,22 @@ void gradesTeacher() {
         DrawRectangle(300, 0, GetScreenWidth() - 300, 80, WHITE);
         DrawText("TEACHER PORTAL", 330, 25, 25, sideBarColor);
 
-        DrawRectangleRounded(card, 0.02f, 10, WHITE);
-        DrawRectangleRoundedLines(card, 0.02f, 10, 2, borderColor);
 
-        DrawText("GRADE MANAGEMENT", (int)card.x + 50, (int)card.y + 40, 40, textColor);
-        DrawLineEx({ card.x + 50, card.y + 95 }, { card.x + 1050, card.y + 95 }, 2, borderColor);
+        if (showTable) {
+            DrawStudentsProgressTable();
 
-        DrawMenuOption(viewGradesRect, "View Student Grades", 1, mouse, accentColor, borderColor, textColor, bgWhite);
+            DrawText("Press Backspace to close", 350, GetScreenHeight() - 50, 20, DARKGRAY);
+            if (IsKeyPressed(KEY_BACKSPACE)) showTable = false;
+        }
+        else {
+            DrawRectangleRounded(card, 0.02f, 10, WHITE);
+            DrawRectangleRoundedLines(card, 0.02f, 10, 2, borderColor);
+
+            DrawText("GRADE MANAGEMENT", (int)card.x + 50, (int)card.y + 40, 40, textColor);
+            DrawLineEx({ card.x + 50, card.y + 95 }, { card.x + 1050, card.y + 95 }, 2, borderColor);
+
+            DrawMenuOption(viewGradesRect, "View Student Grades", 1, mouse, accentColor, borderColor, textColor, bgWhite);
+        }
 
         DrawText("Terms of Service", 500, 1000, 20, GRAY);
         DrawText("Privacy Policy", 750, 1000, 20, GRAY);
@@ -87,7 +181,6 @@ void gradesTeacher() {
         EndDrawing();
     }
 }
-
 void gradesStudent()
 {
     Color bgWhite = { 240, 242, 245, 255 };

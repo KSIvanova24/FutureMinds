@@ -47,17 +47,14 @@ void saveBadgeToCSV(string studentName, string badgeType) {
     }
 
     ofstream outFile("../data/badges.csv", ios::trunc);
-    for (const auto& l : fileLines) outFile << l << "\n";
+
+    for (size_t i = 0; i < fileLines.size(); i++) {
+        outFile << fileLines[i] << "\n";
+    }
+
     outFile.close();
 }
 
-
-struct TabStudentGrade {
-    string name;
-    int totalXP = 0;
-    int quizzesCount = 0;
-    float averagePercentage = 0.0f;
-};
 
 void teacherDashboard()
 {
@@ -76,8 +73,7 @@ void teacherDashboard()
     float grammarSum = 0, vocabSum = 0, readingSum = 0, idiomsSum = 0;
     int gCount = 0, vCount = 0, rCount = 0, iCount = 0;
     int totalQuizzes = 0;
-
-    vector<TabStudentGrade> leaderboard; 
+    vector<TabStudentGrade> leaderboard;
 
     ifstream file("../data/notebook.csv");
     string line;
@@ -157,6 +153,43 @@ void teacherDashboard()
         float dt = GetFrameTime();
         if (notificationTimer > 0) notificationTimer -= dt;
 
+        Rectangle dashBtn = { 0, 150, 300, 60 };
+        Rectangle studentsBtn = { 0, 220, 300, 60 };
+        Rectangle gBtn = { 0, 290, 300, 60 };
+        Rectangle qBtn = { 0, 360, 300, 60 };
+        Rectangle sBtn = { 0, 430, 300, 60 };
+        Rectangle logoutBtn = { 20, (float)GetScreenHeight() - 100, 260, 50 };
+
+        if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) {
+            if (CheckCollisionPointRec(mouse, dashBtn)) currentTab = 0;
+
+            if (CheckCollisionPointRec(mouse, studentsBtn)) {
+                viewAllStudents();
+                UnloadTexture(bGrammarTex); UnloadTexture(bVocabTex); UnloadTexture(bReadingTex); UnloadTexture(bIdiomsTex);
+                return;
+            }
+            if (CheckCollisionPointRec(mouse, gBtn)) {
+                gradesTeacher();
+                UnloadTexture(bGrammarTex); UnloadTexture(bVocabTex); UnloadTexture(bReadingTex); UnloadTexture(bIdiomsTex);
+                return;
+            }
+            if (CheckCollisionPointRec(mouse, qBtn)) {
+                quizes();
+                UnloadTexture(bGrammarTex); UnloadTexture(bVocabTex); UnloadTexture(bReadingTex); UnloadTexture(bIdiomsTex);
+                return;
+            }
+            if (CheckCollisionPointRec(mouse, sBtn)) {
+                settingsTeacher();
+                UnloadTexture(bGrammarTex); UnloadTexture(bVocabTex); UnloadTexture(bReadingTex); UnloadTexture(bIdiomsTex);
+                return;
+            }
+            if (CheckCollisionPointRec(mouse, logoutBtn)) {
+                startingScreen(true);
+                UnloadTexture(bGrammarTex); UnloadTexture(bVocabTex); UnloadTexture(bReadingTex); UnloadTexture(bIdiomsTex);
+                return;
+            }
+        }
+
         BeginDrawing();
         ClearBackground(bgDark);
 
@@ -164,45 +197,29 @@ void teacherDashboard()
         DrawText("FutureMinds", 40, 50, 35, WHITE);
         DrawLineEx({ 30, 110 }, { 270, 110 }, 2, Fade(GRAY, 0.5f));
 
-        Rectangle navDash = { 0, 150, 300, 60 };
-        if (CheckCollisionPointRec(mouse, navDash) || currentTab == 0) {
-            DrawRectangleRec(navDash, Fade(accentColor, 0.3f));
-            DrawRectangle(0, 150, 5, 60, accentColor);
-            if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) currentTab = 0;
+        Rectangle navBtns[] = { dashBtn, studentsBtn, gBtn, qBtn, sBtn };
+        const char* navLabels[] = { "Dashboard", "Students", "Grades", "Quizzes", "Settings" };
+
+        for (int i = 0; i < 5; i++) {
+            bool hover = CheckCollisionPointRec(mouse, navBtns[i]);
+            bool isActive = (i == currentTab);
+
+            if (hover || isActive) {
+                DrawRectangleRec(navBtns[i], Fade(accentColor, 0.3f));
+                DrawRectangle(navBtns[i].x, navBtns[i].y, 5, navBtns[i].height, accentColor);
+            }
+            DrawText(navLabels[i], 60, (int)navBtns[i].y + 15, 24, WHITE);
         }
-        DrawText("Dashboard", 60, 165, 24, WHITE);
 
-        Rectangle studentsBtn = { 0, 220, 300, 60 };
-        if (CheckCollisionPointRec(mouse, studentsBtn) || currentTab == 1) {
-            DrawRectangleRec(studentsBtn, Fade(accentColor, 0.3f));
-            DrawRectangle(0, 220, 5, 60, accentColor);
-            if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) currentTab = 1;
-        }
-        DrawText("Students", 60, 235, 24, WHITE);
-
-        Rectangle gBtn = { 0, 290, 300, 60 };
-        if (CheckCollisionPointRec(mouse, gBtn)) { DrawRectangleRec(gBtn, Fade(accentColor, 0.2f)); if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) { gradesTeacher(); return; } }
-        DrawText("Grades", 60, 305, 24, WHITE);
-
-        Rectangle quizBtn = { 0, 360, 300, 60 };
-        if (CheckCollisionPointRec(mouse, quizBtn)) { DrawRectangleRec(quizBtn, Fade(accentColor, 0.2f)); if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) { quizes(); return; } }
-        DrawText("Quizzes", 60, 375, 24, WHITE);
-
-        Rectangle setBtn = { 0, 430, 300, 60 };
-        if (CheckCollisionPointRec(mouse, setBtn)) { DrawRectangleRec(setBtn, Fade(accentColor, 0.2f)); if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) { settingsTeacher(); return; } }
-        DrawText("Settings", 60, 445, 24, WHITE);
-
-        Rectangle logoutButton = { 20, (float)GetScreenHeight() - 100, 260, 50 };
-        if (CheckCollisionPointRec(mouse, logoutButton)) { DrawRectangleRounded(logoutButton, 0.2f, 10, RED); if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) { startingScreen(true); return; } }
-        else { DrawRectangleRounded(logoutButton, 0.2f, 10, DARKGRAY); }
-        DrawText("Logout", logoutButton.x + 80, logoutButton.y + 15, 20, WHITE);
+        bool logoutHover = CheckCollisionPointRec(mouse, logoutBtn);
+        DrawRectangleRounded(logoutBtn, 0.2f, 10, logoutHover ? RED : DARKGRAY);
+        DrawText("Logout", (int)logoutBtn.x + 85, (int)logoutBtn.y + 15, 20, WHITE);
 
         DrawRectangle(300, 0, GetScreenWidth() - 300, 80, WHITE);
         drawUsername(currentUser);
 
         if (currentTab == 0)
         {
-
             float cardWidth = 350;
             float spacing = (GetScreenWidth() - 300 - (cardWidth * 3)) / 4;
             float startX = 300 + spacing;
@@ -260,6 +277,7 @@ void teacherDashboard()
 
             if (!studentList.empty() && viewGradesHover && IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) {
                 gradesTeacher();
+                UnloadTexture(bGrammarTex); UnloadTexture(bVocabTex); UnloadTexture(bReadingTex); UnloadTexture(bIdiomsTex);
                 return;
             }
 
@@ -305,56 +323,12 @@ void teacherDashboard()
             DrawText("Accredit Badge", accreditBtn.x + 25, accreditBtn.y + 15, 20, WHITE);
 
             if (selectedBadge > 0 && accreditHover && IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) {
-                string badgeName = "";
-                if (selectedBadge == 1) badgeName = "Grammar";
-                if (selectedBadge == 2) badgeName = "Vocabulary";
-                if (selectedBadge == 3) badgeName = "Reading";
-                if (selectedBadge == 4) badgeName = "Idioms";
-
+                string badgeName = (selectedBadge == 1) ? "Grammar" : (selectedBadge == 2) ? "Vocabulary" : (selectedBadge == 3) ? "Reading" : "Idioms";
                 notificationText = TextFormat("Accredited %s badge to %s!", badgeName.c_str(), studentList[selectedStudentIdx].c_str());
                 notificationTimer = 3.0f;
 
                 saveBadgeToCSV(studentList[selectedStudentIdx], badgeName);
                 selectedBadge = 0;
-            }
-        }
-
-        else if (currentTab == 1)
-        {
-            Rectangle tableArea = { 350, 120, (float)GetScreenWidth() - 400, (float)GetScreenHeight() - 170 };
-            DrawRectangleRounded(tableArea, 0.02f, 10, WHITE);
-            DrawRectangleRoundedLines(tableArea, 0.02f, 10, 1, borderColor);
-
-            DrawText("CLASSROOM ACADEMIC PROGRESS", tableArea.x + 40, tableArea.y + 30, 26, textColor);
-            DrawLineEx({ tableArea.x + 40, tableArea.y + 70 }, { tableArea.x + tableArea.width - 40, tableArea.y + 70 }, 1, borderColor);
-
-            float rowY = tableArea.y + 100;
-            DrawText("Student Name", tableArea.x + 50, rowY, 20, GRAY);
-            DrawText("Tests Count", tableArea.x + 300, rowY, 20, GRAY);
-            DrawText("Total Score (XP)", tableArea.x + 500, rowY, 20, GRAY);
-            DrawText("Avg success", tableArea.x + 720, rowY, 20, GRAY);
-            DrawLineEx({ tableArea.x + 40, rowY + 30 }, { tableArea.x + tableArea.width - 40, rowY + 30 }, 1, borderColor);
-
-            rowY += 50;
-
-            if (leaderboard.empty()) {
-                DrawText("No data found in notebook.csv", tableArea.x + 50, rowY + 50, 22, RED);
-            }
-            else {
-                for (size_t i = 0; i < leaderboard.size(); i++) {
-                    if (rowY > tableArea.y + tableArea.height - 40) break; // Защита от излизане от кутията
-
-                    if (i % 2 == 0) {
-                        DrawRectangle(tableArea.x + 30, rowY - 10, tableArea.width - 60, 40, { 245, 246, 250, 255 });
-                    }
-
-                    DrawText(leaderboard[i].name.c_str(), tableArea.x + 50, rowY, 18, textColor);
-                    DrawText(TextFormat("%d", leaderboard[i].quizzesCount), tableArea.x + 300, rowY, 18, textColor);
-                    DrawText(TextFormat("%d XP", leaderboard[i].totalXP), tableArea.x + 500, rowY, 18, textColor);
-                    DrawText(TextFormat("%.1f%%", leaderboard[i].averagePercentage), tableArea.x + 720, rowY, 18, textColor);
-
-                    rowY += 40;
-                }
             }
         }
 

@@ -1,15 +1,9 @@
-#include "settings.h"
-#include "accessData.h"
-#include "quizes.h"
-#include "auth.h"
-#include "dashboards.h"
-#include "grades.h"
-#include <fstream>
-#include <sstream>
-#include <vector>
-#include <string>
-
-using namespace std;
+    #include "settings.h"
+    #include "accessData.h"
+    #include "quizes.h"
+    #include "auth.h"
+    #include "dashboards.h"
+    #include "grades.h"
 
 void viewAllStudents() {
     Color bgWhite = { 240, 242, 245, 255 };
@@ -52,17 +46,17 @@ void viewAllStudents() {
 
         for (int i = 0; i < 5; i++) {
             bool hover = CheckCollisionPointRec(mouse, navs[i]);
-            if (i == 1 || hover) { 
+            if (i == 1 || hover) {
                 DrawRectangleRec(navs[i], Fade(accentColor, 0.3f));
                 DrawRectangle(0, (int)navs[i].y, 5, 60, accentColor);
             }
             DrawText(labels[i], 60, (int)navs[i].y + 15, 24, WHITE);
 
             if (hover && IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) {
-                if (i == 0) teacherDashboard();
-                if (i == 2) gradesTeacher();
-                if (i == 3) quizes();
-                if (i == 4) settingsTeacher();
+                if (i == 0) { teacherDashboard(); return; }
+                if (i == 2) { gradesTeacher(); return; }
+                if (i == 3) { quizes(); return; }
+                if (i == 4) { settingsTeacher(); return; }
             }
         }
 
@@ -94,6 +88,7 @@ void viewAllStudents() {
                 DrawText(students[i].c_str(), (int)row.x + 90, (int)row.y + 28, 24, textColor);
             }
         }
+
         Rectangle logoutBtn = { 20, (float)GetScreenHeight() - 95, 260, 50 };
         bool logoutHover = CheckCollisionPointRec(mouse, logoutBtn);
         DrawRectangleRounded(logoutBtn, 0.2f, 10, logoutHover ? RED : DARKGRAY);
@@ -101,8 +96,9 @@ void viewAllStudents() {
 
         if (logoutHover && IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) {
             startingScreen(true);
-            break;
+            return; 
         }
+
         EndDrawing();
     }
 }
