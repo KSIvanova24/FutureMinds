@@ -74,8 +74,7 @@ void englishGrammarQuiz() {
             EndDrawing();
         }
     }
-    DataAccess ds;
-    ds.saveQuizResult(currentUser, "Grammar", score);
+    saveQuizResult(currentUser, "Grammar", score);
     showDetailedResults("Grammar Quiz", score, qText, opts, answers, userChoices, totalQ);
 }
 
@@ -123,8 +122,8 @@ void englishVocabQuiz() {
             EndDrawing();
         }
     }
-    DataAccess ds;
-    ds.saveQuizResult(currentUser, "Vocabulary", score);
+
+    saveQuizResult(currentUser, "Vocabulary", score);
     showDetailedResults("Vocabulary Quiz", score, qText, opts, answers, userChoices, totalQ);
 }
 
@@ -185,8 +184,7 @@ void readingQuiz() {
             EndDrawing();
         }
     }
-    DataAccess ds;
-    ds.saveQuizResult(currentUser, "Reading", score);
+    saveQuizResult(currentUser, "Reading", score);
     showDetailedResults("Reading Quiz", score, qText, opts, answers, userChoices, totalQ);
 }
 
@@ -242,8 +240,7 @@ void idiomsQuiz() {
             EndDrawing();
         }
     }
-    DataAccess ds;
-    ds.saveQuizResult(currentUser, "Idioms", score);
+    saveQuizResult(currentUser, "Idioms", score);
     showDetailedResults("Idioms Quiz", score, qText, opts, answers, userChoices, totalQ);
 }
 
@@ -297,13 +294,11 @@ void quizes() {
         BeginDrawing();
         ClearBackground({ 240, 244, 248, 255 });
 
-        // --- SIDEBAR AREA ---
         DrawRectangle(0, 0, 300, GetScreenHeight(), sideBarColor);
         DrawText("FutureMinds", 40, 50, 35, WHITE);
         DrawLineEx({ 30, 110 }, { 270, 110 }, 2, Fade(GRAY, 0.5f));
 
         if (isAdmin) {
-            // --- TEACHER SIDEBAR (Точно като в примера) ---
 
             Rectangle dashBtn = { 0, 150, 300, 60 };
             if (CheckCollisionPointRec(mouse, dashBtn)) {
@@ -329,7 +324,6 @@ void quizes() {
             }
             DrawText("Grades", 60, 305, 24, WHITE);
 
-            // Active Page (Quizzes)
             Rectangle quizBtn = { 0, 360, 300, 60 };
             DrawRectangleRec(quizBtn, Fade(accentColor, 0.3f));
             DrawRectangle(0, 360, 5, 60, accentColor);
@@ -344,7 +338,6 @@ void quizes() {
             DrawText("Settings", 60, 445, 24, WHITE);
         }
         else {
-            // --- STUDENT SIDEBAR (Точно като в примера) ---
 
             Rectangle dashBtn = { 0, 150, 300, 60 };
             if (CheckCollisionPointRec(mouse, dashBtn)) {
@@ -354,7 +347,6 @@ void quizes() {
             }
             DrawText("Dashboard", 60, 165, 24, WHITE);
 
-            // Active Page (Quizzes)
             Rectangle quizBtn = { 0, 220, 300, 60 };
             DrawRectangleRec(quizBtn, Fade(accentColor, 0.3f));
             DrawRectangle(0, 220, 5, 60, accentColor);
@@ -377,7 +369,6 @@ void quizes() {
             DrawText("Settings", 60, 375, 24, WHITE);
         }
 
-        // --- Logout Button (Общ за двамата) ---
         Rectangle logoutBtn = { 20, (float)GetScreenHeight() - 100, 260, 50 };
         bool logoutHover = CheckCollisionPointRec(mouse, logoutBtn);
         DrawRectangleRounded(logoutBtn, 0.2f, 10, logoutHover ? RED : DARKGRAY);
@@ -388,10 +379,8 @@ void quizes() {
             return;
         }
 
-        // --- Top White Header ---
         DrawRectangle(300, 0, GetScreenWidth() - 300, 80, WHITE);
 
-        // --- MAIN QUIZ CONTENT ---
         DrawText("SELECT A CATEGORY", 350, 50, 25, GRAY);
 
         bool startGrammar = false;

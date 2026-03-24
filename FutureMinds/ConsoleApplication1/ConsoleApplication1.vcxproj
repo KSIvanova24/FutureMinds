@@ -140,7 +140,6 @@
     <ClCompile Include="quizes.cpp" />
     <ClCompile Include="settings.cpp" />
     <ClCompile Include="students.cpp" />
-    <ClCompile Include="validation.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="accessData.h" />

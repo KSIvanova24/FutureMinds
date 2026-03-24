@@ -27,9 +27,6 @@
     <ClCompile Include="accessData.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="validation.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="dashboards.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>

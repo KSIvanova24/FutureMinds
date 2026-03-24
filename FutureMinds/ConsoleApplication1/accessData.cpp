@@ -1,11 +1,10 @@
 #include "accessData.h"
-#define _CRT_SECURE_NO_WARNINGS
+
 char currentUser[25] = "";
 
-void DataAccess::addAccount(const string& username, const string& password)const {
+void addAccount(const string& username, const string& password) {
 
     ofstream file("../data/accounts.csv", ios_base::app);
-    // Add user's information
     file << username << ',' << password << "," << "student" << "\n";
     file.close();
 }
@@ -54,7 +53,7 @@ void drawStudentsCount()
     DrawText(countFinal.c_str(), 465, 185, 45, BLACK);
 }
 
-void DataAccess::saveQuizResult(const string& username, const string& quizType, int score) const {
+void saveQuizResult(const string& username, const string& quizType, int score) {
     ifstream inFile("../data/notebook.csv");
     vector<string> lines;
     string line;
@@ -83,9 +82,10 @@ void DataAccess::saveQuizResult(const string& username, const string& quizType, 
     }
 
     ofstream outFile("../data/notebook.csv");
-    for (const auto& l : lines) {
-        outFile << l << "\n";
+    for (size_t i = 0; i < lines.size(); i++) {
+        outFile << lines[i] << "\n";
     }
     outFile.close();
 }
+
 

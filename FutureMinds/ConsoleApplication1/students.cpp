@@ -1,4 +1,3 @@
-#define _CRT_SECURE_NO_WARNINGS // Спира C4996 грешката за strcpy
 #include "settings.h"
 #include "accessData.h"
 #include "quizes.h"
@@ -53,7 +52,7 @@ void viewAllStudents() {
 
         for (int i = 0; i < 5; i++) {
             bool hover = CheckCollisionPointRec(mouse, navs[i]);
-            if (i == 1 || hover) { // "Students" е индекс 1
+            if (i == 1 || hover) { 
                 DrawRectangleRec(navs[i], Fade(accentColor, 0.3f));
                 DrawRectangle(0, (int)navs[i].y, 5, 60, accentColor);
             }
@@ -92,7 +91,6 @@ void viewAllStudents() {
                 int letterW = MeasureText(firstLetter.c_str(), 24);
                 DrawText(firstLetter.c_str(), (int)badgeX - (letterW / 2), (int)badgeY - 10, 24, accentColor);
 
-                // Име
                 DrawText(students[i].c_str(), (int)row.x + 90, (int)row.y + 28, 24, textColor);
             }
         }

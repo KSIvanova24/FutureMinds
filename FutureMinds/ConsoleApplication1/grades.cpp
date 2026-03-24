@@ -6,7 +6,6 @@
 #include "grades.h"
 #include "students.h"
 
-// Helper function to draw menu items without using auto/lambdas
 void DrawMenuOption(Rectangle rect, const char* text, int index, Vector2 mouse, Color accentColor, Color borderColor, Color textColor, Color bgWhite) {
     bool hover = CheckCollisionPointRec(mouse, rect);
     DrawRectangleRounded(rect, 0.15f, 10, hover ? Fade(accentColor, 0.1f) : bgWhite);
@@ -80,7 +79,6 @@ void gradesTeacher() {
         DrawLineEx({ card.x + 50, card.y + 95 }, { card.x + 1050, card.y + 95 }, 2, borderColor);
 
         DrawMenuOption(viewGradesRect, "View Student Grades", 1, mouse, accentColor, borderColor, textColor, bgWhite);
-        DrawMenuOption(addGradeRect, "Add/Modify Grades", 2, mouse, accentColor, borderColor, textColor, bgWhite);
 
         DrawText("Terms of Service", 500, 1000, 20, GRAY);
         DrawText("Privacy Policy", 750, 1000, 20, GRAY);

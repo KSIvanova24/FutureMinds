@@ -4,19 +4,33 @@
 #include "validation.h"
 
 void DrawModernInput(Rectangle box, const char* label, const char* text, bool isHovered, bool isPassword, int fontSize) {
+
     DrawText(label, box.x, box.y - 30, 20, DARKGRAY);
+
     DrawRectangleRounded(box, 0.2f, 10, WHITE);
 
-    Color borderColor = isHovered ? Color ({ 66, 153, 225, 255 }) : LIGHTGRAY;
+
+
+    Color borderColor = isHovered ? Color({ 66, 153, 225, 255 }) : LIGHTGRAY;
+
     DrawRectangleRoundedLines(box, 0.2f, 10, 2, borderColor);
 
+
+
     if (isPassword) {
+
         std::string dots(strlen(text), '*');
+
         DrawText(dots.c_str(), box.x + 15, box.y + (box.height / 2 - fontSize / 2), fontSize, BLACK);
+
     }
+
     else {
+
         DrawText(text, box.x + 15, box.y + (box.height / 2 - fontSize / 2), fontSize, BLACK);
+
     }
+
 }
 
 void signup() {
@@ -33,9 +47,8 @@ void signup() {
 
     Rectangle mainPanel = { GetScreenWidth() / 2 - 350, GetScreenHeight() / 2 - 400, 700, 800 };
 
-    DataAccess account;
     Validate validator;
-    Texture2D logo = LoadTexture("../images/logo.png");
+    Texture2D logo = LoadTexture("../images/logoDark.png");
 
     while (!WindowShouldClose()) {
         Vector2 mouse = GetMousePosition();
@@ -53,7 +66,6 @@ void signup() {
         if (hoverUser || hoverPass || hoverRep) SetMouseCursor(MOUSE_CURSOR_IBEAM);
         else SetMouseCursor(MOUSE_CURSOR_DEFAULT);
 
-        // --- PRESERVED BACKEND INPUT LOGIC ---
         int key = GetCharPressed();
         if (hoverUser) {
             while (key > 0) {
@@ -86,18 +98,20 @@ void signup() {
             if (IsKeyPressed(KEY_BACKSPACE) && repeatPasswordLetterCount > 0) repeatPassword[--repeatPasswordLetterCount] = '\0';
         }
 
-        // --- PRESERVED SIGNUP VALIDATION ---
+
         if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON) && hoverBtn) {
+
             if (strcmp(password, repeatPassword) != 0) {
                 password[0] = '\0'; repeatPassword[0] = '\0';
                 passwordLetterCount = 0; repeatPasswordLetterCount = 0;
             }
             else {
-                if (validator.containsUppercase(password) && validator.containsLowercase(password) &&
-                    validator.containsDigit(password) && validator.containsSpecial(password)) {
-                    account.addAccount(username, password);
+                if (validator.isPasswordStrong(password)) {
+                    addAccount(username, password);
                     strcpy_s(currentUser, username);
                     studentDashboard();
+                    UnloadTexture(logo); 
+                    return;
                 }
                 else {
                     password[0] = '\0'; repeatPassword[0] = '\0';
@@ -140,7 +154,7 @@ void login() {
     Rectangle mainPanel = { GetScreenWidth() / 2 - 350, GetScreenHeight() / 2 - 350, 700, 700 };
 
     Validate validator;
-    Texture2D logo = LoadTexture("../images/logo.png");
+    Texture2D logo = LoadTexture("../images/logoDark.png");
 
     while (!WindowShouldClose()) {
         Vector2 mouse = GetMousePosition();
